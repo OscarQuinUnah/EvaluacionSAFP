@@ -1,7 +1,6 @@
 <?php
 if (!empty($_POST["btn_enviar_M_P"])) {
-$conn = mysqli_connect("localhost", "u221487857_root", "c^1eCv1V", "u221487857_bd_asociacion", "3306");
-session_start();
+   include("../conexion_BD.php");
 $User=$_SESSION['user'];
 $idUser=$_SESSION['ID_User'];
 
@@ -24,7 +23,9 @@ if ($C_preguntas_respondidas >= $parametro_preguntas) {
             if ($datos=$sql->fetch_object()) {
                header("location:../Pantallas/nueva_Contrasena.php");
             }else {
-               header("location:../Pantallas/Login.php");
+               echo'<script>alert("Preguntas Registradas Exitosamente ")</script>';
+               header( "refresh:0;url=../Pantallas/Login.php" ); 
+
             }
    
     
@@ -33,6 +34,6 @@ if ($C_preguntas_respondidas >= $parametro_preguntas) {
  }
  
  // Cerrar la conexión a la base de datos
- mysqli_close($conn);
+ mysqli_close($conexion);
 }
 ?>

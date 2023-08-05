@@ -159,7 +159,7 @@ function mostrarContrasena() {
         <button type="button" class="fa fa-eye" onclick="mostrarContrasena()"></button>
         </div>
         <h3>Correo Electronico</h3>
-            <input class="controls" type="text" name="R_correo" value="<?php echo $correo; ?>" placeholder="Ingrese su Correo Electronico"><br>
+            <input class="controls" type="text" name="R_correo" value="<?php echo $correo; ?>" placeholder="Ingrese Correo Electronico "><br>
 
         <input class="buttons" type="submit" Class="btn" name="btn_enviar_R" value="Enviar">  <!--boton que envia los datos de registro al controlador -->
        

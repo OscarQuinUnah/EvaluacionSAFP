@@ -13,7 +13,7 @@ include ("../conexion_BD.php");
 //                $NContra=$_POST["contranueva"];
     $R_Fecha_actual = date('Y-m-j');
 
-        $sql=$conexion->query("SELECT * FROM tbl_ms_usuario WHERE Usuario='$User' and Estado_Usuario='ACTIVO'");
+        $sql=$conexion->query("SELECT * FROM tbl_ms_usuario WHERE Usuario='$User' and Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO'");
 
               
     if (mysqli_num_rows($sql)==0) {
@@ -41,8 +41,8 @@ include ("../conexion_BD.php");
 
         }else{
             //edicion de contraseña, preguntas y primer ingreso
-                $sql2=$conexion->query("UPDATE tbl_ms_usuario SET Estado_Usuario='INACTIVO' WHERE ID_Usuario='$idUser'");
-                 echo'<script>alert("Pregunta o respuesta Invalida. Contactese con uno de los Administradores ")</script>';
+                $sql2=$conexion->query("UPDATE tbl_ms_usuario SET Estado_Usuario='BLOQUEADO' WHERE ID_Usuario='$idUser'");
+                 echo'<script>alert("Pregunta o respuesta Invalida. Su usuario ha sido Bloqueado. Contactese con uno de los Administradores.")</script>';
                    header( "refresh:0;url=../Pantallas/Login.php" ); 
    
         }

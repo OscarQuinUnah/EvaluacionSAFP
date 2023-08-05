@@ -35,19 +35,71 @@
     <?php
      include ("../conexion_BD.php");
      //require ("preguntas.php");
-$sql=$conexion->query("SELECT * FROM tbl_preguntas");
 ?>
 
-<h3 style="margin-top:40px; margin-bottom:30px; text-align:center ">Seleccione una pregunta</h3>
-<select class="controls" type="text" name="Pregunta" required ><br>
-<option value="">Seleccione un pregunta</option>
+<?php
+session_start();
+$idUser=$_SESSION['ID_User'];
+
+//Consulta para traer la cantidad de preguntas secretas contestadas por el usuario
+$sql1 = $conexion->query("SELECT Preguntas_Contestadas FROM `tbl_ms_usuario` WHERE ID_usuario = $idUser");
+
+// Verificar si la consulta devolvió resultados
+if (mysqli_num_rows($sql1) >= 1) {
+    // Obtener el resultado como un array asociativo
+    $row = mysqli_fetch_assoc($sql1);
+    // Acceder al valor de la columna "Preguntas_Contestadas"
+    $User_preguntas = $row['Preguntas_Contestadas'];
+    $U_preguntas = $User_preguntas + 1;
+}
+
+//Trae la cantidad de preguntas de seguridad registradas por el usuario
+$sql2=$conexion->query("SELECT * FROM `tbl_ms_parametros` WHERE `ID_Parametro` in(2)");
+// Verificar si la consulta devolvió resultados
+if (mysqli_num_rows($sql2) >= 1) {
+    // Recorrer los resultados y mostrarlos en pantalla
+    while($row = mysqli_fetch_array($sql2)) {
+        if ($row['ID_Parametro'] == 2) {
+            $C_preguntas=$row['Valor'];
+        } 
+  
+    }
+}
+
+?>
+<h3 style="margin-top:20px; margin-bottom:10px; text-align:center; color:#0F1328">Configuracion de pregunta secreta <?php echo $U_preguntas; ?> de <?php echo $C_preguntas; ?></h3>
+
+
+<h3 style="margin-top:20px; margin-bottom:20px; text-align:center ">Seleccione una pregunta</h3>
+
+<select class="controls" type="text" name="Pregunta" required>
+    <option value="">Seleccione una pregunta</option>
     <?php
-while($row=mysqli_fetch_array($sql)){
-?>
-         <option value="<?php echo $row['ID_Pregunta'];?>"><?php echo $row['Pregunta'];?></option>
-  <?php
-  }
-?>
+    $sql=$conexion->query("SELECT * FROM tbl_preguntas");
+    while ($row = mysqli_fetch_array($sql)) {
+        // Aquí debemos verificar si la pregunta ya está registrada para el usuario en cuestión.
+
+        // Hacemos una consulta para verificar si la pregunta ya está registrada para el usuario.
+        $preguntaRegistrada = false; // Suponemos inicialmente que no está registrada.
+        // Aquí debes reemplazar 'preguntas_por_usuario' por el nombre de la tabla donde se registran las preguntas por usuario.
+        $query = "SELECT COUNT(*) as count FROM tbl_ms_preguntas_x_usuario WHERE ID_Usuario = $idUser AND ID_Pregunta = " . $row['ID_Pregunta'];
+        $result = mysqli_query($conexion, $query);
+        if ($result) {
+            $data = mysqli_fetch_assoc($result);
+            if ($data['count'] > 0) {
+                $preguntaRegistrada = true; // Si count > 0, la pregunta ya está registrada para el usuario.
+            }
+        }
+
+        // Si la pregunta no está registrada para el usuario, mostramos la opción en el select.
+        if (!$preguntaRegistrada) {
+            ?>
+            <option value="<?php echo $row['ID_Pregunta']; ?>"><?php echo $row['Pregunta']; ?></option>
+            <?php
+        }
+    }
+    ?>
+</select>
 
 <input onpaste="return false" oncopy="return false" onkeypress="return /[a-zA-Z0-9\-\_]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" class="controls" type="text" name="respuesta" placeholder="Ingrese la Respuesta "><br>
 
