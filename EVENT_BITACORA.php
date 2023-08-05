@@ -31,7 +31,7 @@ class EVENT_BITACORA{
             
             $fila = $consulta->fetch();
 
-            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha,ID_Usuario,ID_Objeto,Accion,Descripcion) VALUES(NULL,'$fecha', '".$fila['ID_Usuario']."',16,'Inicio de sesion','Entro al sistema')";
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha,ID_Usuario,ID_Objeto,Accion,Descripcion) VALUES(NULL,'$fecha', '".$fila['ID_Usuario']."',16,'Inicio de sesion','Entró al sistema')";
             #$sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha,ID_Usuario,ID_Objeto,Accion,Descripcion) VALUES(NULL,'$fecha', '".$fila['ID_Usuario']."','".$fila['ID_Objeto']."','Inicio de secion','Entro al sistema')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
@@ -112,14 +112,14 @@ class EVENT_BITACORA{
         $_SESSION['IDUsuarioBitacora'];
             $model = new conexion();
             $conexion = $model->conectar();
-            $Accion = "Creacion de usuario";
+            $Accion = "Creación de usuario";
             $IDU =  $_SESSION['IDUsuarioBitacora'];
             $Usuario = $_SESSION['UsuarioBitacora'];
             $Descripcion = "Nuevo usuario agregado: " .$Usuario;
             $fecha = date("Y-m-d h:i:s");
 
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal', '1', 'Creacion de usuario', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal', '1', 'Creación de usuario', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
     
@@ -140,13 +140,13 @@ class EVENT_BITACORA{
         $IDGlobal= $_SESSION['IDUsuarioBitacora'];
             $model = new conexion();
             $conexion = $model->conectar();
-            $Accion = "Creacion de usuario";
+            $Accion = "Creación de usuario";
             $IDU =  $_SESSION['IDUsuarioBitacora'];
             $Usuario = $_SESSION['UsuarioBitacora'];
-            $Descripcion = "Se autoregistro el usuario: " .$Usuario;
+            $Descripcion = "Se autoregistró el usuario: " .$Usuario;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal', '1', 'creacion de usuario', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal', '1', 'Creación de usuario', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
     
@@ -174,10 +174,10 @@ class EVENT_BITACORA{
             $model = new conexion();
             $conexion = $model->conectar();
             $userName = $_SESSION['UsuarioBitUP'];
-            $Descripcion = "Se modifico el usuario: ".$userName;
+            $Descripcion = "Se modificó el usuario: ".$userName;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', $IDGlobal , '1', 'Modificacion de usuario', '$Descripcion')";
+            VALUES (NULL,'$fecha', $IDGlobal , '1', 'Modificación de usuario', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
     
@@ -202,10 +202,10 @@ class EVENT_BITACORA{
             $conexion = $model->conectar();
             $IDDEL= $_SESSION['IDUsuarioBitacoraDELETE'];
             $Nombre_Usuario = $_SESSION['UsuarioBitacoraDELETE'];
-            $Descripcion = "Se elimino el usuario con ID: " .$Nombre_Usuario;
+            $Descripcion = "Se eliminó el usuario con ID: " .$Nombre_Usuario;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', $IDGlobal, '1', 'Eliminacion de usuario', '$Descripcion')";
+            VALUES (NULL,'$fecha', $IDGlobal, '1', 'Eliminación de usuario', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
           
@@ -236,7 +236,7 @@ class EVENT_BITACORA{
             
             $fila = $consulta->fetch();
 
-            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha,ID_Usuario,ID_Objeto,Accion,Descripcion) VALUES(NULL,'$fecha', '".$fila['ID_Usuario']."','".$fila['16']."','Creacion de Usuario Nuevo','El usuario fue creado')";
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha,ID_Usuario,ID_Objeto,Accion,Descripcion) VALUES(NULL,'$fecha', '".$fila['ID_Usuario']."','".$fila['16']."','Creación de Usuario Nuevo','El usuario fue creado')";
             #$sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha,ID_Usuario,ID_Objeto,Accion,Descripcion) VALUES(NULL,'$fecha', '".$fila['ID_Usuario']."','".$fila['ID_Objeto']."','Inicio de secion','Entro al sistema')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
@@ -277,8 +277,8 @@ public function RegaInsertFondo(){
     $Nombre_del_Objeto=$_SESSION['nFondoBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Accion = "Creacion de usuario";
-        $Descripcion = "Se Ingreso el fondo: " .$Nombre_del_Objeto;
+        $Accion = "Creación de usuario";
+        $Descripcion = "Se Ingresó el fondo: " .$Nombre_del_Objeto;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '7', 'Ingreso de fondo', '$Descripcion')";
@@ -304,10 +304,10 @@ public function DeleteFondo(){
    $Fondo=$_SESSION['IDFondoBitacoraDELETE'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se elimino el fondo: " .$Fondo;
+        $Descripcion = "Se eliminó el fondo: " .$Fondo;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', $IDGlobal, '7', 'Eliminacion de fondo', '$Descripcion')";
+        VALUES (NULL,'$fecha', $IDGlobal, '7', 'Eliminación de fondo', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
     
@@ -334,10 +334,10 @@ public function RegUptFondo(){
         $_SESSION['IDUsuario'] = $fila['ID_Usuario'];
         $id =  $_SESSION['IDUsuarioBitacoraUP'];
         $user = $_SESSION['UsuarioBitacoraUP'];
-        $Descripcion = "Se modifico el fondo: " .$Nombre_del_Objeto;
+        $Descripcion = "Se modificó el fondo: " .$Nombre_del_Objeto;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal ', '7', 'Modificacion de fondo', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal ', '7', 'Modificación de fondo', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
 
@@ -376,11 +376,11 @@ public function RegUptFondo(){
      $voluntario=$_SESSION['nombreVolBitacora'];
             $model = new conexion();
             $conexion = $model->conectar();
-            $Accion = "Creacion de Voluntario";
+            $Accion = "Creación de Voluntario";
             $Descripcion = "Nuevo Voluntario agregado: ".$voluntario;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal', '9', 'Creacion de voluntario', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal', '9', 'Creación de voluntario', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
     
@@ -403,10 +403,10 @@ public function RegUptFondo(){
        $voldelete= $_SESSION['NombreVolBitacoraDELETE'];
             $model = new conexion();
             $conexion = $model->conectar();
-            $Descripcion = "Se elimino el Voluntario: ".$idvol;
+            $Descripcion = "Se eliminó el Voluntario: ".$idvol;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', $IDGlobal, '9', 'Eliminacion de voluntario', '$Descripcion')";
+            VALUES (NULL,'$fecha', $IDGlobal, '9', 'Eliminación de voluntario', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
         
@@ -425,10 +425,10 @@ public function RegUptFondo(){
        $Voluntarioup= $_SESSION['VOLBitacoraUP'];
             $model = new conexion();
             $conexion = $model->conectar();
-            $Descripcion = "Se modifico el voluntario: " .$Voluntarioup;
+            $Descripcion = "Se modificó el voluntario: " .$Voluntarioup;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal ', '9', 'Modificacion de voluntario', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal ', '9', 'Modificación de voluntario', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
     
@@ -464,11 +464,11 @@ public function RegUptFondo(){
        $idpago= $_SESSION['IDpagoBitacora'];
             $model = new conexion();
             $conexion = $model->conectar();
-            $Accion = "Creacion de Pago";
+            $Accion = "Creación de Pago";
             $Descripcion = "Nuevo Pago agregado: ".$idpago;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal', '10', 'Creacion de Pago', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal', '10', 'Creación de Pago', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
     
@@ -496,10 +496,10 @@ public function RegUptFondo(){
         $Monto= $_SESSION['pagoBitacoraUP'];
             $model = new conexion();
             $conexion = $model->conectar();       
-            $Descripcion = "Se modifico el pago a: " . $Monto ." con ID: ".$ID_Pago;
+            $Descripcion = "Se modificó el pago a: " . $Monto ." con ID: ".$ID_Pago;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal ', '10', 'Modificacion de pago', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal ', '10', 'Modificación de pago', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
     
@@ -521,10 +521,10 @@ public function RegUptFondo(){
         $idpago= $_SESSION['idPagoBitdel'];
             $model = new conexion();
             $conexion = $model->conectar();
-            $Descripcion = "Se elimino el Pago con ID: ".$idpago;
+            $Descripcion = "Se eliminó el Pago con ID: ".$idpago;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', $IDGlobal, '10', 'Eliminacion de Pago', '$Descripcion')";
+            VALUES (NULL,'$fecha', $IDGlobal, '10', 'Eliminación de Pago', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
             ?>
@@ -558,7 +558,7 @@ public function RegInsertDon(){
         $Descripcion = "Nuevo Donante agregado: ".$donante;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '8', 'Creacion de Donante', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '8', 'Creación de Donante', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
 
@@ -576,10 +576,10 @@ public function DeleteDon(){
   $iddonante=  $_SESSION['IDdonanteBitacoraDELETE'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se elimino el Donante con ID: ".$iddonante;
+        $Descripcion = "Se eliminó el Donante con ID: ".$iddonante;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', $IDGlobal, '8', 'Eliminacion de Donante', '$Descripcion')";
+        VALUES (NULL,'$fecha', $IDGlobal, '8', 'Eliminación de Donante', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
     
@@ -600,10 +600,10 @@ public function DeleteDon(){
         $Nombredonante=$_SESSION['donanteBitacoraUP'];
             $model = new conexion();
             $conexion = $model->conectar();      
-            $Descripcion = "Se modifico el donante: " .$Nombredonante;
+            $Descripcion = "Se modificó el donante: " .$Nombredonante;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal ', '8', 'Modificacion de donante', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal ', '8', 'Modificación de donante', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
     
@@ -644,7 +644,7 @@ public function RegInsertSar(){
         $Descripcion = "Registro SAR agregado con RTN: ".$RTN;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '11', 'Creacion de registro SAR', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '11', 'Creación de registro SAR', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();   
         ?>
@@ -659,10 +659,10 @@ public function RegInsertSar(){
         $RTN=$_SESSION['$RTNsarBitUP'];
             $model = new conexion();
             $conexion = $model->conectar();      
-            $Descripcion = "Se modifico el registro SAR con RTN: ".$RTN;
+            $Descripcion = "Se modificó el registro SAR con RTN: ".$RTN;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal ', '11', 'Modificacion de SAR', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal ', '11', 'Modificación de SAR', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();
             ?>
@@ -676,10 +676,10 @@ public function DeleteSar(){
     $id_sar=$_SESSION['IDSarBitacoraDELETE'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se elimino el registro SAR con ID: ".$id_sar;
+        $Descripcion = "Se eliminó el registro SAR con ID: ".$id_sar;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', $IDGlobal, '11', 'Eliminacion de SAR', '$Descripcion')";
+        VALUES (NULL,'$fecha', $IDGlobal, '11', 'Eliminación de SAR', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
       
@@ -712,7 +712,7 @@ public function RegInsertRol(){
         $Descripcion = "Registro Rol agregado: ".$nombreRol;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '5', 'Creacion de Rol', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '5', 'Creación de Rol', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -726,10 +726,10 @@ public function RegInsertRol(){
         $nombreRol=$_SESSION['RolBitUP'];
             $model = new conexion();
             $conexion = $model->conectar();      
-            $Descripcion = "Se modifico el Rol: " .$nombreRol;
+            $Descripcion = "Se modificó el Rol: " .$nombreRol;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal ', '5', 'Modificacion de Rol', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal ', '5', 'Modificación de Rol', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();  
             ?>
@@ -743,10 +743,10 @@ public function DeleteRol(){
     $ID_Rol=$_SESSION['IDRolDELETE'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se elimino el Rol: ".$ID_Rol;
+        $Descripcion = "Se eliminó el Rol: ".$ID_Rol;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', $IDGlobal, '5', 'Eliminacion de Rol', '$Descripcion')";
+        VALUES (NULL,'$fecha', $IDGlobal, '5', 'Eliminación de Rol', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();   
         ?>
@@ -777,7 +777,7 @@ public function RegInsertpreg(){
         $Descripcion = "Pregunta agregada: ".$pregunta;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '4', 'Creacion de pregunta', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '4', 'Creación de pregunta', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -791,10 +791,10 @@ public function RegInsertpreg(){
         $pregunta=$_SESSION['pregbitUP'];
             $model = new conexion();
             $conexion = $model->conectar();      
-            $Descripcion = "Se modifico La pregunta: " .$pregunta;
+            $Descripcion = "Se modificó La pregunta: " .$pregunta;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal ', '4', 'Modificacion de pregunta', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal ', '4', 'Modificación de pregunta', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();  
             ?>
@@ -808,10 +808,10 @@ public function Deletepreg(){
     $ID_Pregunta=$_SESSION['IDpregDELETE'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se elimino la pregunta: ".$ID_Pregunta;
+        $Descripcion = "Se eliminó la pregunta: ".$ID_Pregunta;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', $IDGlobal, '4', 'Eliminacion de pregunta', '$Descripcion')";
+        VALUES (NULL,'$fecha', $IDGlobal, '4', 'Eliminación de pregunta', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
       
@@ -824,10 +824,10 @@ public function entrarpara(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Entró a la pantalla Parametros";
+        $Descripcion = "Entró a la pantalla Parámetros";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '3', 'Entrar aparametros', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '3', 'Entrar a parametros', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -840,10 +840,10 @@ public function RegInsertpara(){
     $Nombre_Parametro= $_SESSION['parabit'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Agrego el parametro: ".$Nombre_Parametro;
+        $Descripcion = "Agregó el parámetro: ".$Nombre_Parametro;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '3', 'Creacion de parametro', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '3', 'Creación de parámetro', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -858,10 +858,10 @@ public function RegInsertpara(){
         $Parametro=$_SESSION['paraBitUP'];
             $model = new conexion();
             $conexion = $model->conectar();      
-            $Descripcion = "Se modifico el parametro: " .$Parametro;
+            $Descripcion = "Se modificó el parámetro: " .$Parametro;
             $fecha = date("Y-m-d h:i:s");
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-            VALUES (NULL,'$fecha', '$IDGlobal ', '3', 'Modificacion de parametro', '$Descripcion')";
+            VALUES (NULL,'$fecha', '$IDGlobal ', '3', 'Modificación de parámetro', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
             $consulta2->execute();  
             ?>
@@ -890,10 +890,10 @@ public function RegInsertTFondo(){
     $nombre_T_Fondo= $_SESSION['nombreTFondoBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Agrego el Tipo de Fondo: ".$nombre_T_Fondo;
+        $Descripcion = "Agregó el Tipo de Fondo: ".$nombre_T_Fondo;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '13', 'Creacion de Tipo Fondo', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '13', 'Creación de Tipo Fondo', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -908,10 +908,10 @@ public function UPInsertTFondo(){
     $nombre_T_Fondo= $_SESSION['nombreTFondoBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se modifico el Tipo de Fondo: ".$nombre_T_Fondo;
+        $Descripcion = "Se modificó el Tipo de Fondo: ".$nombre_T_Fondo;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '13', 'Modificacion de Tipo Fondo', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '13', 'Modificación de Tipo Fondo', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -925,10 +925,10 @@ public function DELInsertTFondo(){
     $ID_T_Fondo= $_SESSION['IDTFondoBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se elimino el Tipo de Fondo con ID: ".$ID_T_Fondo;
+        $Descripcion = "Se eliminó el Tipo de Fondo con ID: ".$ID_T_Fondo;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '13', 'Eliminacion de Tipo Fondo', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '13', 'Eliminación de Tipo Fondo', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -939,10 +939,10 @@ public function DELInsertTFondo(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Entró a la pantalla Area de Trabajo";
+        $Descripcion = "Entró a la pantalla Área de Trabajo";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Entrar a area de trabajo', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Entrar a área de trabajo', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -955,10 +955,10 @@ public function InsertAreaT(){
     $nombre_Area_Trabajo= $_SESSION['nareaBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Ingreso el area de trabajo: ".$nombre_Area_Trabajo;
+        $Descripcion = "Ingresó el área de trabajo: ".$nombre_Area_Trabajo;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Agregar area de trabajo', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Agregar área de trabajo', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -972,10 +972,10 @@ public function UPAreaT(){
     $nombre_Area_Trabajo= $_SESSION['nareaBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Modifico el area de trabajo: ".$nombre_Area_Trabajo;
+        $Descripcion = "Modificó el área de trabajo: ".$nombre_Area_Trabajo;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Modificacion area de trabajo', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Modificación área de trabajo', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -989,10 +989,10 @@ public function DELAreaT(){
     $ID_Area_Trabajo= $_SESSION['IDareaBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se elimino el area de trabajo con ID: ".$ID_Area_Trabajo;
+        $Descripcion = "Se eliminó el área de trabajo con ID: ".$ID_Area_Trabajo;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Eliminacion area de trabajo', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Eliminación área de trabajo', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1004,10 +1004,10 @@ public function entrarVOLPRO(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Entró a la pantalla vinculacion de voluntarios";
+        $Descripcion = "Entró a la pantalla vinculación de voluntarios";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Entrar a Vinculacion de voluntario', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Entrar a Vinculación de voluntario', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1020,10 +1020,10 @@ public function InsertVOLPRO(){
     $ID_Voluntario= $_SESSION['IDvolproBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se Vinculo el voluntario con ID: ".$ID_Voluntario;
+        $Descripcion = "Se Vinculó el voluntario con ID: ".$ID_Voluntario;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Vinculacion de voluntario', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Vinculación de voluntario', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1037,10 +1037,10 @@ public function UPVOLPRO(){
     $ID_Vinculacion_Proy= $_SESSION['IDvolproBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se modifico el voluntario vinculado con ID: ".$ID_Vinculacion_Proy;
+        $Descripcion = "Se modificó el voluntario vinculado con ID: ".$ID_Vinculacion_Proy;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '15', ' Modidicacion voluntario vinculado', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '15', ' Modidicación voluntario vinculado', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1054,10 +1054,10 @@ public function DELVOLPRO(){
     $ID_Vinculacion_Proy= $_SESSION['IDvolproBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se elimino el voluntario vinculado con ID: ".$ID_Vinculacion_Proy;
+        $Descripcion = "Se eliminó el voluntario vinculado con ID: ".$ID_Vinculacion_Proy;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Eliminacion voluntario vinculado', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Eliminación voluntario vinculado', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1072,7 +1072,7 @@ public function entrarGProj(){
         $Descripcion = "Entró a la pantalla Gestion de Proyectos";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Entrar a Gestion de Proyecto', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Entrar a Gestión de Proyecto', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1099,10 +1099,10 @@ public function InsertProj(){
     $nomb_proyec= $_SESSION['projectBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se creo el proyecto: ".$nomb_proyec;
+        $Descripcion = "Se creó el proyecto: ".$nomb_proyec;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Creacion de proyecto', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Creación de proyecto', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1119,7 +1119,7 @@ public function UPTProjec(){
         $Descripcion = "Se modificó el proyecto: ".$nomb_proyec;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Modificacion de proyecto', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Modificación de proyecto', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1136,7 +1136,7 @@ public function DELProj(){
         $Descripcion = "Se eliminó el proyecto con ID: ".$ID_proyecto;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Eliminacion de proyecto', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Eliminación de proyecto', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1164,7 +1164,7 @@ public function InsertTPago(){
     $Nombre= $_SESSION['nombtpagoBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se agrego el tipo pago: ".$Nombre;
+        $Descripcion = "Se agregó el tipo pago: ".$Nombre;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '17', 'Ingreso Tipo Pago', '$Descripcion')";
@@ -1184,7 +1184,7 @@ public function UPTTPago(){
         $Descripcion = "Se modificó el tipo pago: ".$Nombre;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '17', 'Modificacion Tipo Pago', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '17', 'Modificación Tipo Pago', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1201,7 +1201,7 @@ public function DELTPago(){
         $Descripcion = "Se eliminó el tipo pago con ID: ".$ID_T_pago;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '17', 'Eliminacion Tipo Pago', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '17', 'Eliminación Tipo Pago', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1229,7 +1229,7 @@ public function InsertObj(){
     $objeto= $_SESSION['OBJBitacora'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se agrego el objeto: ".$objeto;
+        $Descripcion = "Se agregó el objeto: ".$objeto;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '18', 'Ingreso de objeto', '$Descripcion')";
@@ -1249,7 +1249,7 @@ public function UPObj(){
         $Descripcion = "Se modificó el objeto: ".$objeto;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '18', 'Modificacion de objeto', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '18', 'Modificación de objeto', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1266,7 +1266,7 @@ public function DELObj(){
         $Descripcion = "Se eliminó el objeto con ID: ".$idObj;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '18', 'Eliminacion de objeto', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '18', 'Eliminación de objeto', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1279,7 +1279,7 @@ public function reportpago(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de pago ";
+        $Descripcion = "Se generó reporte de pago ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '10', 'Reporte Pago', '$Descripcion')";
@@ -1294,7 +1294,7 @@ public function reportusu(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de usuario ";
+        $Descripcion = "Se generó reporte de usuario ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '1', 'Reporte usuario', '$Descripcion')";
@@ -1310,7 +1310,7 @@ public function reportdonan(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de donantes ";
+        $Descripcion = "Se generó reporte de donantes ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '8', 'Reporte donantes', '$Descripcion')";
@@ -1326,7 +1326,7 @@ public function reportfondo(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de fondos ";
+        $Descripcion = "Se generó reporte de fondos ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '7', 'Reporte fondos', '$Descripcion')";
@@ -1342,7 +1342,7 @@ public function reportobj(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de objetos ";
+        $Descripcion = "Se generó reporte de objetos ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '18', 'Reporte objetos', '$Descripcion')";
@@ -1358,7 +1358,7 @@ public function reportparametro(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de parametros ";
+        $Descripcion = "Se generó reporte de parámetros ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '3', 'Reporte parametros', '$Descripcion')";
@@ -1374,7 +1374,7 @@ public function reportpregunt(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de preguntas ";
+        $Descripcion = "Se generó reporte de preguntas ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '4', 'Reporte preguntas', '$Descripcion')";
@@ -1390,7 +1390,7 @@ public function reportproj(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de proyecto ";
+        $Descripcion = "Se generó reporte de proyecto ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Reporte proyecto', '$Descripcion')";
@@ -1406,7 +1406,7 @@ public function reportrol(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de roles ";
+        $Descripcion = "Se generó reporte de roles ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '5', 'Reporte roles', '$Descripcion')";
@@ -1421,7 +1421,7 @@ public function reportsar(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de SAR ";
+        $Descripcion = "Se generó reporte de SAR ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '11', 'Reporte SAR', '$Descripcion')";
@@ -1436,7 +1436,7 @@ public function reportTfondo(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de tipo de fondo ";
+        $Descripcion = "Se generó reporte de tipo de fondo ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '13', 'Reporte tipo fondo', '$Descripcion')";
@@ -1452,7 +1452,7 @@ public function reportTpago(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de tipo de pago ";
+        $Descripcion = "Se generó reporte de tipo de pago ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '17', 'Reporte tipo pago', '$Descripcion')";
@@ -1467,7 +1467,7 @@ public function reportvolpro(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de vountario proyecto ";
+        $Descripcion = "Se generó reporte de vountario proyecto ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Reporte voluntario proyecto', '$Descripcion')";
@@ -1483,7 +1483,7 @@ public function reportvol(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de vountarios ";
+        $Descripcion = "Se generó reporte de vountarios ";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '9', 'Reporte voluntarios', '$Descripcion')";
@@ -1499,7 +1499,7 @@ public function reportbit(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de bitacora";
+        $Descripcion = "Se generó reporte de bitacora";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '2', 'Reporte bitacora', '$Descripcion')";
@@ -1514,7 +1514,7 @@ public function reportareaT(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Se genero reporte de area de trabajo";
+        $Descripcion = "Se generó reporte de area de trabajo";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Reporte area de trabajo', '$Descripcion')";
@@ -1542,10 +1542,10 @@ public function backupcrea(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Creo copia de seguridad";
+        $Descripcion = "Creó copia de seguridad";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '12', 'Creacion copia de seguridad', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '12', 'Creación copia de seguridad', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1558,7 +1558,7 @@ public function backupres(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Actualizo copia de seguridad";
+        $Descripcion = "Actualizó copia de seguridad";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
         VALUES (NULL,'$fecha', '$IDGlobal', '12', 'Actualizar copia de seguridad', '$Descripcion')";
@@ -1576,7 +1576,7 @@ public function backuDEL(){
         $Descripcion = "Eliminó copia de seguridad";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '12', 'Eliminacion copia de seguridad', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '12', 'Eliminación copia de seguridad', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
