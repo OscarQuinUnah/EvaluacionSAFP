@@ -7,9 +7,34 @@ include("../../conexion_BD.php");
     $sql = "DELETE FROM tbl_fondos where ID_de_fondo = '$ID_Fondo'";
     $resultado = mysqli_query($conexion,$sql);
 
+        //Para saber el usuario acti
+        
+        session_start();     
+        $Usuario = $_SESSION['usuario'];     
+        include("../../conexion_BD.php");
+        $sql1 = $conexion->query("SELECT * FROM `tbl_ms_usuario` WHERE Usuario='$Usuario'");
 
+        while($row = mysqli_fetch_array($sql1)){
+            $ID_Usuario = $row['ID_Usuario'];
+        }
+
+        // Fin saber usuario activo
 
     if($resultado){
+
+        // Consulta para obtener el último ID de la tabla
+        $sql2 = $conexion->query("SELECT MAX(IdFondos_Log) AS ultimo_id FROM tbl_fondos_log");
+
+        while ($row = mysqli_fetch_array($sql2)) {
+            $ultimo_id = $row['ultimo_id'];
+        }//Fin consulta ultimo ID de la tabla
+
+
+        //actualizacion a tabla log con usuario que hizo la accion
+        $sql3="UPDATE tbl_fondos_log SET Log_Usuario='$Usuario' where IdFondos_Log  = $ultimo_id";
+        $resultado3 = mysqli_query($conexion,$sql3);
+        //Fin actualizacion a tabla log 
+
         echo "<script languaje='JavaScript'>
                 alert('Los datos se eliminaron correctamente de la Base de Datos');
                 location.assign('FondosAdm.php');
