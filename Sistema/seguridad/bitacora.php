@@ -52,10 +52,10 @@ $fecha_fin = isset($_POST['fecha_fin']) ? $_POST['fecha_fin'] : '';
               <div class="col-md-12">
                   <div class="box">
                     <div class="box-header with-border">
-                          <h1 style="text-align:center; margin-top:15px; margin-bottom:20px" class="box-title">Bitacora</h1>
+                          <h1 style="text-align:center; margin-top:15px; margin-bottom:20px" class="box-title">Bitácora</h1>
                           <!-- PARA GENERAR LOS REPORTES ====================== -->
                           <button class="btn btn-warning" id="generar-reporte" name="generar-reporte" onclick="window.open('../../fpdf/ReporteBitacora.php?campo=' + encodeURIComponent(document.getElementById('campo').value), '_blank')" >
-                         <i class="zmdi zmdi-collection-pdf"></i> Generar Reporte Bitacora
+                         <i class="zmdi zmdi-collection-pdf"></i> Generar Reporte Bitácora
                           </button>            
                 <!-- Fin Generar Reporte -->
     <main>
@@ -116,8 +116,8 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                             <th class="sort asc">Fecha</th>
                             <th class="sort asc">Usuario</th>
                             <th class="sort asc">Objeto</th>
-                            <th class="sort asc">Accion</th>
-                            <th class="sort asc">Descripcion</th>
+                            <th class="sort asc">Acción</th>
+                            <th class="sort asc">Descripción</th>
                         </thead>
 
                         <!-- El id del cuerpo de la tabla. -->
