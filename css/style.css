@@ -513,7 +513,7 @@ height: 40px;
     box-shadow: 7px 13px 37px #000;
     padding: 20px 30px;
     border-top: 4px solid #016ea8;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 238, 255);
 }
 
 .recuperar_contra h1{
@@ -551,7 +551,7 @@ form .input_recupera_contra i{
 
 .buttons_recupera_contra:hover{
     color: #000;
-    background: #00680e;
+    background: white;
     font-weight: 700;
 }  
 
