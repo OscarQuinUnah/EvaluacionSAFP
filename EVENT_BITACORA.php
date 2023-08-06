@@ -51,10 +51,10 @@ class EVENT_BITACORA{
         $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Entró a la pantalla Bitacora" ;
+        $Descripcion = "Entró a la pantalla Bitácora" ;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '16', 'Entrar a Bitacora', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '16', 'Entrar a Bitácora', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();                 
         ?>
