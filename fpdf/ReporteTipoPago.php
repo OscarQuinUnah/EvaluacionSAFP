@@ -86,7 +86,7 @@ class PDF extends FPDF
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
       $this->SetFont('Arial', 'B', 11);
       $this->Cell(120, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(120, 10, utf8_decode('Concepto de Pago'), 1, 1, 'C', 1);
+      $this->Cell(120, 10, utf8_decode('CONCEPTO DE PAGO'), 1, 1, 'C', 1);
    }
 
    // Pie de página

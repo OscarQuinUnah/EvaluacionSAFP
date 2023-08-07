@@ -81,7 +81,7 @@ class PDF extends FPDF
       $this->Cell(30, 10, utf8_decode('N°'), 1, 0, 'C', 1);
       $this->Cell(25, 10, utf8_decode('ID OBJETO'), 1, 0, 'C', 1);
       $this->Cell(90, 10, utf8_decode('OBJETO'), 1, 0, 'C', 1);
-      $this->Cell(60, 10, utf8_decode('DESCRIPCION'), 1, 0, 'C', 1);
+      $this->Cell(60, 10, utf8_decode('DESCRIPCIÓN'), 1, 0, 'C', 1);
       $this->Cell(70, 10, utf8_decode('TIPO DE OBJETO'), 1, 1, 'C', 1);
    }
 

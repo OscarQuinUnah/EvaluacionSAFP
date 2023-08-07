@@ -91,15 +91,15 @@ class PDF extends FPDF
       $this->SetFillColor(255, 255, 255); //colorFondo
       $this->SetTextColor(000, 000, 000); //colorTexto
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
-      $this->SetFont('Arial', 'B', 11);
-      $this->Cell(20, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(40, 10, utf8_decode('Tipo de Fondo'), 1, 0, 'C', 1);
-      $this->Cell(30, 10, utf8_decode('Nombre Objeto'), 1, 0, 'C', 1);
-      $this->Cell(40, 10, utf8_decode('Cantidad recibida'), 1, 0, 'C', 1);
-      $this->Cell(40, 10, utf8_decode('Valor monetario'), 1, 0, 'C', 1);
-      $this->Cell(30, 10, utf8_decode('Proyecto'), 1, 0, 'C', 1);
-      $this->Cell(40, 10, utf8_decode('Donante'), 1, 0, 'C', 1);
-      $this->Cell(40, 10, utf8_decode('Fecha de Adquisicion'), 1, 1, 'C', 1);
+      $this->SetFont('Arial', 'B', 10.5);
+      $this->Cell(5, 10, utf8_decode('N°'), 1, 0, 'C', 1);
+      $this->Cell(47, 10, utf8_decode('TIPO DE FONDO'), 1, 0, 'C', 1);
+      $this->Cell(35, 10, utf8_decode('NOMBRE OBJETO'), 1, 0, 'C', 1);
+      $this->Cell(40, 10, utf8_decode('CANTIDAD RECIBIDA'), 1, 0, 'C', 1);
+      $this->Cell(40, 10, utf8_decode('VALOR MONETARIO'), 1, 0, 'C', 1);
+      $this->Cell(30, 10, utf8_decode('PROYECTO'), 1, 0, 'C', 1);
+      $this->Cell(40, 10, utf8_decode('DONANTE'), 1, 0, 'C', 1);
+      $this->Cell(50, 10, utf8_decode('FECHA DE ADQUISICIÓN'), 1, 1, 'C', 1);
     //   $this->Cell(50, 10, utf8_decode('DEPARTAMENTO'), 1, 0, 'C', 1);
     //   $this->Cell(50, 10, utf8_decode('MUNICIPIO'), 1, 1, 'C', 1);
       // $this->Cell(50, 10, utf8_decode('CAI'), 1, 0, 'C', 1);
@@ -131,7 +131,7 @@ $pdf->AddPage("landscape"); /* aqui entran dos para parametros (horientazion,tam
 $pdf->AliasNbPages(); //muestra la pagina / y total de paginas
 
 $i = 0;
-$pdf->SetFont('Arial', '', 12);
+$pdf->SetFont('Arial', '', 10.5);
 $pdf->SetDrawColor(163, 163, 163); //colorBorde
 
 $campo = $_GET["campo"];
@@ -149,14 +149,14 @@ AND p.Nombre_del_proyecto = '$Nombre_del_proyecto' AND f.Fecha_de_adquisicion_F 
 while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {   
       $i = $i + 1;
       /* TABLA */
-      $pdf->Cell(20, 10, utf8_decode($i), 0, 0, 'C', 0);
-      $pdf->Cell(40, 10, utf8_decode($datos_reporte -> nombre_T_Fondo), 0, 0, 'C', 0);
-      $pdf->Cell(30, 10, utf8_decode($datos_reporte -> Nombre_del_Objeto), 0, 0, 'C', 0);
+      $pdf->Cell(5, 10, utf8_decode($i), 0, 0, 'C', 0);
+      $pdf->Cell(47, 10, utf8_decode($datos_reporte -> nombre_T_Fondo), 0, 0, 'C', 0);
+      $pdf->Cell(35, 10, utf8_decode($datos_reporte -> Nombre_del_Objeto), 0, 0, 'C', 0);
       $pdf->Cell(40, 10, utf8_decode($datos_reporte -> Cantidad_Rec), 0, 0, 'C', 0);
       $pdf->Cell(40, 10, 'L' . number_format($datos_reporte->Valor_monetario, 2), 0, 0, 'C', 0);
       $pdf->Cell(30, 10, utf8_decode($datos_reporte -> Nombre_del_proyecto), 0, 0, 'C', 0);
       $pdf->Cell(40, 10, utf8_decode($datos_reporte -> Nombre_D), 0, 0, 'C', 0);
-      $pdf->Cell(40, 10, utf8_decode($datos_reporte -> Fecha_de_adquisicion_F), 0, 1, 'C', 0);
+      $pdf->Cell(50, 10, utf8_decode($datos_reporte -> Fecha_de_adquisicion_F), 0, 1, 'C', 0);
     //   $pdf->Cell(50, 10, utf8_decode($datos_reporte -> departamento), 0, 0, 'C', 0);
     //   $pdf->Cell(50, 10, utf8_decode($datos_reporte -> municipio), 0, 1, 'C', 0);
       // $pdf->Cell(100, 10, utf8_decode($datos_reporte -> cai), 1, 0, 'C', 0);   

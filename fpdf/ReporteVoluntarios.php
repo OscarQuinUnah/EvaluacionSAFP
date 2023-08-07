@@ -85,10 +85,10 @@ class PDF extends FPDF
       $this->SetTextColor(000, 000, 000); //colorTexto
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
       $this->SetFont('Arial', 'B', 11);
-      $this->Cell(70, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(60, 10, utf8_decode('Nombre voluntario'), 1, 0, 'C', 1);
-      $this->Cell(70, 10, utf8_decode('Telefono'), 1, 0, 'C', 1);
-      $this->Cell(40, 10, utf8_decode('Direccion'), 1, 1, 'C', 1);
+      $this->Cell(50, 10, utf8_decode('N°'), 1, 0, 'C', 1);
+      $this->Cell(70, 10, utf8_decode('NOMBRE DE VOLUNTARIO'), 1, 0, 'C', 1);
+      $this->Cell(70, 10, utf8_decode('TELÉFONO'), 1, 0, 'C', 1);
+      $this->Cell(70, 10, utf8_decode('DIRECCIÓN'), 1, 1, 'C', 1);
     //   $this->Cell(50, 10, utf8_decode('DEPARTAMENTO'), 1, 0, 'C', 1);
     //   $this->Cell(50, 10, utf8_decode('MUNICIPIO'), 1, 1, 'C', 1);
       // $this->Cell(50, 10, utf8_decode('CAI'), 1, 0, 'C', 1);
@@ -129,10 +129,10 @@ WHERE ID_Voluntario LIKE '%{$campo}%' OR Nombre_Voluntario LIKE '%{$campo}%' OR 
 while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {   
       $i = $i + 1;
       /* TABLA */
-      $pdf->Cell(70, 10, utf8_decode($i), 0, 0, 'C', 0);
-      $pdf->Cell(60, 10, utf8_decode($datos_reporte -> Nombre_Voluntario), 0, 0, 'C', 0);
+      $pdf->Cell(50, 10, utf8_decode($i), 0, 0, 'C', 0);
+      $pdf->Cell(70, 10, utf8_decode($datos_reporte -> Nombre_Voluntario), 0, 0, 'C', 0);
       $pdf->Cell(70, 10, utf8_decode($datos_reporte -> Telefono_Voluntario), 0, 0, 'C', 0);
-      $pdf->Cell(40, 10, utf8_decode($datos_reporte -> Direccion_Voluntario), 0, 1, 'C', 0);
+      $pdf->Cell(70, 10, utf8_decode($datos_reporte -> Direccion_Voluntario), 0, 1, 'C', 0);
     //   $pdf->Cell(50, 10, utf8_decode($datos_reporte -> departamento), 0, 0, 'C', 0);
     //   $pdf->Cell(50, 10, utf8_decode($datos_reporte -> municipio), 0, 1, 'C', 0);
       // $pdf->Cell(100, 10, utf8_decode($datos_reporte -> cai), 1, 0, 'C', 0);   

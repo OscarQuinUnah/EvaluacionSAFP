@@ -79,11 +79,11 @@ class PDF extends FPDF
       $this->SetTextColor(000, 000, 000); //colorTexto
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
       $this->SetFont('Arial', 'B', 11);
-      $this->Cell(30, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(35, 10, utf8_decode('Donante'), 1, 0, 'C', 1);
-      $this->Cell(70, 10, utf8_decode('Telefono o Celular'), 1, 0, 'C', 1);
-      $this->Cell(40, 10, utf8_decode('Direccion'), 1, 0, 'C', 1);
-      $this->Cell(50, 10, utf8_decode('Correo electronico'), 1, 1, 'C', 1);
+      $this->Cell(20, 10, utf8_decode('N°'), 1, 0, 'C', 1);
+      $this->Cell(70, 10, utf8_decode('DONANTE'), 1, 0, 'C', 1);
+      $this->Cell(60, 10, utf8_decode('TELÉFONO O CELULAR'), 1, 0, 'C', 1);
+      $this->Cell(50, 10, utf8_decode('DIRECCIÓN'), 1, 0, 'C', 1);
+      $this->Cell(80, 10, utf8_decode('CORREO ELECTRÓNICO'), 1, 1, 'C', 1);
       // $this->Cell(50, 10, utf8_decode('CAI'), 1, 0, 'C', 1);
       // $this->Cell(20, 10, utf8_decode('Estado'), 1, 1, 'C', 1);
    }
@@ -124,11 +124,11 @@ WHERE ID_Donante LIKE '%{$campo}%' OR Nombre_D LIKE '%{$campo}%' OR Tel_cel_D LI
 while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {   
       $i = $i + 1;
       /* TABLA */
-      $pdf->Cell(30, 10, utf8_decode($i), 0, 0, 'C', 0);
-      $pdf->Cell(35, 10, utf8_decode($datos_reporte -> Nombre_D), 0, 0, 'C', 0);
-      $pdf->Cell(70, 10, utf8_decode($datos_reporte -> Tel_cel_D), 0, 0, 'C', 0);
-      $pdf->Cell(40, 10, utf8_decode($datos_reporte -> Direccion_D), 0, 0, 'C', 0);
-      $pdf->Cell(50, 10, utf8_decode($datos_reporte -> Correo_D), 0, 1, 'C', 0);
+      $pdf->Cell(20, 10, utf8_decode($i), 0, 0, 'C', 0);
+      $pdf->Cell(70, 10, utf8_decode($datos_reporte -> Nombre_D), 0, 0, 'C', 0);
+      $pdf->Cell(60, 10, utf8_decode($datos_reporte -> Tel_cel_D), 0, 0, 'C', 0);
+      $pdf->Cell(50, 10, utf8_decode($datos_reporte -> Direccion_D), 0, 0, 'C', 0);
+      $pdf->Cell(80, 10, utf8_decode($datos_reporte -> Correo_D), 0, 1, 'C', 0);
       // $pdf->Cell(100, 10, utf8_decode($datos_reporte -> cai), 1, 0, 'C', 0);   
       // $pdf->Cell(20, 10, utf8_decode($datos_reporte -> estado), 0, 1, 'C', 0);   
    }

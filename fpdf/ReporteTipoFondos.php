@@ -85,8 +85,8 @@ class PDF extends FPDF
       $this->SetTextColor(000, 000, 000); //colorTexto
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
       $this->SetFont('Arial', 'B', 11);
-      $this->Cell(180, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(50, 10, utf8_decode('Nombre Fondo'), 1, 1, 'C', 1);
+      $this->Cell(120, 10, utf8_decode('N°'), 1, 0, 'C', 1);
+      $this->Cell(120, 10, utf8_decode('NOMBRE FONDO'), 1, 1, 'C', 1);
      
       // $this->Cell(50, 10, utf8_decode('CAI'), 1, 0, 'C', 1);
       // $this->Cell(20, 10, utf8_decode('Estado'), 1, 1, 'C', 1);
@@ -129,8 +129,8 @@ WHERE ID_tipo_fondo LIKE '%{$campo}%' OR nombre_T_Fondo LIKE '%{$campo}%' ");
 while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {   
       $i = $i + 1;
       /* TABLA */
-      $pdf->Cell(180, 10, utf8_decode($i), 0, 0, 'C', 0);
-      $pdf->Cell(50, 10, utf8_decode($datos_reporte -> nombre_T_Fondo), 0, 1, 'C', 0);
+      $pdf->Cell(120, 10, utf8_decode($i), 0, 0, 'C', 0);
+      $pdf->Cell(120, 10, utf8_decode($datos_reporte -> nombre_T_Fondo), 0, 1, 'C', 0);
       // $pdf->Cell(100, 10, utf8_decode($datos_reporte -> cai), 1, 0, 'C', 0);   
       // $pdf->Cell(20, 10, utf8_decode($datos_reporte -> estado), 0, 1, 'C', 0);   
    }

@@ -80,10 +80,10 @@ class PDF extends FPDF
       $this->SetTextColor(000, 000, 000); //colorTexto
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
       $this->SetFont('Arial', 'B', 11);
-      $this->Cell(20, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(50, 10, utf8_decode('Nombre del parametro '), 1, 0, 'C', 1);
-      $this->Cell(130, 10, utf8_decode('Descripcion'), 1, 0, 'C', 1);
-      $this->Cell(70, 10, utf8_decode('Valor'), 1, 1, 'C', 1);
+      $this->Cell(10, 10, utf8_decode('N°'), 1, 0, 'C', 1);
+      $this->Cell(70, 10, utf8_decode('NOMBRE DEL PARÁMETRO'), 1, 0, 'C', 1);
+      $this->Cell(120, 10, utf8_decode('DESCRIPCIÓN'), 1, 0, 'C', 1);
+      $this->Cell(70, 10, utf8_decode('VALOR'), 1, 1, 'C', 1);
       // $this->Cell(50, 10, utf8_decode('CAI'), 1, 0, 'C', 1);
       // $this->Cell(20, 10, utf8_decode('Estado'), 1, 1, 'C', 1);
    }
@@ -122,15 +122,26 @@ $consulta_reporte_alquiler = $conexion->query("SELECT SQL_CALC_FOUND_ROWS ID_Par
 FROM tbl_ms_parametros
 WHERE ID_Parametro LIKE '%{$campo}%' OR Parametro LIKE '%{$campo}%' OR Descripcion_P LIKE '%{$campo}%' OR Valor LIKE '%{$campo}%'");
 
-while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {   
-      $i = $i + 1;
-      /* TABLA */
-      $pdf->Cell(20, 10, utf8_decode($i), 0, 0, 'C', 0);
-      $pdf->Cell(50, 10, utf8_decode($datos_reporte -> Parametro), 0, 0, 'C', 0);
-      $pdf->Cell(130, 10, utf8_decode($datos_reporte -> Descripcion_P), 0, 0, 'C', 0);
-      $pdf->Cell(70, 10, utf8_decode($datos_reporte -> Valor), 0, 1, 'C', 0);
-      // $pdf->Cell(100, 10, utf8_decode($datos_reporte -> cai), 1, 0, 'C', 0);   
-      // $pdf->Cell(20, 10, utf8_decode($datos_reporte -> estado), 0, 1, 'C', 0);   
-   }
+// while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {   
+//       $i = $i + 1;
+//       /* TABLA */
+//       $pdf->Cell(10, 10, utf8_decode($i), 0, 0, 'C', 0);
+//       $pdf->Cell(70, 10, utf8_decode($datos_reporte -> Parametro), 0, 0, 'C', 0);
+//       $pdf->Cell(120, 10, utf8_decode($datos_reporte -> Descripcion_P), 0, 0, 'C', 0);
+//       $pdf->Cell(70, 10, utf8_decode($datos_reporte -> Valor), 0, 1, 'C', 0);
+//       // $pdf->Cell(100, 10, utf8_decode($datos_reporte -> cai), 1, 0, 'C', 0);   
+//       // $pdf->Cell(20, 10, utf8_decode($datos_reporte -> estado), 0, 1, 'C', 0);   
+//    }
+
+while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {
+   $i = $i + 1;
+   /* TABLA */
+   $pdf->Cell(10, 10, utf8_decode($i), 0, 0, 'C', 0);
+   $pdf->Cell(70, 10, utf8_decode($datos_reporte->Parametro), 0, 0, 'C', 0);
+   $pdf->Cell(120, 10, utf8_decode($datos_reporte->Descripcion_P), 0, 0, 'C', 0);
+
+   // Utilizamos MultiCell para la columna "Valor"
+   $pdf->MultiCell(70, 10, utf8_decode($datos_reporte->Valor), 0, 'C', 0);
+}
 
 $pdf->Output('ReporteParametros.pdf', 'I');//nombreDescarga, Visor(I->visualizar - D->descargar)

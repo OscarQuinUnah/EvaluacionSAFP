@@ -83,15 +83,15 @@ class PDF extends FPDF
       $this->SetTextColor(000, 000, 000); //colorTexto
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
       $this->SetFont('Arial', 'B', 11);
-      $this->Cell(30, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(50, 10, utf8_decode('Proyecto'), 1, 0, 'C', 1);
-      $this->Cell(35, 10, utf8_decode('Fecha Inicio'), 1, 0, 'C', 1);
-      $this->Cell(20, 10, utf8_decode('Fecha final'), 1, 0, 'C', 1);
-      $this->Cell(25, 10, utf8_decode('Voluntarios'), 1, 0, 'C', 1);
-      $this->Cell(30, 10, utf8_decode('fondos proy.'), 1, 0, 'C', 1);
-      $this->Cell(30, 10, utf8_decode('Fondos act.'), 1, 0, 'C', 1);
-      $this->Cell(33, 10, utf8_decode('Pagos'), 1, 0, 'C', 1);
-      $this->Cell(20, 10, utf8_decode('Estado'), 1, 1, 'C', 1);
+      $this->Cell(10, 10, utf8_decode('N°'), 1, 0, 'C', 1);
+      $this->Cell(50, 10, utf8_decode('PROYECTO'), 1, 0, 'C', 1);
+      $this->Cell(35, 10, utf8_decode('FECHA INICIO'), 1, 0, 'C', 1);
+      $this->Cell(30, 10, utf8_decode('FECHA FINAL'), 1, 0, 'C', 1);
+      $this->Cell(28, 10, utf8_decode('VOLUNTARIOS'), 1, 0, 'C', 1);
+      $this->Cell(35, 10, utf8_decode('FONDOS PROY.'), 1, 0, 'C', 1);
+      $this->Cell(30, 10, utf8_decode('FONDOS ACT.'), 1, 0, 'C', 1);
+      $this->Cell(35, 10, utf8_decode('PAGOS'), 1, 0, 'C', 1);
+      $this->Cell(20, 10, utf8_decode('ESTADO'), 1, 1, 'C', 1);
       // $this->Cell(50, 10, utf8_decode('CAI'), 1, 0, 'C', 1);
       // $this->Cell(20, 10, utf8_decode('Estado'), 1, 1, 'C', 1);
    }
@@ -152,14 +152,14 @@ while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {
    
     $i = $i + 1;
     /* TABLA */
-    $pdf->Cell(30, 10, utf8_decode($i), 0, 0, 'C', 0);
+    $pdf->Cell(10, 10, utf8_decode($i), 0, 0, 'C', 0);
     $pdf->Cell(50, 10, utf8_decode($datos_reporte -> Nombre_del_proyecto), 0, 0, 'C', 0);
     $pdf->Cell(35, 10, utf8_decode($datos_reporte -> Fecha_de_inicio_P), 0, 0, 'C', 0);
-    $pdf->Cell(20, 10, utf8_decode($datos_reporte -> Fecha_final_P), 0, 0, 'C', 0);
-    $pdf->Cell(25, 10, utf8_decode($total_voluntarios), 0, 0, 'C', 0); // Nueva celda para el total de voluntarios
-    $pdf->Cell(30, 10, 'L' . number_format($datos_reporte->Fondos_proyecto, 2), 0, 0, 'C', 0);
+    $pdf->Cell(30, 10, utf8_decode($datos_reporte -> Fecha_final_P), 0, 0, 'C', 0);
+    $pdf->Cell(28, 10, utf8_decode($total_voluntarios), 0, 0, 'C', 0); // Nueva celda para el total de voluntarios
+    $pdf->Cell(35, 10, 'L' . number_format($datos_reporte->Fondos_proyecto, 2), 0, 0, 'C', 0);
     $pdf->Cell(30, 10, 'L' . number_format($total_fondos, 2), 0, 0, 'C', 0); // Nueva celda para el total de fondos
-    $pdf->Cell(33, 10, 'L' . number_format($total_pagos, 2), 0, 0, 'C', 0); // Nueva celda para el total de pagos
+    $pdf->Cell(35, 10, 'L' . number_format($total_pagos, 2), 0, 0, 'C', 0); // Nueva celda para el total de pagos
     $pdf->Cell(20, 10, utf8_decode($datos_reporte -> Estado_Proyecto), 0, 1, 'C', 0);
 
    }

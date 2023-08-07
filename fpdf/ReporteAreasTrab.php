@@ -84,9 +84,9 @@ class PDF extends FPDF
       $this->SetTextColor(000, 000, 000); //colorTexto
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
       $this->SetFont('Arial', 'B', 11);
-      $this->Cell(40, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(65, 10, utf8_decode('ÁREA DE TRABAJO'), 1, 0, 'C', 1);
-      $this->Cell(140, 10, utf8_decode('DESCRIPCIÓN'), 1, 1, 'C', 1);
+      $this->Cell(70, 10, utf8_decode('N°'), 1, 0, 'C', 1);
+      $this->Cell(95, 10, utf8_decode('ÁREA DE TRABAJO'), 1, 0, 'C', 1);
+      $this->Cell(115, 10, utf8_decode('DESCRIPCIÓN'), 1, 1, 'C', 1);
    }
 
    // Pie de página
@@ -127,9 +127,9 @@ WHERE ID_Area_Trabajo LIKE '%{$campo}%' OR nombre_Area_Trabajo LIKE '%{$campo}%'
 while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {   
       $i = $i + 1;
       /* TABLA */
-      $pdf->Cell(40, 10, utf8_decode($i), 0, 0, 'C', 0);
-      $pdf->Cell(65, 10, utf8_decode($datos_reporte -> nombre_Area_Trabajo), 0, 0, 'C', 0);
-      $pdf->Cell(140, 10, utf8_decode($datos_reporte -> descripcion_A_Trabajo), 0, 1, 'C', 0);
+      $pdf->Cell(70, 10, utf8_decode($i), 0, 0, 'C', 0);
+      $pdf->Cell(95, 10, utf8_decode($datos_reporte -> nombre_Area_Trabajo), 0, 0, 'C', 0);
+      $pdf->Cell(115, 10, utf8_decode($datos_reporte -> descripcion_A_Trabajo), 0, 1, 'C', 0);
    }
 
 $pdf->Output('ReporteAreasTrabajo.pdf', 'I');//nombreDescarga, Visor(I->visualizar - D->descargar)

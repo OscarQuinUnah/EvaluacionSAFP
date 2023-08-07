@@ -84,10 +84,10 @@ class PDF extends FPDF
       $this->SetTextColor(000, 000, 000); //colorTexto
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
       $this->SetFont('Arial', 'B', 11);
-      $this->Cell(65, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(65, 10, utf8_decode('Actividad'), 1, 0, 'C', 1);
-      $this->Cell(65, 10, utf8_decode('Usuario que la realizo'), 1, 0, 'C', 1);
-      $this->Cell(65, 10, utf8_decode('Fecha de la realizacion'), 1, 1, 'C', 1);
+      $this->Cell(60, 10, utf8_decode('N°'), 1, 0, 'C', 1);
+      $this->Cell(55, 10, utf8_decode('ACTIVIDAD'), 1, 0, 'C', 1);
+      $this->Cell(75, 10, utf8_decode('USUARIO QUE LA REALIZÓ'), 1, 0, 'C', 1);
+      $this->Cell(80, 10, utf8_decode('FECHA DE LA REALIZACIÓN'), 1, 1, 'C', 1);
    }
 
    // Pie de página
@@ -124,10 +124,10 @@ $consulta_reporte_alquiler = $conexion->query("SELECT * FROM tbl_registro_backup
 while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {   
       $i = $i + 1;
       /* TABLA */
-      $pdf->Cell(65, 10, utf8_decode($i), 0, 0, 'C', 0);
-      $pdf->Cell(65, 10, utf8_decode($datos_reporte -> Actividad), 0, 0, 'C', 0);
-      $pdf->Cell(65, 10, utf8_decode($datos_reporte -> ID_Usuario), 0, 0, 'C', 0);
-      $pdf->Cell(65, 10, utf8_decode($datos_reporte -> Fecha), 0, 1, 'C', 0);
+      $pdf->Cell(60, 10, utf8_decode($i), 0, 0, 'C', 0);
+      $pdf->Cell(55, 10, utf8_decode($datos_reporte -> Actividad), 0, 0, 'C', 0);
+      $pdf->Cell(75, 10, utf8_decode($datos_reporte -> ID_Usuario), 0, 0, 'C', 0);
+      $pdf->Cell(80, 10, utf8_decode($datos_reporte -> Fecha), 0, 1, 'C', 0);
    }
 
 $pdf->Output('Reporte_Backup_Restore.pdf', 'I');//nombreDescarga, Visor(I->visualizar - D->descargar)

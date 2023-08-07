@@ -80,13 +80,13 @@ class PDF extends FPDF
       $this->SetTextColor(000, 000, 000); //colorTexto
       $this->SetDrawColor(255, 255, 255); //colorBorde 163 163 163
       $this->SetFont('Arial', 'B', 11);
-      $this->Cell(17, 10, utf8_decode('N°'), 1, 0, 'C', 1);
-      $this->Cell(30, 10, utf8_decode('RTN'), 1, 0, 'C', 1);
+      $this->Cell(10, 10, utf8_decode('N°'), 1, 0, 'C', 1);
+      $this->Cell(35, 10, utf8_decode('RTN'), 1, 0, 'C', 1);
       $this->Cell(60, 10, utf8_decode('NÚMERO DECLARACION'), 1, 0, 'C', 1);
-      $this->Cell(24, 10, utf8_decode('MONTO'), 1, 0, 'C', 1);
-      $this->Cell(40, 10, utf8_decode('RAZÓN SOCIAL'), 1, 0, 'C', 1);
+      $this->Cell(25, 10, utf8_decode('MONTO'), 1, 0, 'C', 1);
+      $this->Cell(55, 10, utf8_decode('RAZÓN SOCIAL'), 1, 0, 'C', 1);
       $this->Cell(55, 10, utf8_decode('DEPARTAMENTO'), 1, 0, 'C', 1);
-      $this->Cell(50, 10, utf8_decode('MUNICIPIO'), 1, 1, 'C', 1);
+      $this->Cell(45, 10, utf8_decode('MUNICIPIO'), 1, 1, 'C', 1);
       // $this->Cell(50, 10, utf8_decode('CAI'), 1, 0, 'C', 1);
       // $this->Cell(20, 10, utf8_decode('Estado'), 1, 1, 'C', 1);
    }
@@ -116,7 +116,7 @@ $pdf->AddPage("landscape"); /* aqui entran dos para parametros (horientazion,tam
 $pdf->AliasNbPages(); //muestra la pagina / y total de paginas
 
 $i = 0;
-$pdf->SetFont('Arial', '', 12);
+$pdf->SetFont('Arial', '', 11.5);
 $pdf->SetDrawColor(163, 163, 163); //colorBorde
 
 $campo = $_GET["campo"];
@@ -132,13 +132,13 @@ WHERE (ID_SAR LIKE '%{$campo}%' OR RTN LIKE '%{$campo}%' OR num_declaracion LIKE
 while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {   
       $i = $i + 1;
       /* TABLA */
-      $pdf->Cell(17, 10, utf8_decode($i), 0, 0, 'C', 0);
-      $pdf->Cell(30, 10, utf8_decode($datos_reporte -> RTN), 0, 0, 'C', 0);
+      $pdf->Cell(10, 10, utf8_decode($i), 0, 0, 'C', 0);
+      $pdf->Cell(35, 10, utf8_decode($datos_reporte -> RTN), 0, 0, 'C', 0);
       $pdf->Cell(60, 10, utf8_decode($datos_reporte -> num_declaracion), 0, 0, 'C', 0);
-      $pdf->Cell(24, 10, utf8_decode($datos_reporte -> Monto), 0, 0, 'C', 0);
-      $pdf->Cell(40, 10, utf8_decode($datos_reporte -> nombre_razonSocial), 0, 0, 'C', 0);
+      $pdf->Cell(25, 10, utf8_decode($datos_reporte -> Monto), 0, 0, 'C', 0);
+      $pdf->Cell(55, 10, utf8_decode($datos_reporte -> nombre_razonSocial), 0, 0, 'C', 0);
       $pdf->Cell(55, 10, utf8_decode($datos_reporte -> departamento), 0, 0, 'C', 0);
-      $pdf->Cell(50, 10, utf8_decode($datos_reporte -> municipio), 0, 1, 'C', 0);
+      $pdf->Cell(45, 10, utf8_decode($datos_reporte -> municipio), 0, 1, 'C', 0);
       // $pdf->Cell(100, 10, utf8_decode($datos_reporte -> cai), 1, 0, 'C', 0);   
       // $pdf->Cell(20, 10, utf8_decode($datos_reporte -> estado), 0, 1, 'C', 0);   
    }
