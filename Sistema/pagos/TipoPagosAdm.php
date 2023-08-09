@@ -157,11 +157,11 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                             <th class="sort asc">ID</th>
                             <th class="sort asc">Nombre</th>
 
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=17");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=17) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
                             <?php } ?>
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=17");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=17) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
                             <?php } ?>

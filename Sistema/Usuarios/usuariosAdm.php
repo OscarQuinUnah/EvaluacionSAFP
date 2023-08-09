@@ -146,11 +146,11 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                             <th class="sort asc">Fecha Creacion</th>
                             <th class="sort asc">Fecha Vencimiento</th>
                             <th class="sort asc">Estado del usuario</th>
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=1");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=1) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) {?>
                             <th></th>
                             <?php } ?>
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=1");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=1) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
                             <?php } ?>

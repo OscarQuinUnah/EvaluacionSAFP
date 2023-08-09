@@ -153,11 +153,11 @@ if ($datos=$sql->fetch_object()) { ?>
                             <th class="sort asc">Area de Trabajo</th>
                             <th class="sort asc">Descripcion</th>
 
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=14");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=14) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) {?>
                             <th></th>
                             <?php } ?>
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=14");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=14) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
                             <?php } ?>
