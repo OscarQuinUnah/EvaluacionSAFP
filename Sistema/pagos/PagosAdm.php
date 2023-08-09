@@ -330,7 +330,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Fecha de Transaccion:</label>
-                            <input type="date" class="form-control" name="FechaTransaccion" id="FechaTransaccion" maxlength="100" placeholder="Ingrese la Fecha de Transaccion">
+                            <input type="date" class="form-control" name="FechaTransaccion" id="FechaTransaccion" maxlength="100" placeholder="Ingrese la Fecha de Transaccion" required>
                           </div>
                           
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
