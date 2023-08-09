@@ -301,6 +301,13 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
 }
 </script>
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            window.addEventListener('beforeunload', function() {
+                $.post('../../EVENT_BITACORA.php', { action: 'salirparametros' });
+            });
+        });
+    </script>
 </body>
 </html>

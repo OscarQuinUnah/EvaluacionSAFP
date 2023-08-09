@@ -1,4 +1,5 @@
 <?php
+
 class Conexion{
     public function  conectar(){
         return $conexion= new PDO('mysql:host=localhost; dbname=u511180871_bd_asociacion' , 'root' , '');
@@ -6,6 +7,188 @@ class Conexion{
     
 }
 include("conexion_BD.php");
+
+#salida usuario
+if (isset($_POST['action']) && $_POST['action'] === 'salirusu') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirusu();
+}
+
+#salida Home
+if (isset($_POST['action']) && $_POST['action'] === 'salirhome') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirhome();
+}
+
+#salida Backup
+if (isset($_POST['action']) && $_POST['action'] === 'salirback') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirback();
+}
+
+#salida bita
+if (isset($_POST['action']) && $_POST['action'] === 'salirbitacora') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirbitacora();
+}
+
+#salida parametros
+if (isset($_POST['action']) && $_POST['action'] === 'salirparametros') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirparametros();
+}
+
+#salida preguntas
+if (isset($_POST['action']) && $_POST['action'] === 'salirpreguntas') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirpreguntas();
+}
+
+#salida rol
+if (isset($_POST['action']) && $_POST['action'] === 'salirrol') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirrol();
+}
+#salida obj
+if (isset($_POST['action']) && $_POST['action'] === 'salirobj') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirobj();
+}
+#salida SAR
+if (isset($_POST['action']) && $_POST['action'] === 'salirSAR') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirSAR();
+}
+
+#salida proy
+if (isset($_POST['action']) && $_POST['action'] === 'salirproy') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirproy();
+}
+#salida ges proy
+if (isset($_POST['action']) && $_POST['action'] === 'salirgesproy') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirgesproy();
+}
+
+#salida donantes
+if (isset($_POST['action']) && $_POST['action'] === 'salirdonantes') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirdonantes();
+}
+
+#salida tipo fondo
+if (isset($_POST['action']) && $_POST['action'] === 'salirtfondo') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirtfondo();
+}
+#salida fondo
+if (isset($_POST['action']) && $_POST['action'] === 'salirfondo') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirfondo();
+}
+#salida Voluntario
+if (isset($_POST['action']) && $_POST['action'] === 'salirvol') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirvol();
+}
+#salida area trabajo
+if (isset($_POST['action']) && $_POST['action'] === 'salirarea') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirarea();
+}
+
+#salida Vinculación Voluntarios
+if (isset($_POST['action']) && $_POST['action'] === 'salirvinvol') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirvinvol();
+}
+#salida Pago
+if (isset($_POST['action']) && $_POST['action'] === 'salirpago') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirpago();
+}
+#salida Tipo Pago
+if (isset($_POST['action']) && $_POST['action'] === 'salirtpago') {
+    session_start();
+    // Aquí puedes incluir la función salirusu() del archivo EVENT_BITACORA
+    require_once 'EVENT_BITACORA.php';
+
+    $bitacora = new EVENT_BITACORA();
+    $bitacora->salirtpago();
+}
 
 class EVENT_BITACORA{ 
     //===================================================================================
@@ -54,7 +237,7 @@ class EVENT_BITACORA{
         $Descripcion = "Entró a la pantalla Bitácora" ;
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '16', 'Entrar a Bitácora', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '2', 'Entrar a Bitácora', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();                 
         ?>
@@ -121,18 +304,10 @@ class EVENT_BITACORA{
             $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
             VALUES (NULL,'$fecha', '$IDGlobal', '1', 'Creación de usuario', '$Descripcion')";
             $consulta2= $conexion->prepare($sql2);
-            $consulta2->execute();
-    
-            
-          
+            $consulta2->execute();        
             ?>
-    
         <?php
-    
-        
-
-    }
-    
+    }  
     //===================================================================================
     //===================================================================================
     public function RegautoInsert(){
@@ -1004,10 +1179,10 @@ public function entrarVOLPRO(){
     $IDGlobal=$_SESSION['ID_User'];
         $model = new conexion();
         $conexion = $model->conectar();
-        $Descripcion = "Entró a la pantalla vinculación de voluntarios";
+        $Descripcion = "Entró a la pantalla Vinculación de Voluntarios";
         $fecha = date("Y-m-d h:i:s");
         $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
-        VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Entrar a Vinculación de voluntario', '$Descripcion')";
+        VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Entrar a Vinculación de Voluntarios', '$Descripcion')";
         $consulta2= $conexion->prepare($sql2);
         $consulta2->execute();
         ?>
@@ -1582,7 +1757,332 @@ public function backuDEL(){
         ?>
     <?php
   }
+#Salida usuario
+  public function salirusu(){
 
+    $IDGlobal=$_SESSION['ID_User'];
+    
+        $model = new conexion();
+        $conexion = $model->conectar();
+        $Descripcion = "Salió de la pantalla Usuarios";
+        $fecha = date("Y-m-d h:i:s");
+        $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+        VALUES (NULL,'$fecha', '$IDGlobal', '1', 'Salida de pantalla Usuario', '$Descripcion')";
+        $consulta2= $conexion->prepare($sql2);
+        $consulta2->execute();
+        ?>
+    <?php
+  }
 
+  #Salida home
+  public function salirhome(){
+
+    $IDGlobal=$_SESSION['ID_User'];
+    
+        $model = new conexion();
+        $conexion = $model->conectar();
+        $Descripcion = "Salió de la pantalla Home";
+        $fecha = date("Y-m-d h:i:s");
+        $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+        VALUES (NULL,'$fecha', '$IDGlobal', '16', 'Salida de pantalla Home', '$Descripcion')";
+        $consulta2= $conexion->prepare($sql2);
+        $consulta2->execute();
+        ?>
+    <?php
+  }
+
+ #Salida backup
+ public function salirback(){
+
+    $IDGlobal=$_SESSION['ID_User'];
+    
+        $model = new conexion();
+        $conexion = $model->conectar();
+        $Descripcion = "Salió de la pantalla Backup";
+        $fecha = date("Y-m-d h:i:s");
+        $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+        VALUES (NULL,'$fecha', '$IDGlobal', '12', 'Salida de pantalla Backup', '$Descripcion')";
+        $consulta2= $conexion->prepare($sql2);
+        $consulta2->execute();
+        ?>
+    <?php
+  }
+   #Salida bitacora
+  public function salirbitacora(){
+
+    $IDGlobal=$_SESSION['ID_User'];
+    
+        $model = new conexion();
+        $conexion = $model->conectar();
+        $Descripcion = "Salió de la pantalla Bitácora";
+        $fecha = date("Y-m-d h:i:s");
+        $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+        VALUES (NULL,'$fecha', '$IDGlobal', '2', 'Salida de pantalla Bitácora', '$Descripcion')";
+        $consulta2= $conexion->prepare($sql2);
+        $consulta2->execute();
+        ?>
+    <?php
+  }
+   #Salida parametros
+   public function salirparametros(){
+
+    $IDGlobal=$_SESSION['ID_User'];
+    
+        $model = new conexion();
+        $conexion = $model->conectar();
+        $Descripcion = "Salió de la pantalla Parámetros";
+        $fecha = date("Y-m-d h:i:s");
+        $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+        VALUES (NULL,'$fecha', '$IDGlobal', '3', 'Salida de pantalla Parámetros', '$Descripcion')";
+        $consulta2= $conexion->prepare($sql2);
+        $consulta2->execute();
+        ?>
+    <?php
+  }
+  #Salida preguntas
+  public function salirpreguntas(){
+
+    $IDGlobal=$_SESSION['ID_User'];
+    
+        $model = new conexion();
+        $conexion = $model->conectar();
+        $Descripcion = "Salió de la pantalla Preguntas";
+        $fecha = date("Y-m-d h:i:s");
+        $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+        VALUES (NULL,'$fecha', '$IDGlobal', '4', 'Salida de pantalla Preguntas', '$Descripcion')";
+        $consulta2= $conexion->prepare($sql2);
+        $consulta2->execute();
+        ?>
+    <?php
+  }
+  #Salida rol
+  public function salirrol(){
+
+    $IDGlobal=$_SESSION['ID_User'];
+    
+        $model = new conexion();
+        $conexion = $model->conectar();
+        $Descripcion = "Salió de la pantalla Roles";
+        $fecha = date("Y-m-d h:i:s");
+        $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+        VALUES (NULL,'$fecha', '$IDGlobal', '5', 'Salida de pantalla Roles', '$Descripcion')";
+        $consulta2= $conexion->prepare($sql2);
+        $consulta2->execute();
+        ?>
+    <?php
+  }
+   #Salida objeto
+   public function salirobj(){
+
+    $IDGlobal=$_SESSION['ID_User'];
+    
+        $model = new conexion();
+        $conexion = $model->conectar();
+        $Descripcion = "Salió de la pantalla Objeto";
+        $fecha = date("Y-m-d h:i:s");
+        $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+        VALUES (NULL,'$fecha', '$IDGlobal', '18', 'Salida de pantalla Objeto', '$Descripcion')";
+        $consulta2= $conexion->prepare($sql2);
+        $consulta2->execute();
+        ?>
+    <?php
+  }
+    #Salida SAR
+    public function salirSAR(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla SAR";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '11', 'Salida de pantalla SAR', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+
+   #Salida proj
+   public function salirproy(){
+
+    $IDGlobal=$_SESSION['ID_User'];
+    
+        $model = new conexion();
+        $conexion = $model->conectar();
+        $Descripcion = "Salió de la pantalla Proyecto";
+        $fecha = date("Y-m-d h:i:s");
+        $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+        VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Salida de pantalla Proyecto', '$Descripcion')";
+        $consulta2= $conexion->prepare($sql2);
+        $consulta2->execute();
+        ?>
+    <?php
+  }
+     #Salida ges proj
+     public function salirgesproy(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla Gestión de Proyecto";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '6', 'Salida de pantalla Gestión de Proyecto', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+          #Salida donantes
+     public function salirdonantes(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla Donantes";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '8', 'Salida de pantalla Donantes', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+
+           #Salida tipo fondo
+     public function salirtfondo(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla Tipo de Fondo";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '13', 'Salida de pantalla Tipo de Fondo', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+             #Salida fondo
+     public function salirfondo(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla Fondo";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '7', 'Salida de pantalla Fondo', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+
+              #Salida voluntarios
+     public function salirvol(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla Voluntarios";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '9', 'Salida de pantalla Voluntarios', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+
+               #Salida area de trabajo
+     public function salirarea(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla Área de Trabajo";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '14', 'Salida de pantalla Área de Trabajo', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+#Salida vinculacion voluntarios
+      public function salirvinvol(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla Vinculación de Voluntarios";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '15', 'Salida de pantalla Vinculación de Voluntarios', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+      #Salida pago
+      public function salirpago(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla Pagos";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '10', 'Salida de pantalla Pagos', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+       #Salida tipo pago
+       public function salirtpago(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Salió de la pantalla Tipo de Pagos";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '10', 'Salida de pantalla Tipo de Pagos', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
+      #Depurar bitacora
+      public function depurarbit(){
+
+        $IDGlobal=$_SESSION['ID_User'];
+        
+            $model = new conexion();
+            $conexion = $model->conectar();
+            $Descripcion = "Depuró la Bitácora";
+            $fecha = date("Y-m-d h:i:s");
+            $sql2 = "INSERT INTO tbl_ms_bitacora(ID_Bitacora,Fecha, ID_Usuario, ID_Objeto, Accion, Descripcion) 
+            VALUES (NULL,'$fecha', '$IDGlobal', '2', 'Depuracion de Bitácora', '$Descripcion')";
+            $consulta2= $conexion->prepare($sql2);
+            $consulta2->execute();
+            ?>
+        <?php
+      }
 }  
+
 ?>

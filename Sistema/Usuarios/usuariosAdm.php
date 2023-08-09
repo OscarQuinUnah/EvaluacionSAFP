@@ -40,6 +40,7 @@ $R_F_Vencida= date("Y-m-j",strtotime($R_Fecha_actual."+ ".$diasV." days")); /*le
   </script>
 </head>
 <body>
+
 	<!--Seccion donde va toda la barra lateral -->
 	<?php include '../sidebar.php'; ?>
 
@@ -381,6 +382,15 @@ if (mysqli_num_rows($sql2) >= 1) {
  	<script src="../../js/jquery-3.1.1.min.js"></script>
 	<script src="../../js/main.js"></script>
   <script src="../../js/usuario.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            window.addEventListener('beforeunload', function() {
+                $.post('../../EVENT_BITACORA.php', { action: 'salirusu' });
+            });
+        });
+    </script>
 
 </body>
 </html>

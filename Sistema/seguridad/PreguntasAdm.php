@@ -315,6 +315,13 @@ if ($datos=$sql->fetch_object()) { ?>
 </script>
 
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            window.addEventListener('beforeunload', function() {
+                $.post('../../EVENT_BITACORA.php', { action: 'salirpreguntas' });
+            });
+        });
+        </script>
 </body>
 </html>

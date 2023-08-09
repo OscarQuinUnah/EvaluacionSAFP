@@ -53,6 +53,14 @@ $R_F_Vencida= date("Y-m-j",strtotime($R_Fecha_actual."+ ".$diasV." days")); /*le
   </script>
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            window.addEventListener('beforeunload', function() {
+                $.post('../../EVENT_BITACORA.php', { action: 'salirtfondo' });
+            });
+        });
+    </script>
 	<!--Seccion donde va toda la barra lateral -->
 	<?php include '../sidebarpro.php'; ?>
 

@@ -198,6 +198,14 @@ if ($datos=$sql->fetch_object()) { ?>
  	<script src="../../js/jquery-3.1.1.min.js"></script>
 	<script src="../../js/main.js"></script>
   <script src="../../js/usuario.js"></script>
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            window.addEventListener('beforeunload', function() {
+                $.post('../../EVENT_BITACORA.php', { action: 'salirgesproy' });
+            });
+        });
+    </script>
+</body>
 </body>
 </html>

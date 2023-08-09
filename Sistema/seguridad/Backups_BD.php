@@ -115,6 +115,14 @@ $resultado = mysqli_query($conn, $sql);
 </head>
 
 <body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            window.addEventListener('beforeunload', function() {
+                $.post('../../EVENT_BITACORA.php', { action: 'salirback' });
+            });
+        });
+    </script>
 <?php include '../sidebar.php'; ?>
 <!-- Formulario para crear y restaurar una copia de seguridad -->
 <section class="full-box dashboard-contentPage" style="overflow-y: auto;">

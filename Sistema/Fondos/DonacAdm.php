@@ -36,6 +36,14 @@ if(empty($_SESSION['ID_Proyect'])){
   </script>
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            window.addEventListener('beforeunload', function() {
+                $.post('../../EVENT_BITACORA.php', { action: 'salirdonantes' });
+            });
+        });
+    </script>
 	<!--Seccion donde va toda la barra lateral -->
 	<?php include '../sidebarpro.php'; ?>
 
