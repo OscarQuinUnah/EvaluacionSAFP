@@ -132,11 +132,11 @@ if ($num_rows > 0) {
         $output['data'] .= '<td>' . $row['fecha_limite_emision'] . '</td>';
         $output['data'] .= '<td>' . $row['num_inicial'] . '</td>';
         $output['data'] .= '<td>' . $row['num_final'] . '</td>';
-         $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=6");
+         $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=11) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) {
         $output['data'] .= '<td><a class="boton-editar" href="Update_SAR.php?ID_SAR=' . $row['ID_SAR'] . '"><i class="zmdi zmdi-edit"></i></a></td>';
 }
-$sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=6");
+$sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=11) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { 
         $output['data'] .= '<td><a onclick="return confirmar()" class="boton-eliminar" href="Delete_SAR.php?ID_SAR=' . $row['ID_SAR'] . '"><i class="zmdi zmdi-delete"></i></a></td>';
 }

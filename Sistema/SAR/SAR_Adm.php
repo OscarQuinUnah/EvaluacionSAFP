@@ -78,7 +78,7 @@ $R_F_Vencida= date("Y-m-j",strtotime($R_Fecha_actual."+ ".$diasV." days")); /*le
                   <div class="box">
                     <div class="box-header with-border">
                           <h1 style="text-align:center; margin-top:15px; margin-bottom:20px" class="box-title">Gestion SAR</h1>
-                          <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=11 ");
+                          <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=11) or ('$usuario'='ADMIN') ");
 if ($datos=$sql->fetch_object()) { ?>
                           <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-file-text"></i> Agregar Datos</button>
                           <button class="btn btn-warning" id="generar-reporte" name="generar-reporte" onclick="window.open('../../fpdf/ReporteSAR.php?campo=' + encodeURIComponent(document.getElementById('campo').value), '_blank')" >
@@ -91,7 +91,7 @@ if ($datos=$sql->fetch_object()) { ?>
 <!-- ================================================ -->
                     <!-- /.box-header -->
                     <!-- centro -->
-                    <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_consultar=1 and ID_Rol=$ID_Rol and ID_Objeto=11");
+                    <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_consultar=1 and ID_Rol=$ID_Rol and ID_Objeto=11) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 <div class="panel-body" id="listadoregistros">
 <main>
@@ -176,11 +176,11 @@ if ($datos=$sql->fetch_object()) { ?>
                             <th class="sort asc">Numero Inicial</th>
                             <th class="sort asc">Numero Final</th>
                             <th class="sort asc">Acciones</th>
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=11");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=11) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
                             <?php } ?>
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=11");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=11) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
                             <?php } ?>
