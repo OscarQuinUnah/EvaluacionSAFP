@@ -96,11 +96,11 @@ if ($num_rows > 0) {
         $output['data'] .= '<td>' . $row['ID_Area_Trabajo'] . '</td>';
         $output['data'] .= '<td>' . $row['nombre_Area_Trabajo'] . '</td>';
         $output['data'] .= '<td>' . $row['descripcion_A_Trabajo'] . '</td>';
-         $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=14");
+         $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=14) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) {
         $output['data'] .= '<td><a class="boton-editar" href="Update_area_trabajo_Adm.php?ID_Area_Trabajo=' . $row['ID_Area_Trabajo'] . '"><i class="zmdi zmdi-edit"></i></a></td>';
 }
-$sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=14");
+$sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=14) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { 
         $output['data'] .= '<td><a onclick="return confirmar()" class="boton-eliminar" href="Delete_area_trabajo.php?ID_Area_Trabajo=' . $row['ID_Area_Trabajo'] . '"><i class="zmdi zmdi-delete"></i></a></td>';
 }

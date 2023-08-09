@@ -79,7 +79,7 @@ $R_F_Vencida= date("Y-m-j",strtotime($R_Fecha_actual."+ ".$diasV." days")); /*le
                   <div class="box">
                     <div class="box-header with-border">
                           <h1 class="box-title" style="text-align:center; margin-top:15px; margin-bottom:20px">Mantenimiento Areas de Trabajos</h1>
-                          <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=14");
+                          <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=14) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 
                           <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-assignment"></i> Agregar Area de trabajo</button>
@@ -96,7 +96,7 @@ if ($datos=$sql->fetch_object()) { ?>
                     </div>
                     <!-- /.box-header -->
                     <!-- centro -->
-                    <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_consultar=1 and ID_Rol=$ID_Rol and ID_Objeto=14 ");
+                    <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_consultar=1 and ID_Rol=$ID_Rol and ID_Objeto=14) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 <div class="panel-body" id="listadoregistros">
 <main>
