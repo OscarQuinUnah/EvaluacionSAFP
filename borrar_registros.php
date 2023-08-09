@@ -1,8 +1,8 @@
 <?php
 if (isset($_POST["borrar"])) {
     // Conexión a la base de datos (reemplaza con tus propios datos de conexión)
-    $conexion = new mysqli("localhost", "root", "", "bd_asociacion_creo_en_ti", "3306");
-    $conexion->set_charset("utf8");
+    $conexion = new mysqli("localhost", "root", "", "u511180871_bd_asociacion", "3306");
+$conexion->set_charset("utf8");
 
     if ($conexion->connect_error) {
         die("Error de conexión: " . $conexion->connect_error);
