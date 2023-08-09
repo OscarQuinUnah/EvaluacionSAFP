@@ -12,7 +12,7 @@ include ("../conexion_BD.php");
 
     
     //Consulta a la base de datos, con la contraseña proporcionada y verifica si el estado es activo
-    $sql=$conexion->query("SELECT * FROM `tbl_ms_usuario` WHERE Token='$token' and Estado_Usuario='ACTIVO'");
+    $sql=$conexion->query("SELECT * FROM `tbl_ms_usuario` WHERE Token='$token' and Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO'");
     if (mysqli_num_rows($sql) ==1) {
         while($row=mysqli_fetch_array($sql)){
             $idUser=$row['ID_Usuario'];
@@ -60,7 +60,7 @@ include ("../conexion_BD.php");
     
                         }else {
                             if ($contra_new === $contra_confir_new) {
-                                $sql3=$conexion->query("UPDATE tbl_ms_usuario SET Contraseña='$contra_new', Fecha_Vencimiento='$F_Vencida', Modificado_Por='$User', Fecha_Modificacion='$Fecha_Actual' WHERE ID_Usuario='$idUser'");
+                                $sql3=$conexion->query("UPDATE tbl_ms_usuario SET Contraseña='$contra_new', Fecha_Vencimiento='$F_Vencida', Modificado_Por='$User', Fecha_Modificacion='$Fecha_Actual', Estado_Usuario='ACTIVO', Intentos='0' WHERE ID_Usuario='$idUser'");
                                 $sql4=$conexion->query("INSERT INTO tbl_ms_hist_contraseña(ID_Usuario, Contraseña, Creado_Por, Fecha_Creacion, Modificado_Por, Fecha_Modificacion) VALUES ('$idUser','$contra_new','$User','$Fecha_Actual','$User','$Fecha_Actual')");
                                 $sql5=$conexion->query("UPDATE tbl_ms_usuario SET Token=NULL WHERE ID_Usuario='$idUser'");
                                 echo'<script>alert("Su contraseña se ha actualizado exitosamente")</script>';
