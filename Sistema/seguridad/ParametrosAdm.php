@@ -44,7 +44,7 @@ exit();
                   <div class="box">
                     <div class="box-header with-border">
                           <h1 class="box-title" style="text-align:center; margin-top:15px; margin-bottom:20px">Mantenimiento Parametros</h1>
-                          <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=3");
+                          <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=3) or ('$usuario'='ADMIN')");
                             if ($datos=$sql->fetch_object()) { ?>
                           <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-badge-check"></i> Agregar Parametros</button>
                            <!-- PARA GENERAR LOS REPORTES ====================== -->
@@ -59,7 +59,7 @@ exit();
                     </div>
                     <!-- /.box-header -->
                     <!-- centro -->
-                    <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_consultar=1 and ID_Rol=$ID_Rol and ID_Objeto=3");
+                    <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_consultar=1 and ID_Rol=$ID_Rol and ID_Objeto=3) or ('$usuario'='ADMIN')");
                     if ($datos=$sql->fetch_object()) { ?>
                    <div class="panel-body" id="listadoregistros">
 <main>
@@ -112,7 +112,7 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                             <th class="sort asc">Nombre del parametro</th>
                             <th class="sort asc">Descripcion</th>
                             <th class="sort asc">Valor</th>
-<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=3");
+<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=3) or ('$usuario'='ADMIN')");
                   if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
                             <?php } ?>

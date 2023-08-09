@@ -97,7 +97,7 @@ if ($num_rows > 0) {
         $output['data'] .= '<td>' . $row['Parametro'] . '</td>';
         $output['data'] .= '<td>' . $row['Descripcion_P'] . '</td>';
         $output['data'] .= '<td>' . $row['Valor'] . '</td>';
-         $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=3");
+         $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=3) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) {
         $output['data'] .= '<td><a class="boton-editar" href="Update_Parametros.php?ID_Parametro=' . $row['ID_Parametro'] . '"><i class="zmdi zmdi-edit"></i></a></td>';
 }
