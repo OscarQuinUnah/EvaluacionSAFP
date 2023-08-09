@@ -119,11 +119,11 @@ if ($num_rows > 0) {
         $output['data'] .= '<td>' . $row['nombre'] . '</td>';
         $output['data'] .= '<td>' . $row['Nombre_del_proyecto'] . '</td>';
         $output['data'] .= '<td>' . $row['Fecha_de_transaccion'] . '</td>';
-        $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=10");
+        $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=10) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) {  
         $output['data'] .= '<td><a class="boton-editar" href="Update_Pago.php?ID_de_pago=' . $row['ID_de_pago'] . '"><i class="zmdi zmdi-edit"></i></a></td>';
 }
-$sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=10");
+$sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=10) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { 
         $output['data'] .= "<td><a onclick='return confirmar()' class='boton-eliminar' href='Delete_Pago.php?ID_de_pago=" . $row['ID_de_pago'] . "'><i class='zmdi zmdi-delete'></i></a></td>";
 }
