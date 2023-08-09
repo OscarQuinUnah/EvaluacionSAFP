@@ -58,7 +58,7 @@ exit();
                   <div class="box">
                     <div class="box-header with-border">
                           <h1 style="text-align:center; margin-top:15px; margin-bottom:20px" class="box-title">Mantenimiento roles</h1>
-                          <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=5");
+                          <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                           <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-account-add"></i>Agregar Rol</button>
                           <!-- PARA GENERAR LOS REPORTES ====================== -->
@@ -73,7 +73,7 @@ if ($datos=$sql->fetch_object()) { ?>
                     </div>
                     <!-- /.box-header -->
                     <!-- centro -->
-                    <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_consultar=1 and ID_Rol=$ID_Rol and ID_Objeto=5");
+                    <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_consultar=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 <div class="panel-body" id="listadoregistros">
 <main>
@@ -126,15 +126,15 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                             <th class="sort asc">Rol</th>
                             <th class="sort asc">Descripcion</th>
                             <th class="sort asc">Estado</th>
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=1");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) {?>
                             <th></th>
                             <?php } ?>
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=1");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
                             <?php } ?>
-                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5");
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                              <th></th>
                              <?php } ?>

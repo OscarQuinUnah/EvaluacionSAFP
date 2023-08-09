@@ -97,15 +97,15 @@ if ($num_rows > 0) {
         $output['data'] .= '<td>' . $row['Rol'] . '</td>';
         $output['data'] .= '<td>' . $row['Descripcion'] . '</td>';
         $output['data'] .= '<td>' . $row['Estado'] . '</td>';
-         $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5");
+         $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) {
         $output['data'] .= '<td><a class="boton-editar" href="Update_Roles.php?ID_Rol=' . $row['ID_Rol'] . '"><i class="zmdi zmdi-edit"></i></a></td>';
 }
-$sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5");
+$sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { 
         $output['data'] .= '<td><a onclick="return confirmar()" class="boton-eliminar" href="Delete_Roles.php?ID_Rol=' . $row['ID_Rol'] . '"><i class="zmdi zmdi-delete"></i></a></td>';
 }
-$sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5");
+$sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { 
         $output['data'] .= '<td><a class="boton-permiso" href="PermisosUl.php?ID_Rol=' . $row['ID_Rol'] . '"><i class="zmdi zmdi-key"></i></a></td>';
 }
