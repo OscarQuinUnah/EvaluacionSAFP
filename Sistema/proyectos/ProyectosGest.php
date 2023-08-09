@@ -10,7 +10,10 @@
  $ID_Proyect = $_GET['ID_proyecto'];
  $_SESSION['ID_Proyect']= $ID_Proyect;
 
-
+ if (empty($_SESSION['user']) and empty($_SESSION['ID_User'])) {
+  header('location:../../Pantallas/Login.php');
+exit();
+}
 
  $sql = "SELECT Nombre_del_proyecto FROM tbl_proyectos WHERE ID_proyecto = '$ID_Proyect'";
  $resultado = mysqli_query($conexion, $sql);
@@ -66,7 +69,7 @@
                           <div class="container-fluid">
                               <!-- Small boxes (Stat box) -->
                               <div class="row">
-                              <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=15");
+                              <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=15) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                                 <div class="col-lg-3 col-6">
                                   <!-- small box -->
@@ -95,7 +98,7 @@ if ($datos=$sql->fetch_object()) { ?>
                                 <?php } ?>
                                 <!-- ./col -->
                                 <!-- ################################ INICIO DE FONDOS ##################################### -->
-                                <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=7");
+                                <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where ( Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=7) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                                 <div class="col-lg-3 col-6">
                                   <!-- small box -->
@@ -122,7 +125,7 @@ if ($datos=$sql->fetch_object()) { ?>
                                 </div>
                                 <?php } ?>
                                 <!-- ################################ INICIO DE PAGOS ##################################### -->
-                                <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=10");
+                                <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where ( Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=10) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                                 <div class="col-lg-3 col-6">
                                   <!-- small box -->

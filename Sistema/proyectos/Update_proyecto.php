@@ -1,6 +1,24 @@
 <?php
     include("../../conexion_BD.php");
     session_start();
+    $usuario=$_SESSION['user'];
+    $ID_Rol=$_SESSION['ID_Rol'];
+    if (empty($_SESSION['user']) and empty($_SESSION['ID_User'])) {
+      header('location:../../Pantallas/Login.php');
+    exit();
+    }
+    $query = "SELECT COUNT(*) as count FROM tbl_permisos WHERE Estad=1 AND Permiso_consultar=1 AND Permiso_Actualizacion = 1 AND ID_Rol =? AND ID_Objeto = 6";
+    $stmt = $conexion->prepare($query);
+    $stmt->bind_param('i', $ID_Rol);
+    $stmt->execute();
+    $stmt->bind_result($count);
+    $stmt->fetch();
+    $stmt->close();
+    
+    if ($count === 0) {
+        header('location:../../Sistema/Home/home.php');
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
