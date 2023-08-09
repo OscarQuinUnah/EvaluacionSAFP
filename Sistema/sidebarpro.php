@@ -34,7 +34,7 @@
 			</div>
 			<div class="full-box dashboard-sideBar-UserInfo2">
 				<Ul class="list-unstyled full-box dashboard-sideBar-Menu" >
-				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=16");
+				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=16) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 			<li>
 					<a href="../Home/home.php">
@@ -42,7 +42,7 @@ if ($datos=$sql->fetch_object()) { ?>
 					</a>
 			</li>
 			<?php } ?>
-			<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=1");
+			<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=1) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
@@ -55,44 +55,44 @@ if ($datos=$sql->fetch_object()) { ?>
 					</ul>
 				</li>
 				<?php } ?>
-<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and (ID_Objeto = 12 OR ID_Objeto = 2 OR ID_Objeto = 3 OR ID_Objeto = 4 OR ID_Objeto = 5)");
+<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and (ID_Objeto = 12 OR ID_Objeto = 2 OR ID_Objeto = 3 OR ID_Objeto = 4 OR ID_Objeto = 5)) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
 						<i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> Seguridad <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
-					<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=12");
+					<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=12) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 					    <li>
 							<a href="../seguridad/Backups_BD.php"><i class="zmdi zmdi-folder-outline"></i> Backups </a>
 						</li>
 						<?php } ?>
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=2");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=2) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../seguridad/bitacora.php"><i class="zmdi zmdi-assignment-o"></i> Bitacora </a>
 						</li>
 						<?php } ?>
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=3");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=3) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../seguridad/ParametrosAdm.php"><i class="zmdi zmdi-archive"></i> Parametros </a>
 						</li>
 						<?php } ?>
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=4");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=4) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../seguridad/PreguntasAdm.php"><i class="zmdi zmdi-view-list"></i> Preguntas </a>
 						</li>
 						<?php } ?>
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=5");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../seguridad/RolesAdm.php"><i class="zmdi zmdi-face"></i> Roles </a>
 						</li>
 						<?php } ?>
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=18");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=18) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../seguridad/ObjetosAdm.php"><i class="zmdi zmdi-money-box"></i>Objetos </a>
@@ -101,7 +101,7 @@ if ($datos=$sql->fetch_object()) { ?>
 					</ul>
 				</li>
 				<?php } ?>
-                <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=11");
+                <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=11) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
@@ -114,7 +114,7 @@ if ($datos=$sql->fetch_object()) { ?>
 					</ul>
 				</li>
 				<?php } ?>
-				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=6");
+				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=6) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
@@ -130,10 +130,10 @@ if ($datos=$sql->fetch_object()) { ?>
 				</Ul>
 			</div>
 			<!-- Menu de la barra lateral -->
-			<?php $sql=$conexion->query("SELECT * FROM tbl_ms_roles where ID_Rol=$ID_Rol and Estado=1");
+			<?php $sql=$conexion->query("SELECT * FROM tbl_ms_roles where (ID_Rol=$ID_Rol and Estado=1) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
-			<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=6");
+			<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=6) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 			<li>
 			<a href="../proyectos/ProyectosGest.php?ID_proyecto=<?php echo $IDProyecto; ?>">
@@ -141,26 +141,26 @@ if ($datos=$sql->fetch_object()) { ?>
             </a>
 			</li>
 			<?php } ?>
-				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and  (ID_Objeto = 8 OR ID_Objeto = 13 OR ID_Objeto = 7)");
+				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and  (ID_Objeto = 8 OR ID_Objeto = 13 OR ID_Objeto = 7)) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
 						<i class="zmdi zmdi-money-box"></i> Fondos <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
-					<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=8");
+					<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=8) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../Fondos/DonacAdm.php"><i class="zmdi zmdi-favorite"></i> Donantes </a>
 						</li>
 						<?php } ?>
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=13");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=13) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../Fondos/Tipo_Fondo_Adm.php"><i class="zmdi zmdi-assignment-returned"></i> Tipos de Fondos </a>
 						</li>
 						<?php } ?>
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=7");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=7) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../Fondos/FondosAdm.php"><i class="zmdi zmdi-assignment-returned"></i> Mantenimiento Fondos </a>
@@ -169,26 +169,26 @@ if ($datos=$sql->fetch_object()) { ?>
 					</ul>
 				</li>
 				<?php } ?>
-				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and (ID_Objeto = 9 OR ID_Objeto = 14 OR ID_Objeto = 15)");
+				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and (ID_Objeto = 9 OR ID_Objeto = 14 OR ID_Objeto = 15)) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
 						<i class="zmdi zmdi-accounts"></i> Voluntarios <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
-					<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=9");
+					<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=9) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../Voluntarios/VoluntariosAdm.php"><i class="zmdi zmdi-accounts-list-alt"></i> Mantenimiento voluntarios </a>
 						</li>
 						<?php } ?>
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=14");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=14) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../Voluntarios/area_trabajo_Adm.php"><i class="zmdi zmdi-accounts-list-alt"></i>Areas de trabajo </a>
 						</li>
 						<?php } ?>
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=15");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=15) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../Voluntarios/voluntarios_proyectos_Adm.php"><i class="zmdi zmdi-accounts-list-alt"></i>Vinculacion de voluntarios </a>
@@ -198,21 +198,21 @@ if ($datos=$sql->fetch_object()) { ?>
 
 				</li>
 				<?php } ?>
-				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Estad=1 and ID_Rol=$ID_Rol and (ID_Objeto = 10 OR ID_Objeto = 17)");
+				<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Estad=1 and ID_Rol=$ID_Rol and (ID_Objeto = 10 OR ID_Objeto = 17)) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
 						<i class="zmdi zmdi-money"></i> Pagos <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
-					<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=10");
+					<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=10) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../pagos/PagosAdm.php"><i class="zmdi zmdi-money-box"></i> Mantenimiento pagos </a>
 						</li>
 						<?php } ?>
 
-						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=17");
+						<?php $sql=$conexion->query("SELECT * FROM tbl_permisos where  (Estad=1 and ID_Rol=$ID_Rol and ID_Objeto=17) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 						<li>
 							<a href="../pagos/TipoPagosAdm.php"><i class="zmdi zmdi-money-box"></i> Mantenimiento Tipo Pagos </a>
