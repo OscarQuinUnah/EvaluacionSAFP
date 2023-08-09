@@ -51,7 +51,7 @@ if ($datos=$sql->fetch_object()) { ?>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="../Usuarios/usuariosAdm.php"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Mantenimiento usuarios</a>
+							<a href="../Usuarios/usuariosAdm.php"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Mantenimiento Usuarios</a>
 						</li>
 					</ul>
 				</li>
