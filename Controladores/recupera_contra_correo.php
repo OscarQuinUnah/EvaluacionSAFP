@@ -10,7 +10,7 @@ if (!empty($_POST["btn_enviar_C"])) {
             header("refresh:0;url=../Pantallas/renovar-Contra.php");
         }else {
             //Si Existe el usuario Valide que este activo
-            $sql1=$conexion->query("SELECT * FROM tbl_ms_usuario WHERE Usuario='$User' and Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO'");
+            $sql1=$conexion->query("SELECT * FROM tbl_ms_usuario WHERE Usuario='$User' and (Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO')");
             //Extrae el correo y el Id del usuario
             if (mysqli_num_rows($sql1) >=1) {
                 while($row=mysqli_fetch_array($sql1)){

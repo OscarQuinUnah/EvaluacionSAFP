@@ -217,7 +217,9 @@ function sendEmail($R_Nombre, $R_usuario, $R_contra, $R_Correo)
 
             $mail->send();
             return true;
-            echo '<script>alert("Correo de Bienvenida Enviado"); window.location.href="../Pantallas/Preguntas_RAI.php";</script>'; /*como esto es autoregistro el usuario debe configurar las preguntas secretas */
+            //echo'<script>alert("Correo de Bienvenida Enviado exitoxamente")</script>';
+            //echo '<script>alert("Correo de Bienvenida Enviado"); window.location.href="../Pantallas/Preguntas_RAI.php";</script>'; /*como esto es autoregistro el usuario debe configurar las preguntas secretas */
+            //header( "refresh:0;url=../Pantallas/Login.php" ); 
         } catch (Exception $e) {
             return false;
         }

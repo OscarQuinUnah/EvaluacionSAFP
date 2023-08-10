@@ -12,7 +12,7 @@ include ("../conexion_BD.php");
 
     
     //Consulta a la base de datos, con la contraseña proporcionada y verifica si el estado es activo
-    $sql=$conexion->query("SELECT * FROM `tbl_ms_usuario` WHERE Token='$token' and Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO'");
+    $sql=$conexion->query("SELECT * FROM `tbl_ms_usuario` WHERE Token='$token' and (Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO')");
     if (mysqli_num_rows($sql) ==1) {
         while($row=mysqli_fetch_array($sql)){
             $idUser=$row['ID_Usuario'];

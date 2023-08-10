@@ -11,7 +11,7 @@ if(isset($_POST['btn_enviar_P'])){
     $P_Fecha_Actual = date('Y-m-j');
     
 
-    $sql=$conexion->query("SELECT * FROM `tbl_ms_usuario` WHERE Usuario='$User' and Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO'");
+    $sql=$conexion->query("SELECT * FROM `tbl_ms_usuario` WHERE Usuario='$User' and (Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO')");
     if (mysqli_num_rows($sql)==1) {
 
         while($row=mysqli_fetch_array($sql)){

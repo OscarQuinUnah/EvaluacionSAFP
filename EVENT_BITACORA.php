@@ -311,7 +311,7 @@ class EVENT_BITACORA{
     //===================================================================================
     //===================================================================================
     public function RegautoInsert(){
-        session_start();
+        //session_start();
         $IDGlobal= $_SESSION['IDUsuarioBitacora'];
             $model = new conexion();
             $conexion = $model->conectar();

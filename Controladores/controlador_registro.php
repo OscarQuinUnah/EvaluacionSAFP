@@ -97,9 +97,7 @@ if (mysqli_num_rows($sql2) >= 1) {
                 //regNuevoUser();
                 $_SESSION['user']=$R_usuario;
                 $_SESSION['ID_User']=$ID_Usuario;
-                require_once('../Controladores/Correo_Bienvenida.php'); // Asegúrate de proporcionar la ruta correcta
-                // Llamar a la función sendmaillocal
-                sendEMail($R_Nombre, $R_usuario, $R_contra, $R_Correo);
+                header("location:../Pantallas/Preguntas_RAI.php"); /*como esto es autoregistro el usuario debe configurar las preguntas secretas */
                 }
                     
             }

@@ -13,7 +13,7 @@ include ("../conexion_BD.php");
 //                $NContra=$_POST["contranueva"];
     $R_Fecha_actual = date('Y-m-j');
 
-        $sql=$conexion->query("SELECT * FROM tbl_ms_usuario WHERE Usuario='$User' and Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO'");
+        $sql=$conexion->query("SELECT * FROM tbl_ms_usuario WHERE Usuario='$User' and (Estado_Usuario='ACTIVO' or Estado_Usuario='BLOQUEADO')");
 
               
     if (mysqli_num_rows($sql)==0) {
