@@ -318,7 +318,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                            $sql=$conexion->query("SELECT * FROM tbl_tipo_pago_r");
                           ?>
                             <select class="form-control" name="Pago" id="Pago" required ><br>
-                            <option value="">Seleccione un tipo de pago</option>
+                            <option value="">SELECCIONE UN TIPO DE PAGO</option>
                           <?php
                             while($row1=mysqli_fetch_array($sql)){
                             ?>
