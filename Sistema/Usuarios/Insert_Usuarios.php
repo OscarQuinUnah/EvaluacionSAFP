@@ -29,7 +29,16 @@
         if(isset($_POST['enviar'])){
             $nombreUsuario = strtoupper($_POST['Usuario']);
             $nombreCompleto = $_POST['Nombre_Usuario'];
+            //$contraseña = $_POST['contraseña'];
+
+            //INICIO Prueba para encriptar contrase;a
             $contraseña = $_POST['contraseña'];
+            //$rawPassword = $_POST['password']; // Contraseña ingresada por el usuario en el formulario de registro
+            $hashedPassword = password_hash($contraseña, PASSWORD_DEFAULT);
+
+            // Guardar $hashedPassword en la base de datos junto con otros datos del usuario
+
+
             $Rol = $_POST['Rol'];
             //$verifContra = $_POST[''];
             $email = $_POST['Correo_electronico'];
@@ -63,7 +72,7 @@ if (mysqli_num_rows($sql2) >= 1) {
                 
 
             try {
-                $sql = "INSERT INTO tbl_ms_usuario ( ID_Rol, Nombre_Usuario, Usuario, Contraseña, Correo_electronico, Fecha_Vencimiento, Estado_Usuario, Creado_Por, Fecha_Creacion ) VALUES ($Rol,'$nombreCompleto', '$nombreUsuario','$contraseña','$email', '$R_F_Vencida', 'NUEVO', '$usuario','$R_Fecha_actual'  )";
+                $sql = "INSERT INTO tbl_ms_usuario ( ID_Rol, Nombre_Usuario, Usuario, Contraseña, Correo_electronico, Fecha_Vencimiento, Estado_Usuario, Creado_Por, Fecha_Creacion ) VALUES ($Rol,'$nombreCompleto', '$nombreUsuario','$hashedPassword','$email', '$R_F_Vencida', 'NUEVO', '$usuario','$R_Fecha_actual'  )";
 
                 $resultado = mysqli_query($conexion,$sql);
     
