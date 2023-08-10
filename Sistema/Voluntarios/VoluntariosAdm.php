@@ -251,19 +251,19 @@ if ($datos=$sql->fetch_object()) { ?>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre Voluntario(*):</label>
                             <input type="hidden" name="Nombre_Voluntario" id="Nombre_Voluntario">
-                            <input onpaste="return false"  type="text" class="form-control" name="Nombre_Voluntario" id="Nombre_Voluntario" maxlength="39" placeholder="Ingrese el nombre del voluntario" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false"  type="text" class="form-control" name="Nombre_Voluntario" id="Nombre_Voluntario" maxlength="39" placeholder="INGRESE EL NOMBRE DEL VOLUNTARIO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Telefono(*):</label>
                             <input type="hidden" name="Telefono_Voluntario" id="Telefono_Voluntario">
-                            <input onpaste="return false" style="text" type="text" class="form-control" name="Telefono_Voluntario" id="Telefono_Voluntario" maxlength="15" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  placeholder="Ingrese el numero telefonico del voluntario" oninput="validarTelefono(event)" required>
+                            <input onpaste="return false" style="text" type="text" class="form-control" name="Telefono_Voluntario" id="Telefono_Voluntario" maxlength="15" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  placeholder="INGRESE EL NÚMERO TELEFÓNICO DEL VOLUNTARIO" oninput="validarTelefono(event)" required>
 
                             
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Direccion Voluntario(*):</label>
                             <input type="hidden" name="Direccion_Voluntario" id="Direccion_Voluntario">
-                            <textarea onpaste="return false" oninput="this.value = this.value.toUpperCase();" type="text" class="form-control" name="Direccion_Voluntario" id="Direccion_Voluntario" maxlength="100" placeholder="Ingrese la direccion voluntario"  required></textarea>
+                            <textarea onpaste="return false" oninput="this.value = this.value.toUpperCase();" type="text" class="form-control" name="Direccion_Voluntario" id="Direccion_Voluntario" maxlength="100" placeholder="INGRESE LA DIRECCIÓN DEL VOLUNTARIO"  required></textarea>
                           </div>
                         
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
