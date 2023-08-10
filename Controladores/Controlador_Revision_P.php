@@ -24,7 +24,7 @@ if ($C_preguntas_respondidas >= $parametro_preguntas) {
             if ($datos=$sql->fetch_object()) {
                header("location:../Pantallas/nueva_Contrasena.php");
             }else {
-               echo'<script>alert("Preguntas Registradas Exitosamente. Se ha enviado un correo elecronico de bienvenida")</script>';
+               echo'<script>alert("Preguntas Registradas Exitosamente.")</script>';
                //Traer los datos del usuario
                $query=$conexion->query("SELECT * FROM `tbl_ms_usuario` WHERE `ID_Usuario`='$idUser'");
                // Verificar si la consulta devolvió resultados

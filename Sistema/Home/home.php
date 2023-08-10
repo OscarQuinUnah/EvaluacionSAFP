@@ -168,26 +168,29 @@
         });
     </script>
 <section><!-- INICIO DEL MENSAJE MODAL_______________________________________ -->
-    <?php
-    // Obtener la fecha de vencimiento de la tabla de usuario
-    $sql = "SELECT Fecha_Vencimiento FROM tbl_ms_usuario WHERE Usuario='$usuario'";
-    $resultado = mysqli_query($conexion, $sql);
-    $fecha_vencimiento = mysqli_fetch_assoc($resultado)['Fecha_Vencimiento'];
 
-    // Comparar la fecha de vencimiento con la fecha actual
-    $fecha_actual = date("Y-m-d");
+<?php
+// Obtener la fecha de vencimiento y el rol del usuario desde la tabla de usuarios
+$sql = "SELECT Fecha_Vencimiento, ID_Rol FROM tbl_ms_usuario WHERE Usuario='$usuario'";
+$resultado = mysqli_query($conexion, $sql);
+$usuario_info = mysqli_fetch_assoc($resultado);
+$fecha_vencimiento = $usuario_info['Fecha_Vencimiento'];
+$rol_usuario = $usuario_info['ID_Rol'];
+
+// Comparar la fecha de vencimiento con la fecha actual
+$fecha_actual = date("Y-m-d");
+if ($rol_usuario !== '1') { // Si el usuario no es ADMIN
     if ($fecha_vencimiento < $fecha_actual) {
-        // Si la fecha de vencimiento ha pasado, actualizar el estado del usuario a "inactivo" en la base de datos
+        // Si la fecha de vencimiento ha pasado, realizar las acciones necesarias
         $sql1 = "UPDATE tbl_ms_usuario SET Estado_Usuario = 'INACTIVO' WHERE Usuario='$usuario'";
         mysqli_query($conexion, $sql1);
-		session_unset(); // Clear all session variables
-		session_destroy();// Destroy the session  
-		echo "<script languaje='JavaScript'>
-		alert('Tu contraseña ha expirado, contacese con uno de los Administradores');
-		location.assign('../../Pantallas/Login.php');
-		</script>"; 
+        session_unset(); // Limpiar todas las variables de sesión
+        session_destroy(); // Destruir la sesión
+        echo "<script languaje='JavaScript'>
+        alert('Tu contraseña ha expirado, contáctese con uno de los Administradores');
+        location.assign('../../Pantallas/Login.php');
+        </script>";
         exit;
-
     } else if (date_diff(date_create($fecha_actual), date_create($fecha_vencimiento))->days < 7) {
         // Si la fecha de vencimiento está próxima y el modal no se ha mostrado antes, mostrar un mensaje modal de advertencia utilizando JavaScript y Bootstrap
         if (!isset($_SESSION['modalShown'])) {
@@ -200,21 +203,34 @@
                 modal.style.display = 'block';
 
                 // Cuando el usuario hace clic fuera del modal, cerrarlo y establecer la variable de sesión
-            window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-                // Enviar una petición al servidor para establecer la variable de sesión
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', 'setModalShown.php', true);
-                xhr.send();
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                        // Enviar una petición al servidor para establecer la variable de sesión
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('POST', 'setModalShown.php', true);
+                        xhr.send();
+                    }
+                }
             }
-            }
-        }
-        </script>";
-
+            </script>";
         }
     }
+} else { // Si el usuario es ADMIN
+	 //Traer el parametro de fecha vencimiento
+	 $query=$conexion->query("SELECT * FROM `tbl_ms_parametros` WHERE `ID_Parametro`=7");
+                
+	 while($row=mysqli_fetch_array($query)){
+		  $V_Vencimiento=$row['Valor'];
+	 }
+
+    // Extender el tiempo de vencimiento en, por ejemplo, 30 días adicionales
+	$nueva_fecha_vencimiento = date('Y-m-d', strtotime($fecha_vencimiento . ' +' . $V_Vencimiento . ' days'));
+    $sql2 = "UPDATE tbl_ms_usuario SET Fecha_Vencimiento = '$nueva_fecha_vencimiento' WHERE Usuario='$usuario'";
+    mysqli_query($conexion, $sql2);
+}
 ?>
+
 
  
     <!-- The Modal -->
