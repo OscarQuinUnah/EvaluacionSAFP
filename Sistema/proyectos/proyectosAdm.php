@@ -281,7 +281,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Estado:</label>
                             <select class="form-control" name="estado" id="estado" required>
-                              <option value="">Selecione un estado</option>
+                              <option value="">SELECCIONE UN ESTADO</option>
                               <option value="ACTIVO">ACTIVO</option>
                               <option value="INACTIVO">INACTIVO</option>
                             </select>
