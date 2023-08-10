@@ -325,15 +325,15 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre del Objeto</label>
-                            <input type="text" class="form-control"  name="Nombre_del_Objeto" id="Nombre_del_Objeto" oninput="this.value = this.value.toUpperCase();" placeholder="Ingrese el nombre del objeto" required>
+                            <input type="text" class="form-control"  name="Nombre_del_Objeto" id="Nombre_del_Objeto" oninput="this.value = this.value.toUpperCase();" placeholder="INGRESE EL NOMBRE DEL OBJETO" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Cantidad recibida</label>
-                            <input type="text" class="form-control"  name="Cantidad_Rec" id="Cantidad_Rec" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Ingrese la cantidad de fondos recibidos" required>
+                            <input type="text" class="form-control"  name="Cantidad_Rec" id="Cantidad_Rec" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="INGRESE LA CANTIDAD DE FONDOS RECIBIDOS" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Valor monetario</label>
-                            <input type="text" class="form-control"  name="Valor_monetario" id="Valor_monetario" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" placeholder="Ingrese el Valor monetario" required>
+                            <input type="text" class="form-control"  name="Valor_monetario" id="Valor_monetario" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" placeholder="INGRESE EL VALOR MONETARIO" required>
                           </div>	
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Donante del fondo:</label>
@@ -361,7 +361,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Fecha de Adquisicion:</label>
-                            <input type="date" class="form-control" name="FechaAdquisicion" id="FechaAdquisicion" maxlength="100" placeholder="Ingrese la Fecha de Adquisicion" required>
+                            <input type="date" class="form-control" name="FechaAdquisicion" id="FechaAdquisicion" maxlength="100" placeholder="INGRESE LA FECHA DE ADQUISICIÓN" required>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <button class="btn btn-primary" type="submit" name="enviar_F" value="AGREGAR"><i class="zmdi zmdi-download"></i> Guardar</button>
