@@ -310,7 +310,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                            <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                           <label>Monto Pagado(*):</label>
                             <input type="hidden" name="Monto_pagado" id="Monto_pagado">
-                            <input style="text" type="text" class="form-control" name="Monto_pagado" id="Monto_pagado" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" placeholder="Ingrese la cantidad del pago" required>
+                            <input style="text" type="text" class="form-control" name="Monto_pagado" id="Monto_pagado" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" placeholder="INGRESE LA CANTIDAD DE PAGO" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Tipo de Pago(*):</label>
@@ -330,7 +330,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Fecha de Transaccion:</label>
-                            <input type="date" class="form-control" name="FechaTransaccion" id="FechaTransaccion" maxlength="100" placeholder="Ingrese la Fecha de Transaccion" required>
+                            <input type="date" class="form-control" name="FechaTransaccion" id="FechaTransaccion" maxlength="100" placeholder="INGRESE LA FECHA DE TRANSACCIÓN" required>
                           </div>
                           
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
