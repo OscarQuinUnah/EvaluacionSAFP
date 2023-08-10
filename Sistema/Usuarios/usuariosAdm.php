@@ -278,12 +278,12 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Usuario(*):</label>
                             <input type="hidden" name="Usuario" id="Usuario">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="Usuario" id="Usuario" maxlength="100" placeholder="Ingrese el Usuario" onkeypress="validarMayusculas(event)"  oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="Usuario" id="Usuario" maxlength="100" placeholder="INGRESE EL USUARIO" onkeypress="validarMayusculas(event)"  oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre Usuario(*):</label>
                             <input type="hidden" name="Nombre_Usuario" id="Usuario">
-                            <input type="text" class="form-control" name="Nombre_Usuario" id="Nombre_Usuario" maxlength="100" placeholder="Ingrese el nombre usuario" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input type="text" class="form-control" name="Nombre_Usuario" id="Nombre_Usuario" maxlength="100" placeholder="INGRESE EL NOMBRE DE USUARIO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Rol de usuario:(*):</label>
@@ -291,7 +291,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                            $sql = $conexion->query("SELECT * FROM tbl_ms_roles");
                             ?>
                             <select class="form-control" name="Rol" id="Rol" required>
-                               <option value="">Seleccione un rol</option>
+                               <option value="">SELECCIONE UN ROL</option>
                                <?php
                                while ($row1 = mysqli_fetch_array($sql)) {
                                ?>
@@ -304,7 +304,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Correo electronico(*):</label>
                             <input type="hidden" name="Correo_electronico" id="Correo_electronico">
-                            <input type="email" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="100" placeholder="Ingrese el correo electronico" onkeypress="validarCorreo(event)" required>
+                            <input type="email" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="100" placeholder="INGRESE SU CORREO ELECTRÓNICO" onkeypress="validarCorreo(event)" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                           <label for="contraseña">Contraseña</label>
@@ -325,7 +325,7 @@ if (mysqli_num_rows($sql2) >= 1) {
     }
 }
 ?>
-                          <input type="password" class="form-control" maxlength="<?php echo $Max_Pass ?>" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" onkeypress="return bloquearEspacio(event);" required>
+                          <input type="password" class="form-control" maxlength="<?php echo $Max_Pass ?>" id="contraseña" name="contraseña" placeholder="INGRESE SU CONTRASEÑA" onkeypress="return bloquearEspacio(event);" required>
                            <div class="input-group-append">
                           <button class="btn btn-outline-secondary" type="button" id="ver-ocultar" onclick="mostrarContrasena()">
                           <i class="zmdi zmdi-eye"></i>
@@ -336,7 +336,7 @@ if (mysqli_num_rows($sql2) >= 1) {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Fecha de Vencimiento(*):</label>
                             <input type="hidden" name="FechaVencimiento" id="FechaVencimiento">
-                            <input type="date" value="<?php echo $R_F_Vencida?>" class="form-control" name="FechaVencimiento" id="FechaVencimiento" maxlength="100" placeholder="Ingrese la fecha de Vencimiento" readonly>
+                            <input type="date" value="<?php echo $R_F_Vencida?>" class="form-control" name="FechaVencimiento" id="FechaVencimiento" maxlength="100" placeholder="INGRESE LA FECHA DE VENCIMIENTO" readonly>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Estado(*)</label>
