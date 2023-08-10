@@ -270,19 +270,19 @@ if ($datos=$sql->fetch_object()) { ?>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>OBJETO(*):</label>
                             <input type="hidden" name="objeto" id="objeto">
-                            <input type="text" class="form-control" name="objeto" id="objeto" maxlength="40"  oninput="this.value = this.value.toUpperCase();" required>
+                            <input type="text" class="form-control" name="objeto" id="objeto" maxlength="40" placeholder="INGRESE UN OBJETO"  oninput="this.value = this.value.toUpperCase();" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>DESCRIPCION(*):</label>
                             <input type="hidden" name="descripcion" id="descripcion">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="descripcion" id="descripcion" maxlength="100" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="descripcion" id="descripcion" maxlength="100" placeholder="INGRESE UNA DESCRIPCIÓN" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>TIPO DE OBJETO(*):</label>
                             <input type="hidden" name="tipoObj" id="tipoObj">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="tipoObj" id="tipoObj" maxlength="50" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="tipoObj" id="tipoObj" maxlength="50" placeholder="INGRESE UN TIPO DE OBJETO" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
 
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
