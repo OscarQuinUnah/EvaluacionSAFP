@@ -303,7 +303,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                            $sql2=$conexion->query("SELECT * FROM tbl_voluntarios");
                           ?>
                             <select class="form-control" name="ID_Voluntario" id="ID_Voluntario" required ><br>
-                            <option value="">Seleccione un Voluntario</option>
+                            <option value="">SELECCIONE UN VOLUNTARIO</option>
                            <?php
                             while($row1=mysqli_fetch_array($sql2)){
                             ?>
@@ -319,7 +319,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                            $sql2=$conexion->query("SELECT * FROM tbl_area_trabajo");
                           ?>
                             <select class="form-control" name="ID_Area_Trabajo" id="ID_Area_Trabajo" required ><br>
-                            <option value="">Seleccione area de trabajo</option>
+                            <option value="">SELECCIONE ÁREA DE TRABAJO</option>
                            <?php
                             while($row1=mysqli_fetch_array($sql2)){
                             ?>
