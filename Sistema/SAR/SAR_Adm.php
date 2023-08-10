@@ -307,13 +307,13 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>RTN(*):</label>
                             <input type="hidden" name="rtn" id="rtn">
-                            <input type="text" class="form-control" name="rtn" id="rtn" maxlength="14" placeholder="Ingrese el RTN" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
+                            <input type="text" class="form-control" name="rtn" id="rtn" maxlength="14" placeholder="INGRESE EL RTN" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Numero de declaracion(*):</label>
                             <input type="hidden" name="numDeclaracion" id="numDeclaracion">
-                            <input type="text" class="form-control" name="numDeclaracion" id="numDeclaracion" maxlength="11" placeholder="Ingrese el Numero de declaracion" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
+                            <input type="text" class="form-control" name="numDeclaracion" id="numDeclaracion" maxlength="11" placeholder="INGRESE EL NUMERO DE DECLARACIÓN" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -328,13 +328,13 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Nombre o Razon Social(*):</label>
                             <input type="hidden" name="razonSocial" id="razonSocial">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="razonSocial" id="razonSocial" maxlength="100" placeholder="Ingrese el nombre o razon social" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="razonSocial" id="razonSocial" maxlength="100" placeholder="INGRESE EL NOMBRE O RAZÓN SOCIAL" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Monto(*):</label>
                             <input type="hidden" name="Monto" id="Monto">
-                            <input type="text" class="form-control" name="Monto" id="Monto" maxlength="7" placeholder="Ingrese el Monto" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
+                            <input type="text" class="form-control" name="Monto" id="Monto" maxlength="7" placeholder="INGRESE EL MONTO" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -372,79 +372,79 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Barrio o Colonia(*):</label>
                             <input type="hidden" name="barrioColonia" id="barrioColonia">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="barrioColonia" id="barrioColonia" maxlength="100" placeholder="Ingrese el Barrio o Colonia" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="barrioColonia" id="barrioColonia" maxlength="100" placeholder="INGRESE EL BARRIO O COLONIA" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Calle o Avenida(*):</label>
                             <input type="hidden" name="calleAvenida" id="calleAvenida">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="calleAvenida" id="calleAvenida" maxlength="100" placeholder="Ingrese la calle o avenida" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="calleAvenida" id="calleAvenida" maxlength="100" placeholder="INGRESE LA CALLE O AVENIDA" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Numero de casa(*):</label>
                             <input type="hidden" name="numCasa" id="numCasa">
-                            <input type="text" class="form-control" name="numCasa" id="numCasa" maxlength="100" placeholder="Ingrese el numero de casa" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
+                            <input type="text" class="form-control" name="numCasa" id="numCasa" maxlength="100" placeholder="INGRESE EL NUMERO DE CASA" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Bloque(*):</label>
                             <input type="hidden" name="bloque" id="bloque">
-                            <input type="text" class="form-control" name="bloque" id="bloque" maxlength="100" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" placeholder="Ingrese el bloque">
+                            <input type="text" class="form-control" name="bloque" id="bloque" maxlength="100" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" placeholder="INGRESE EL BLOQUE">
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Telefono Fijo:</label>
                             <input type="hidden" name="telFijo" id="telFijo">
-                            <input type="text" class="form-control" name="telFijo" id="telFijo" maxlength="8" placeholder="Ingrese el Telefono Fijo" oninput="validarTelefono(event)" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
+                            <input type="text" class="form-control" name="telFijo" id="telFijo" maxlength="8" placeholder="INGRESE EL TELÉFONO FIJO" oninput="validarTelefono(event)" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Celular(*):</label>
                             <input type="hidden" name="telCelular" id="telCelular">
-                            <input type="text" class="form-control" name="telCelular" id="telCelular" maxlength="8" placeholder="Ingrese el Telefono Celular" oninput="validarTelefono(event)" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
+                            <input type="text" class="form-control" name="telCelular" id="telCelular" maxlength="8" placeholder="INGRESE EL TELÉFONO CELULAR" oninput="validarTelefono(event)" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Domicilio(*):</label>
                             <input type="hidden" name="domicilio" id="domicilio">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="domicilio" id="domicilio" maxlength="100" placeholder="Ingrese el Domicilio" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="domicilio" id="domicilio" maxlength="100" placeholder="INGRESE EL DOMICILIO" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Correo electronico(*):</label>
                             <input type="hidden" name="Correo_electronico" id="Correo_electronico">
-                            <input type="text" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="100" placeholder="Ingrese el correo electronico" onkeypress="validarCorreo(event)" required>
+                            <input type="text" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="100" placeholder="INGRESE EL CORREO ELECTRÓNICO" onkeypress="validarCorreo(event)" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Profesion u Oficio(*):</label>
                             <input type="hidden" name="profesionOficio" id="profesionOficio">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="profesionOficio" id="profesionOficio" maxlength="100" placeholder="Ingrese la profesion u Oficio" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="profesionOficio" id="profesionOficio" maxlength="100" placeholder="INGRESE LA PROFESIÓN U OFICIO" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>CAI(*):</label>
                             <input type="hidden" name="cai" id="cai">
-                            <input type="text" class="form-control" name="cai" id="cai" maxlength="36" placeholder="Ingrese el codigo CAI" required>
+                            <input type="text" class="form-control" name="cai" id="cai" maxlength="36" placeholder="INGRESE EL CÓDIGO CAI" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Fecha Limite de Emision(*):</label>
                             <input type="hidden" name="fechaEmision" id="fechaEmision">
-                            <input type="date" class="form-control" name="fechaEmision" id="fechaEmision" maxlength="100" placeholder="Ingrese la fecha de emision" required>
+                            <input type="date" class="form-control" name="fechaEmision" id="fechaEmision" maxlength="100" placeholder="INGRESE LA FECHA DE EMISIÓN" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Numero Inicial(*):</label>
                             <input type="hidden" name="numeroInicial" id="numeroInicial">
-                            <input type="text" class="form-control" name="numeroInicial" id="numeroInicial" maxlength="6" placeholder="Ingrese el Numero Inicial" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
+                            <input type="text" class="form-control" name="numeroInicial" id="numeroInicial" maxlength="6" placeholder="INGRESE EL NÚMERO INICIAL" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Numero Final(*):</label>
                             <input type="hidden" name="numeroFinal" id="numeroFinal">
-                            <input type="text" class="form-control" name="numeroFinal" id="numeroFinal" maxlength="6" placeholder="Ingrese el Numero Final"  onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
+                            <input type="text" class="form-control" name="numeroFinal" id="numeroFinal" maxlength="6" placeholder="INGRESE EL NÚMERO FINAL"  onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" required>
                           </div>
 
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
