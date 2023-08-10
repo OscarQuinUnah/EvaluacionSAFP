@@ -5,6 +5,7 @@ require '../conexion_BD.php';
   session_start();
     $User=$_SESSION['user'];
     $idUser=$_SESSION['ID_User'];
+    $Contra=$_SESSION['R_contra'];
 
 //Extra la cantidad de preguntas actuales
 $sql1=$conexion->query("SELECT Preguntas_Contestadas FROM `tbl_ms_usuario` WHERE Usuario='$User'");

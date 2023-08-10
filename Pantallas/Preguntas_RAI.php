@@ -40,6 +40,7 @@
 <?php
 session_start();
 $idUser=$_SESSION['ID_User'];
+$Contra=$_SESSION['R_contra'];
 
 //Consulta para traer la cantidad de preguntas secretas contestadas por el usuario
 $sql1 = $conexion->query("SELECT Preguntas_Contestadas FROM `tbl_ms_usuario` WHERE ID_usuario = $idUser");

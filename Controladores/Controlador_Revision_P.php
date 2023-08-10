@@ -3,6 +3,7 @@ if (!empty($_POST["btn_enviar_M_P"])) {
    include("../conexion_BD.php");
 $User=$_SESSION['user'];
 $idUser=$_SESSION['ID_User'];
+$Contra=$_SESSION['R_contra'];
 
 
 
@@ -46,7 +47,7 @@ if ($C_preguntas_respondidas >= $parametro_preguntas) {
                              // Asegúrate de que las variables estén definidas antes de usarlas
                              $R_Nombre = $Nombre; // Reemplaza con el valor correcto
                              $R_usuario = $User; // Reemplaza con el valor correcto
-                             $R_contra = $Contraseña; // Reemplaza con el valor correcto
+                             $R_contra = $Contra; // Reemplaza con el valor correcto
                              $R_Correo = $Correo; // Reemplaza con el valor correcto
                require_once('../Controladores/Correo_Bienvenida.php'); // Asegúrate de proporcionar la ruta correcta
                sendEMail($R_Nombre, $R_usuario, $R_contra, $R_Correo);
