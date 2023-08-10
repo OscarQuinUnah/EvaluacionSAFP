@@ -319,7 +319,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Tipo de declaracion(*):</label>
                               <select class="form-control" name="tipoDeclaracion" id="tipoDeclaracion" required>
-                                <option value="">Selecione un tipo de declaracion</option>
+                                <option value="">SELECCIONE UN TIPO DE DECLARACIÓN</option>
                                 <option value="VENTA">VENTA</option>
                                 <option value="RENTA">RENTA</option>
                               </select>
