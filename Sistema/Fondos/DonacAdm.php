@@ -253,22 +253,22 @@ if ($datos=$sql->fetch_object()) { ?>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre Donante(*):</label>
                             <input type="hidden" name="Nombre_Donante" id="Nombre_Donante">
-                            <input onpaste="return false" type="text" class="form-control" name="Nombre_Donante" id="Nombre_Donante" maxlength="39" placeholder="Ingrese el nombre del donante" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false" type="text" class="form-control" name="Nombre_Donante" id="Nombre_Donante" maxlength="39" placeholder="INGRESE EL NOMBRE DEL DONANTE" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Telefono(*):</label>
                             <input type="hidden" name="Telef" id="Telef">
-                            <input onpaste="return false" type="text" class="form-control" name="Telef" id="Telef" maxlength="19" placeholder="Ingrese el número de teléfono" onkeypress='return event.charCode >= 48 && event.charCode <= 57' oninput="validarTelefono(event)" required>
+                            <input onpaste="return false" type="text" class="form-control" name="Telef" id="Telef" maxlength="19" placeholder="INGRESE EL NÚMERO DE TELÉFONO" onkeypress='return event.charCode >= 48 && event.charCode <= 57' oninput="validarTelefono(event)" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Direccion(*):</label>
                             <input type="hidden" name="Direccion" id="Direccion">
-                            <input onpaste="return false" type="text" class="form-control" name="Direccion" id="Direccion" maxlength="39" placeholder="Ingrese la dirrecion del donante" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false" type="text" class="form-control" name="Direccion" id="Direccion" maxlength="39" placeholder="INGRESE LA DIRECCIÓN DEL DONANTE" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Correo electronico(*):</label>
                             <input type="hidden" name="Correo_electronico" id="Correo_electronico">
-                            <input onpaste="return false" type="email" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="39" placeholder="Ingrese el correo electronico" oninput="validarCorreo(event)" onkeydown="return evitarEspacios(event)"  required>
+                            <input onpaste="return false" type="email" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="39" placeholder="INGRESE EL CORREO ELECTRÓNICO" oninput="validarCorreo(event)" onkeydown="return evitarEspacios(event)"  required>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <button class="btn btn-primary" type="submit" name="enviar" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
