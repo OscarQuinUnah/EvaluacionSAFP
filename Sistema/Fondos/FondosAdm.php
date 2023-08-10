@@ -313,7 +313,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                            $sql=$conexion->query("SELECT * FROM tbl_tipos_de_fondos");
                           ?>
                             <select class="form-control" name="tipos_de_fondos" id="tipos_de_fondos" required ><br>
-                            <option value="">Seleccione un tipo de fondo:</option>
+                            <option value="">SELECCIONE UN TIPO DE FONDO:</option>
                            <?php
                             while($row1=mysqli_fetch_array($sql)){
                             ?>
@@ -341,7 +341,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                            $sql=$conexion->query("SELECT * FROM tbl_donantes");
                           ?>
                             <select class="form-control" name="Donante" id="Donante" required ><br>
-                            <option value="">Seleccione un Donante:</option>
+                            <option value="">SELECCIONE UN DONANTE:</option>
                            <?php
                             while($row1=mysqli_fetch_array($sql)){
                             ?>
