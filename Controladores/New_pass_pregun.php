@@ -44,8 +44,11 @@ if(isset($_POST['btn_enviar_P'])){
             header("refresh:0;url=../Pantallas/New_pass_preg.php");
             
         }else{
-            $sql3=$conexion->query("UPDATE tbl_ms_usuario SET Contraseña='$NContra', Fecha_Vencimiento='$P_Vencida', Modificado_Por='$User', Fecha_Modificacion='$P_Fecha_Actual', Estado_Usuario='ACTIVO', Intentos='0' WHERE ID_Usuario='$idUser'");
-            $sql4=$conexion->query("INSERT INTO tbl_ms_hist_contraseña(ID_Usuario, Contraseña, Creado_Por, Fecha_Creacion, Modificado_Por, Fecha_Modificacion) VALUES ('$idUser','$NContra','$User','$P_Fecha_Actual','$User','$P_Fecha_Actual')");
+            //Encriptar contrase;a
+             //$NContra=$_POST["p_contranueva"];// Contraseña ingresada por el usuario en el formulario de registro
+             $hashedPassword = password_hash($NContra, PASSWORD_DEFAULT);
+            $sql3=$conexion->query("UPDATE tbl_ms_usuario SET Contraseña='$hashedPassword', Fecha_Vencimiento='$P_Vencida', Modificado_Por='$User', Fecha_Modificacion='$P_Fecha_Actual', Estado_Usuario='ACTIVO', Intentos='0' WHERE ID_Usuario='$idUser'");
+            $sql4=$conexion->query("INSERT INTO tbl_ms_hist_contraseña(ID_Usuario, Contraseña, Creado_Por, Fecha_Creacion, Modificado_Por, Fecha_Modificacion) VALUES ('$idUser','$hashedPassword','$User','$P_Fecha_Actual','$User','$P_Fecha_Actual')");
 
             echo'<script>alert("Contraseña Actualizada Exitosamente")</script>';
             header("refresh:0;url=../Pantallas/Login.php");
