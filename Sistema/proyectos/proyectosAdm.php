@@ -263,20 +263,20 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre del proyecto(*):</label>
                             <input type="hidden" name="Nombre_proyecto" id="Nombre_proyecto">
-                            <input type="text" class="form-control" name="Nombre_proyecto" id="Nombre_proyecto" maxlength="100" placeholder="Ingrese el nombre del proyecto:"  oninput="this.value = this.value.toUpperCase();"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)" required>
+                            <input type="text" class="form-control" name="Nombre_proyecto" id="Nombre_proyecto" maxlength="100" placeholder="INGRESE EL NOMBRE DEL PROYECTO"  oninput="this.value = this.value.toUpperCase();"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                           <label>Fecha de Inicio:</label>
-                          <input type="date" class="form-control" name="Fechaini" id="Fechaini" maxlength="100" placeholder="Ingrese la Fecha de inicio" required>
+                          <input type="date" class="form-control" name="Fechaini" id="Fechaini" maxlength="100" placeholder="INGRESE LA FECHA DE INICIO" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                           <label>Fecha final:</label>
-                          <input type="date" class="form-control" name="Fechafinal" id="Fechafinal" maxlength="100" placeholder="Ingrese la Fecha final" min="<?= date('Y-m-d') ?>" required>
+                          <input type="date" class="form-control" name="Fechafinal" id="Fechafinal" maxlength="100" placeholder="INGRESE LA FECHA FINAL" min="<?= date('Y-m-d') ?>" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                           <label>Fondos proyectados(*):</label>
                             <input type="hidden" name="Monto_proyectados" id="Monto_proyectados">
-                            <input style="text" type="text" class="form-control" name="Monto_proyectados" id="Monto_proyectados" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" oninput="this.value = this.value.replace(/(\.\d*)\./g, '$1')" placeholder="Ingrese los fondos proyectados:" required>
+                            <input style="text" type="text" class="form-control" name="Monto_proyectados" id="Monto_proyectados" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" oninput="this.value = this.value.replace(/(\.\d*)\./g, '$1')" placeholder="INGRESE LOS FONDOS PROYECTADOS" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Estado:</label>
