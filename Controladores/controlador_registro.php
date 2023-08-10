@@ -60,6 +60,12 @@ if (mysqli_num_rows($sql2) >= 1) {
                 $R_Nombre=$_POST["R_Nombre"];
                 $R_usuario=strtoupper($_POST["R_usuario"]); /*convierte los datos de usuario en mayusculas*/ 
                 $R_contra=$_POST["R_contra"];
+
+                //Encriptar contrase;a
+                //$R_contra=$_POST["R_contra"]; // Contraseña ingresada por el usuario en el formulario de registro
+                $hashedPassword = password_hash($R_contra, PASSWORD_DEFAULT);
+                // Guardar $hashedPassword en la base de datos junto con otros datos del usuario
+
                 $R_Correo=$_POST["R_correo"];
                 $R_Fecha_actual = date('Y-m-d');       /*obtiene la fecha actual*/
                 $sql1=$conexion->query("SELECT * FROM `tbl_ms_parametros` WHERE ID_Parametro=7");
@@ -69,11 +75,11 @@ if (mysqli_num_rows($sql2) >= 1) {
                     }
                 $R_F_Vencida= date("Y-m-j",strtotime($R_Fecha_actual."+ ".$diasV." days")); /*le suma 1 mes a la fecha actual*/
                 $sql=$conexion->query("INSERT INTO tbl_ms_usuario(ID_Usuario,ID_Rol,Nombre_Usuario,Usuario,Contraseña,Correo_Electronico,Fecha_Ultima_conexion, Preguntas_contestadas, Primer_ingreso, Fecha_vencimiento, Creado_por, Fecha_Creacion, Modificado_Por, Fecha_Modificacion, Estado_Usuario, Intentos) 
-                VALUES ('$ID_Usuario',4,'$R_Nombre', '$R_usuario','$R_contra','$R_Correo','$R_Fecha_actual',0,1,'$R_F_Vencida','$R_usuario', '$R_Fecha_actual','$R_usuario', '$R_Fecha_actual','INACTIVO',0)");
+                VALUES ('$ID_Usuario',4,'$R_Nombre', '$R_usuario','$hashedPassword','$R_Correo','$R_Fecha_actual',0,1,'$R_F_Vencida','$R_usuario', '$R_Fecha_actual','$R_usuario', '$R_Fecha_actual','INACTIVO',0)");
                 //aqui iria la funcion bitacora                    
 
                        
-                $sql2=$conexion->query("INSERT INTO tbl_ms_hist_contraseña(`ID_Usuario`, `Contraseña`, `Creado_Por`, `Fecha_Creacion`) VALUES ('$ID_Usuario','$R_contra','$R_usuario','$R_Fecha_actual')");
+                $sql2=$conexion->query("INSERT INTO tbl_ms_hist_contraseña(`ID_Usuario`, `Contraseña`, `Creado_Por`, `Fecha_Creacion`) VALUES ('$ID_Usuario','$hashedPassword','$R_usuario','$R_Fecha_actual')");
 
                 if ($sql) {
                         echo'<script>alert("Datos Guardados exitosamente ")</script>';

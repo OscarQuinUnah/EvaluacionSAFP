@@ -9,6 +9,12 @@ if(isset($_POST['btn_enviar_R'])){
   $NContra=$_POST["contranueva"];
   $R_Fecha_actual = date("Y-m-j");
   
+       //Encriptar contrase;a
+       
+       //$NContra=$_POST["contranueva"];// Contraseña ingresada por el usuario en el formulario de registro
+       $hashedPassword = password_hash($NContra, PASSWORD_DEFAULT);
+       // Guardar $hashedPassword en la base de datos junto con otros datos del usuario
+
 
    //Extrae el ID Del usuario
    $sql1=$conexion->query("SELECT * FROM `tbl_ms_usuario` WHERE Usuario='$User'");
@@ -41,9 +47,9 @@ if(isset($_POST['btn_enviar_R'])){
 
    }else{
       //edicion de contraseña, preguntas y primer ingreso
-      $sql2=$conexion->query("UPDATE tbl_ms_usuario SET Contraseña='$NContra',Fecha_Vencimiento='$P_Vencida', Modificado_Por='$User', Fecha_Modificacion='$R_Fecha_actual', Estado_Usuario='ACTIVO' WHERE ID_Usuario='$idUser' ");
+      $sql2=$conexion->query("UPDATE tbl_ms_usuario SET Contraseña='$hashedPassword',Fecha_Vencimiento='$P_Vencida', Modificado_Por='$User', Fecha_Modificacion='$R_Fecha_actual', Estado_Usuario='ACTIVO' WHERE ID_Usuario='$idUser' ");
       $sql2=$conexion->query("INSERT INTO tbl_ms_hist_contraseña(ID_Usuario, Contraseña, Creado_Por, Fecha_Creacion, Modificado_Por, Fecha_Modificacion)
-       VALUES ('$idUser','$NContra','$User','$R_Fecha_actual','$User','$R_Fecha_actual')");
+       VALUES ('$idUser','$hashedPassword','$User','$R_Fecha_actual','$User','$R_Fecha_actual')");
         
     
       
