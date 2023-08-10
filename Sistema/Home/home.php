@@ -171,15 +171,15 @@
 
 <?php
 // Obtener la fecha de vencimiento y el rol del usuario desde la tabla de usuarios
-$sql = "SELECT Fecha_Vencimiento, ID_Rol FROM tbl_ms_usuario WHERE Usuario='$usuario'";
+$sql = "SELECT Fecha_Vencimiento, Usuario FROM tbl_ms_usuario WHERE Usuario='$usuario'";
 $resultado = mysqli_query($conexion, $sql);
 $usuario_info = mysqli_fetch_assoc($resultado);
 $fecha_vencimiento = $usuario_info['Fecha_Vencimiento'];
-$rol_usuario = $usuario_info['ID_Rol'];
+$rol_usuario = $usuario_info['Usuario'];
 
 // Comparar la fecha de vencimiento con la fecha actual
 $fecha_actual = date("Y-m-d");
-if ($rol_usuario !== '1') { // Si el usuario no es ADMIN
+if ($rol_usuario !== 'ADMIN') { // Si el usuario no es ADMIN
     if ($fecha_vencimiento < $fecha_actual) {
         // Si la fecha de vencimiento ha pasado, realizar las acciones necesarias
         $sql1 = "UPDATE tbl_ms_usuario SET Estado_Usuario = 'INACTIVO' WHERE Usuario='$usuario'";
