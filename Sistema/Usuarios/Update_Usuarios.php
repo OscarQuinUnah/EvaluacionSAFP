@@ -145,7 +145,8 @@ if ($count === 0) {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre Usuario(*):</label>
                             <input type="hidden" name="Nombre_Usuario" id="Nombre_Usuario">
-                            <input type="text" class="form-control" name="Nombre_Usuario" id="Nombre_Usuario" maxlength="100" placeholder="Ingrese el nombre de usuario" value="<?php echo $nombreUsuario; ?>"  oninput="this.value = this.value.toUpperCase();" required>
+                            <input type="text" class="form-control" name="Nombre_Usuario" id="Nombre_Usuario" maxlength="100" placeholder="Ingrese el nombre de usuario" value="<?php echo $nombreUsuario; ?>"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+        oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                            <?php require '../../conexion_BD.php'; ?>
@@ -251,6 +252,11 @@ if (mysqli_num_rows($sql2) >= 1) {
   <script src="../../js/events.js"></script>
 	<script src="../../js/main.js"></script>
   <script src="../../js/usuario.js"></script>
+  <script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 
 </body>
 </html>

@@ -142,8 +142,8 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                             <th class="sort asc">Usuario</th>
                             <th class="sort asc">Nombre</th>
                             <th class="sort asc">Rol</th>
-                            <th class="sort asc">Correo electronico</th>
-                            <th class="sort asc">Fecha Creacion</th>
+                            <th class="sort asc">Correo electrónico</th>
+                            <th class="sort asc">Fecha Creación</th>
                             <th class="sort asc">Fecha Vencimiento</th>
                             <th class="sort asc">Estado del usuario</th>
                             <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=1) or ('$usuario'='ADMIN')");
@@ -278,12 +278,13 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Usuario(*):</label>
                             <input type="hidden" name="Usuario" id="Usuario">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="Usuario" id="Usuario" maxlength="100" placeholder="INGRESE EL USUARIO" onkeypress="validarMayusculas(event)"  oninput="this.value = this.value.toUpperCase();" required>
+                            <input  type="text" class="form-control" name="Usuario" id="Usuario" maxlength="100" placeholder="INGRESE EL USUARIO" onkeypress="validarMayusculas(event)"  oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre Usuario(*):</label>
                             <input type="hidden" name="Nombre_Usuario" id="Usuario">
-                            <input type="text" class="form-control" name="Nombre_Usuario" id="Nombre_Usuario" maxlength="100" placeholder="INGRESE EL NOMBRE DE USUARIO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input type="text" class="form-control" name="Nombre_Usuario" id="Nombre_Usuario" maxlength="100" placeholder="INGRESE EL NOMBRE DE USUARIO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+        oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Rol de usuario:(*):</label>
@@ -304,7 +305,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Correo electronico(*):</label>
                             <input type="hidden" name="Correo_electronico" id="Correo_electronico">
-                            <input type="email" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="100" placeholder="INGRESE SU CORREO ELECTRÓNICO" onkeypress="validarCorreo(event)" required>
+                            <input onkeydown="return evitarEspacios(event)" oninput="validarCorreo(event)" type="email" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="100" placeholder="INGRESE SU CORREO ELECTRÓNICO"  required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                           <label for="contraseña">Contraseña</label>
@@ -391,6 +392,22 @@ if (mysqli_num_rows($sql2) >= 1) {
             });
         });
     </script>
+    
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
+
+<script>
+  //Evitar espacios
+function evitarEspacios(event) {
+  if (event.keyCode === 32) { // 32 es el código de tecla para el espacio en blanco
+    event.preventDefault(); // Cancelar el evento de pulsación de tecla
+    return false; // Impedir la entrada del espacio en blanco
+  }
+}
+</script>
 
 </body>
 </html>

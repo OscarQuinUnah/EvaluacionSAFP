@@ -253,7 +253,7 @@ if ($datos=$sql->fetch_object()) { ?>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Pregunta(*):</label>
                             <input type="hidden" name="Pregunta" id="Pregunta">
-                            <input oncopy="return false" onpaste="return false" type="text" class="form-control" name="Pregunta" id="Pregunta" maxlength="50" placeholder="INGRESE UNA PREGUNTA" oninput="this.value = this.value.toUpperCase();" onkeypress="return validarEspaciosYSignos(event)" required>
+                            <input type="text" class="form-control" name="Pregunta" id="Pregunta" maxlength="50" placeholder="INGRESE UNA PREGUNTA" oninput="this.value = this.value.toUpperCase(); validarEspaciosYSignos(event); validarEspacios(this);" onkeypress="return validarEspaciosYSignos(event);" oncopy="return false;" onpaste="return false;" required>
                           </div>
                         
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -323,5 +323,11 @@ if ($datos=$sql->fetch_object()) { ?>
             });
         });
         </script>
+
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 </body>
 </html>

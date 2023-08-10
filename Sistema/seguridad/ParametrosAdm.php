@@ -43,13 +43,13 @@ exit();
               <div class="col-md-12">
                   <div class="box">
                     <div class="box-header with-border">
-                          <h1 class="box-title" style="text-align:center; margin-top:15px; margin-bottom:20px">Mantenimiento Parametros</h1>
+                          <h1 class="box-title" style="text-align:center; margin-top:15px; margin-bottom:20px">Mantenimiento Parámetros</h1>
                           <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=3) or ('$usuario'='ADMIN')");
                             if ($datos=$sql->fetch_object()) { ?>
-                          <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-badge-check"></i> Agregar Parametros</button>
+                          <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-badge-check"></i> Agregar Parámetros</button>
                            <!-- PARA GENERAR LOS REPORTES ====================== -->
                         <button class="btn btn-warning" id="generar-reporte" name="generar-reporte" onclick="window.open('../../fpdf/Reporteparametros.php?campo=' + encodeURIComponent(document.getElementById('campo').value), '_blank')" >
-                         <i class="zmdi zmdi-collection-pdf"></i> Generar Reporte de Parametros
+                         <i class="zmdi zmdi-collection-pdf"></i> Generar Reporte de parámetro
                           </button>              
                             <!-- Fin Generar Reporte -->
                           <div class="box-tools pull-right">
@@ -109,8 +109,8 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                     <table class="table table-sm table-bordered table-striped">
                         <thead>
                             <th class="sort asc">ID</th>
-                            <th class="sort asc">Nombre del parametro</th>
-                            <th class="sort asc">Descripcion</th>
+                            <th class="sort asc">Nombre del parámetro</th>
+                            <th class="sort asc">Descripción</th>
                             <th class="sort asc">Valor</th>
 <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=3) or ('$usuario'='ADMIN')");
                   if ($datos=$sql->fetch_object()) { ?>
@@ -251,7 +251,7 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Descripcion(*):</label>
                             <input type="hidden" name="Descrip_Parametro" id="Descrip_Parametro">
-                            <input onpaste="return false" type="text" class="form-control" name="Descrip_Parametro" id="Descrip_Parametro" maxlength="80" placeholder="INGRESE LA DESCRIPCIÓN"  onkeypress="return /[a-zA-Z\s_,.]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false" type="text" class="form-control" name="Descrip_Parametro" id="Descrip_Parametro" maxlength="80" placeholder="INGRESE LA DESCRIPCIÓN"  onkeypress="return /[a-zA-Z\s_,.]/i.test(event.key)" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div  class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Valor(*):</label>
@@ -309,5 +309,11 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
             });
         });
     </script>
+
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 </body>
 </html>

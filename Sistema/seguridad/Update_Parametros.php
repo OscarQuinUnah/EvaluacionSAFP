@@ -137,7 +137,7 @@ if ($count === 0) {
                             <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                               <label>Descripcion (*):</label>
                               <input type="hidden" name="Descrip_Parametro" id="Descrip_Parametro">
-                              <input type="text" class="form-control" name="Descrip_Parametro" id="Descrip_Parametro" maxlength="80" value="<?php echo $Descripcion_Parametro; ?>" onkeypress="return /[a-zA-Z\s_,.]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" require>
+                              <input type="text" class="form-control" name="Descrip_Parametro" id="Descrip_Parametro" maxlength="80" value="<?php echo $Descripcion_Parametro; ?>" onkeypress="return /[a-zA-Z\s_,.]/i.test(event.key)" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" require>
                             </div>
 
                             <?php 
@@ -295,6 +295,12 @@ if ($count === 0) {
   });
 }
 </script> 
+
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 
 </body>
 </html>

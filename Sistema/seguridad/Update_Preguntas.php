@@ -143,7 +143,7 @@
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                           <label>Pregunta(*):</label>
                             <input type="hidden" name="Pregunta" id="Pregunta">
-                            <input onpaste="return false" type="text" class="form-control" name="Pregunta" id="Pregunta" value="<?php echo $Pregunta; ?>" maxlength="50" placeholder="Ingrese una pregunta" oninput="this.value = this.value.toUpperCase();" onkeypress="return validarEspaciosYSignos(event)" required>
+                            <input type="text" class="form-control" name="Pregunta" id="Pregunta" maxlength="50" placeholder="INGRESE UNA PREGUNTA" oninput="this.value = this.value.toUpperCase(); validarEspaciosYSignos(event); validarEspacios(this);" onkeypress="return validarEspaciosYSignos(event);" oncopy="return false;" onpaste="return false;" required>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <button class="btn btn-primary" type="submit" name="Enviar_Pregunta" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
@@ -202,6 +202,11 @@
   }).then(function () {
     window.location.href = "PreguntasAdm.php";
   });
+}
+</script>
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
 }
 </script>
 
