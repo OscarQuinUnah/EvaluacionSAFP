@@ -314,7 +314,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                             </select>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <label>area de trabajo:</label>
+                            <label>Area de trabajo:</label>
                             <?php
                            $sql2=$conexion->query("SELECT * FROM tbl_area_trabajo");
                           ?>
