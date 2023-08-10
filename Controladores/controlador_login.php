@@ -1,22 +1,25 @@
 <?php
+    
 require '../conexion_BD.php';
 /*cuando se presiona el boton dentro de login se activa esta funcion */
 if (!empty($_POST["btn_Login"])) {
-    /*si el apartado text de usuario y contraseña esta vacio manda un echo de campo vacio */
-    if (empty($_POST["usuario"]) and empty($_POST["contra"]) )
-    {
+    if (empty($_POST["usuario"]) or empty($_POST["contra"])) {
         echo '<div class="alert_danger">Por favor ingrese su nombre de usuario y contraseña </div>';
-    }
-     else{
-        $usuario=$_POST["usuario"];
-        $contra=$_POST["contra"];
+    } else {
+        $usuario = $_POST["usuario"];
+        $contra = $_POST["contra"];
         session_start();
-        $_SESSION['usuario']=$usuario;
+        $_SESSION['usuario'] = $usuario;
 
+        $sql = $conexion->query("SELECT Contraseña FROM tbl_ms_usuario WHERE Usuario='$usuario'");
+        if ($datos = $sql->fetch_assoc()) {
+            $storedHashedPassword = $datos['Contraseña'];
 
-        $sql=$conexion->query("SELECT * FROM tbl_ms_usuario where Usuario='$usuario' and Contraseña='$contra'");
-        if ($datos=$sql->fetch_object()) {
-            //si el usuario esta inactivo (nuevo registro)
+            if (password_verify($contra, $storedHashedPassword)) {
+                // Contraseña verificada correctamente
+
+                // ... Resto de tu código para verificar el estado del usuario y otras acciones ...
+                            //si el usuario esta inactivo (nuevo registro)
             $sql=$conexion->query("SELECT * FROM tbl_ms_usuario where Estado_Usuario='INACTIVO' and Usuario='$usuario' ");
             if ($datos=$sql->fetch_object()) {
                  echo '<div class="alert_danger">Usuario inactivo, comuniquese con el Administrador del Sistema </div>';
@@ -50,6 +53,7 @@ if (!empty($_POST["btn_Login"])) {
                     $_SESSION['user']=$usuario;
                     $_SESSION['ID_User']=$idUser;
                     $_SESSION['ID_Rol']=$ID_Rol;
+
                         header("location: ../Controladores/controlador_de_inicio.php");
 
                 } else {
@@ -79,28 +83,31 @@ if (!empty($_POST["btn_Login"])) {
                          $sql=$conexion->query("SELECT * FROM tbl_ms_usuario where Usuario='$usuario'");
                   while ($row=mysqli_fetch_array($sql)) {
                            $intentos_u=$row['Intentos']+1;
-                           if ($intentos_u>=$intentos_p) {
-                            //bloquea el usuario si llego a los intentos permitidos
-                                $sql1=$conexion->query("UPDATE tbl_ms_usuario SET Estado_Usuario='BLOQUEADO', Intentos='$intentos_u' WHERE Usuario='$usuario'");
-                               echo '<div class="alert-danger">Usuario Bloqueado, comuniquese con el Administrador del Sistema </div>';
-
-                            } else {
-                                //suma intentos
-                                $sql1=$conexion->query("UPDATE tbl_ms_usuario SET Intentos='$intentos_u' WHERE Usuario='$usuario'");
-                            }
-
-                            
+                           if ($usuario!='ADMIN'){
+                            if ($intentos_u>=$intentos_p) {
+                             //bloquea el usuario si llego a los intentos permitidos
+                                 $sql1=$conexion->query("UPDATE tbl_ms_usuario SET Estado_Usuario='BLOQUEADO', Intentos='$intentos_u' WHERE Usuario='$usuario'");
+                                echo '<div class="alert-danger">Usuario Bloqueado, comuniquese con el Administrador del Sistema </div>';
+ 
+                             } else {
+                                 //suma intentos
+                                 $sql1=$conexion->query("UPDATE tbl_ms_usuario SET Intentos='$intentos_u' WHERE Usuario='$usuario'");
+                             }
                         }
-
-                        
-                        
-
-            echo '<div class="alert_danger">Usuario o contraseña incorrecto </div>';
-
+        }
+    
+                    
+                echo '<div class="alert_danger">Usuario o contraseña incorrectos</div>';
+            }
+        } else {
+            echo '<div class="alert_danger">Usuario no encontrado</div>';
         }
         
     }
-}  
+}
+
+
+
 /*este boton te lleva a registro */
 if (!empty($_POST["btn_R_Ingreso"])) {
     header("location: ../Pantallas/Registro_N_Usuario.php");
@@ -109,3 +116,4 @@ if (!empty($_POST["btn_R_Ingreso"])) {
 
 
 ?>
+
