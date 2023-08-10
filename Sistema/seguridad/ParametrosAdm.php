@@ -246,17 +246,17 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre del parametro(*):</label>
                             <input type="hidden" name="Nombre_Parametro" id="Nombre_Parametro">
-                            <input onpaste="return false" oncopy="return false"type="text" class="form-control" name="Nombre_Parametro" id="Nombre_Parametro" maxlength="50" placeholder="Ingrese el Nombre del Parametro" onkeypress="return /[a-zA-Z_]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false" oncopy="return false"type="text" class="form-control" name="Nombre_Parametro" id="Nombre_Parametro" maxlength="50" placeholder="INGRESE EL NOMBRE DEL PARÁMETRO" onkeypress="return /[a-zA-Z_]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Descripcion(*):</label>
                             <input type="hidden" name="Descrip_Parametro" id="Descrip_Parametro">
-                            <input onpaste="return false" type="text" class="form-control" name="Descrip_Parametro" id="Descrip_Parametro" maxlength="80" placeholder="Ingrese la descripcion"  onkeypress="return /[a-zA-Z\s_,.]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false" type="text" class="form-control" name="Descrip_Parametro" id="Descrip_Parametro" maxlength="80" placeholder="INGRESE LA DESCRIPCIÓN"  onkeypress="return /[a-zA-Z\s_,.]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div  class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Valor(*):</label>
                             <input type="hidden" name="Valor_Parametro" id="Valor_Parametro">
-                            <input onpaste="return false" oncopy="return false" type="text" class="form-control" name="Valor_Parametro" id="Valor_Parametro" maxlength="50" placeholder="Valor del parametro"  required>
+                            <input onpaste="return false" oncopy="return false" type="text" class="form-control" name="Valor_Parametro" id="Valor_Parametro" maxlength="50" placeholder="VALOR DEL PARÁMETRO"  required>
                           </div>
                         
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
