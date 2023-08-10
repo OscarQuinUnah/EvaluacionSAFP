@@ -414,7 +414,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Correo electronico(*):</label>
                             <input type="hidden" name="Correo_electronico" id="Correo_electronico">
-                            <input type="text" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="100" placeholder="INGRESE EL CORREO ELECTRÓNICO" onkeypress="validarCorreo(event)" required>
+                            <input type="text" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="100" placeholder="INGRESE EL CORREO ELECTRÓNICO" oninput="validarCorreo(event)" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
