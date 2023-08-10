@@ -249,18 +249,18 @@ if ($datos=$sql->fetch_object()) { ?>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre rol(*):</label>
                             <input type="hidden" name="Nombre_rol" id="Nombre_rol">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="Nombre_rol" id="Nombre_rol" maxlength="100" placeholder="Ingrese el nombre del Rol"oninput="this.value = this.value.toUpperCase();"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="Nombre_rol" id="Nombre_rol" maxlength="100" placeholder="INGRESE EL NOMBRE DEL ROL"oninput="this.value = this.value.toUpperCase();"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Descripcion(*):</label>
                             <input type="hidden" name="descripcion" id="descripcion">
-                            <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="100" placeholder="Ingrese la descripcion del rol"  oninput="this.value = this.value.toUpperCase();" required>
+                            <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="100" placeholder="INGRESE LA DESCRIPCIÓN DEL ROL"  oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Estado:</label>
                            <!-- <input type="number" min="1" max="3" class="form-control" name="Rol" id="Rol" maxlength="1" placeholder="1:Administrador 2:Editor 3:Supervisor">  -->
                             <select class="form-control" name="estado" id="estado" required>
-                              <option value="">Selecione un estado</option>
+                              <option value="">SELECCIONE UN ESTADO</option>
                               <option value="1" >ACTIVO</option>
                               <option value="2" >INACTIVO</option>
                             </select>
