@@ -73,7 +73,7 @@ function opencontra() {
                     <div class="box-header with-border">
                      
                         <div class="container-fluid" class="full-box cover dashboard-sideBar" style="overflow-y: auto;">
-                              <h1>Gestion de Usuario</h1>
+                              <h1>Gestión de Usuario</h1>
                               <hr style="margin-bottom: 20px;">
                         </div>
 
@@ -106,7 +106,7 @@ function opencontra() {
                         <input class="form-control" type="text" id="U_Imput" name="U_Imput" value="<?php echo $Usuario ?>" readonly require>
                     </div>
                     <div class="form-group">
-                        <label for="telefono">Correo Electronico: </label>
+                        <label for="telefono">Correo Electrónico: </label>
                         <input class="form-control" type="text" id="C_E_Imput" name="C_E_Imput" value="<?php echo $Correo_electronico ?>" readonly require>
                     </div>
                    <!-- <button type="submit" class="btn btn-primary">Guardar Cambios</button>-->
