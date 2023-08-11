@@ -256,7 +256,7 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                           <div  class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Valor(*):</label>
                             <input type="hidden" name="Valor_Parametro" id="Valor_Parametro">
-                            <input onpaste="return false" oncopy="return false" type="text" class="form-control" name="Valor_Parametro" id="Valor_Parametro" maxlength="50" placeholder="VALOR DEL PARÁMETRO"  required>
+                            <input onpaste="return false" oncopy="return false" type="text" class="form-control" name="Valor_Parametro" id="Valor_Parametro" maxlength="50" oninput="validarEspacios(this);" placeholder="VALOR DEL PARÁMETRO"  required>
                           </div>
                         
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">

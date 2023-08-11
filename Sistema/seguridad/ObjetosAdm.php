@@ -268,25 +268,28 @@ if ($datos=$sql->fetch_object()) { ?>
                           </div> -->
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <label>OBJETO(*):</label>
+                            <label>Objeto(*):</label>
                             <input type="hidden" name="objeto" id="objeto">
-                            <input type="text" class="form-control" name="objeto" id="objeto" maxlength="40" placeholder="INGRESE UN OBJETO"  oninput="this.value = this.value.toUpperCase();" required>
+                            <input type="text" class="form-control" name="objeto" id="objeto" maxlength="40" placeholder="INGRESE UN OBJETO"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <label>DESCRIPCION(*):</label>
+                            <label>Descipción(*):</label>
                             <input type="hidden" name="descripcion" id="descripcion">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="descripcion" id="descripcion" maxlength="100" placeholder="INGRESE UNA DESCRIPCIÓN" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="descripcion" id="descripcion" maxlength="100" placeholder="INGRESE UNA DESCRIPCIÓN"onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <label>TIPO DE OBJETO(*):</label>
+                            <label>Tipo de objeto(*):</label>
                             <input type="hidden" name="tipoObj" id="tipoObj">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="tipoObj" id="tipoObj" maxlength="50" placeholder="INGRESE UN TIPO DE OBJETO" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="tipoObj" id="tipoObj" maxlength="50" placeholder="INGRESE UN TIPO DE OBJETO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
 
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <button class="btn btn-primary" type="submit" name="enviar" value="AGREGAR"><i class="zmdi zmdi-download"></i> Guardar</button>
+                          <button class="btn btn-primary" type="submit" name="enviar" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
                             <button class="btn btn-danger" onclick="cancelar()" type="button"><i class="zmdi zmdi-close-circle"></i> Cancelar</button>
                           </div>
                           </div>
@@ -303,6 +306,11 @@ if ($datos=$sql->fetch_object()) { ?>
 
 	
 	<!--script en java para los efectos--> 
+  <script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 <script>
   function cancelar() {
   swal({

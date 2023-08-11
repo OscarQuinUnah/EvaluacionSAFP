@@ -117,8 +117,6 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                         <thead>
                             <th class="sort asc">ID</th>
                             <th class="sort asc">Preguntas</th>
-                            <th class="sort asc">Acciones</th>
-
                             <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=7) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
