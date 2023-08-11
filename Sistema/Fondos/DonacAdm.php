@@ -253,7 +253,8 @@ if ($datos=$sql->fetch_object()) { ?>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre Donante(*):</label>
                             <input type="hidden" name="Nombre_Donante" id="Nombre_Donante">
-                            <input onpaste="return false" type="text" class="form-control" name="Nombre_Donante" id="Nombre_Donante" maxlength="39" placeholder="INGRESE EL NOMBRE DEL DONANTE" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false" type="text" class="form-control" name="Nombre_Donante" id="Nombre_Donante" maxlength="39" placeholder="INGRESE EL NOMBRE DEL DONANTE" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Teléfono(*):</label>
@@ -263,7 +264,7 @@ if ($datos=$sql->fetch_object()) { ?>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Dirección(*):</label>
                             <input type="hidden" name="Direccion" id="Direccion">
-                            <input onpaste="return false" type="text" class="form-control" name="Direccion" id="Direccion" maxlength="39" placeholder="INGRESE LA DIRECCIÓN DEL DONANTE" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false" type="text" class="form-control" name="Direccion" id="Direccion" maxlength="39" placeholder="INGRESE LA DIRECCIÓN DEL DONANTE" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Correo electrónico(*):</label>
@@ -331,6 +332,11 @@ function evitarEspacios(event) {
 }
 </script>
 
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 
 <script>
   //Confirmar cancelacion

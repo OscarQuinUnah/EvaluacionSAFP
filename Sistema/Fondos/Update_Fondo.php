@@ -144,12 +144,6 @@
                             <input class="form-control" name="Proyecto" id="Proyecto" placeholder="<?php echo $Nombre_del_proyecto?>" readonly>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Usuario</label>
-                            <?php     
-                            $usuario=$_SESSION['usuario'];?>
-                            <input type="text" class="form-control"  name="Usuario" id="Usuario" maxlength="100" value="<?php echo $usuario; ?>" style="text-transform:uppercase" readonly>
-                          </div>
-                          <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                            <?php require '../../conexion_BD.php'; ?>
                           <label>Tipo de Fondo(*):</label>
                             <?php
@@ -167,15 +161,15 @@
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre del Objeto</label>
-                            <input type="text" class="form-control"  name="Nombre_del_Objeto" id="Nombre_del_Objeto" oninput="this.value = this.value.toUpperCase();" placeholder="Ingrese el nombre del objeto" value="<?php echo $Nombre_del_Objeto; ?>" require>
+                            <input type="text" class="form-control"  name="Nombre_del_Objeto" id="Nombre_del_Objeto" maxlength="49" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" placeholder="Ingrese el nombre del objeto" value="<?php echo $Nombre_del_Objeto; ?>" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Cantidad recibida</label>
-                            <input type="text" class="form-control"  name="Cantidad_Rec" id="Cantidad_Rec" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" pattern="^\d+(\.\d{1,2})?$" placeholder="Ingrese la cantidad de fondos recibidos" value="<?php echo $Cantidad_Rec; ?>" require>
+                            <input type="text" class="form-control"  name="Cantidad_Rec" id="Cantidad_Rec" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" pattern="^\d+(\.\d{1,2})?$" placeholder="Ingrese la cantidad de fondos recibidos" value="<?php echo $Cantidad_Rec; ?>" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Valor monetario</label>
-                            <input type="text" class="form-control"  name="Valor_monetario" id="Valor_monetario" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" placeholder="Ingrese el Valor monetario" value="<?php echo $Valor_monetario; ?>" require>
+                            <input type="text" class="form-control"  name="Valor_monetario" id="Valor_monetario" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode === 46" placeholder="Ingrese el Valor monetario" value="<?php echo $Valor_monetario; ?>" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                            <?php require '../../conexion_BD.php'; ?>
@@ -234,6 +228,12 @@
   }).then(function () {
     window.location.href = "FondosAdm.php";
   });
+}
+</script>
+
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
 }
 </script>
   

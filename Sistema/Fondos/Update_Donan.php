@@ -136,7 +136,8 @@ if ($count === 0) {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre Donante(*):</label>
                             <input type="hidden" name="Nombre_Donante" id="Nombre_Donante">
-                            <input onpaste="return false" type="text" value="<?php echo $Nombre_donan; ?>" class="form-control" name="Nombre_Donante" id="Nombre_Donante" maxlength="39" placeholder="Ingrese el nombre del donante" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false" type="text" value="<?php echo $Nombre_donan; ?>" class="form-control" name="Nombre_Donante" id="Nombre_Donante" maxlength="39" placeholder="Ingrese el nombre del donante" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-5">
                             <label>Telefono(*):</label>
@@ -144,9 +145,9 @@ if ($count === 0) {
                             <input onpaste="return false" type="text" value="<?php echo $Tel_Cel; ?>" class="form-control" name="Telef" id="Telef" pattern="[0-9()+-]{8,20}" maxlength="19" placeholder="Ingrese el número de teléfono" onkeypress='return event.charCode >= 48 && event.charCode <= 57' oninput="validarTelefono(event)" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                            <label>Direccion(*):</label>
+                            <label>Dirección(*):</label>
                             <input type="hidden" name="Direccion" id="Direccion">
-                            <input onpaste="return false" type="text" class="form-control" name="Direccion" id="Direccion" maxlength="39" placeholder="Ingrese la dirrecion del donante" value="<?php echo $Direcc; ?>" oninput="this.value = this.value.toUpperCase();" require>
+                            <input onpaste="return false" type="text" class="form-control" name="Direccion" id="Direccion" maxlength="39" placeholder="Ingrese la dirrecion del donante" value="<?php echo $Direcc; ?>" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Correo electronico(*):</label>
@@ -180,6 +181,12 @@ if ($count === 0) {
   <script src="../../js/events.js"></script>
 	<script src="../../js/main.js"></script>
   <script src="../../js/usuario.js"></script>
+
+  <script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 
   <script>
     //Validar Telefono

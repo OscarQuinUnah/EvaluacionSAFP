@@ -125,7 +125,8 @@
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Nombre del Tipo Fondo</label>
-                            <input oncopy="return false" type="text" class="form-control"  name="nombre_T_Fondo" id="nombre_T_Fondo" placeholder="Ingrese el Nombre del Tipo Fondo" value="<?php echo $nombre_T_Fondo; ?>" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" require>
+                            <input oncopy="return false" type="text" class="form-control"  name="nombre_T_Fondo" id="nombre_T_Fondo" placeholder="Ingrese el Nombre del Tipo Fondo" value="<?php echo $nombre_T_Fondo; ?>" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <button class="btn btn-primary" type="submit" name="enviar_F2" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
@@ -156,6 +157,12 @@
 	<script src="../../js/main.js"></script>
   <script src="./js/usuario.js"></script>
   <?php include '../sidebarpro.php'; ?>
+
+  <script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 
   <script>
   //Confirmar cancelacion
