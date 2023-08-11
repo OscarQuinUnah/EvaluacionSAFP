@@ -60,12 +60,18 @@ $fecha_fin = isset($_POST['fecha_fin']) ? $_POST['fecha_fin'] : '';
                     <div class="box-header with-border">
                           <h1 style="text-align:center; margin-top:15px; margin-bottom:20px" class="box-title">Bitácora</h1>
                           <!-- PARA GENERAR LOS REPORTES ====================== -->
-                          <button class="btn btn-warning" id="generar-reporte" name="generar-reporte" onclick="window.open('../../fpdf/ReporteBitacora.php?campo=' + encodeURIComponent(document.getElementById('campo').value), '_blank')" >
-                         <i class="zmdi zmdi-collection-pdf"></i> Generar Reporte Bitácora
-                          </button>           
-                          <form action="../../borrar_registros.php" method="post" onsubmit="return confirmDelete();">
-        <input type="submit" name="borrar" value="Depurar">
-    </form> 
+                          <div style="display: flex; align-items: flex-start;">
+                            <button class="btn btn-warning" id="generar-reporte" name="generar-reporte" onclick="window.open('../../fpdf/ReporteBitacora.php?campo=' + encodeURIComponent(document.getElementById('campo').value), '_blank')" >
+                                <i class="zmdi zmdi-collection-pdf"></i> Generar Reporte Bitácora
+                            </button>
+                            
+                            <form action="../../borrar_registros.php" method="post" onsubmit="return confirmDelete();" style="margin-left: 10px; margin-top: 0px;">
+                                <input type="submit" class="btn btn-danger custom-btn" name="borrar" value="Depurar">
+                            </form>
+                        </div>
+
+
+
     <script>
         function confirmDelete() {
             return confirm("¿Estás seguro de que deseas borrar los 100 registros?");
@@ -262,5 +268,11 @@ document.getElementById("num_registros").addEventListener("change", function() {
  	<script src="../../js/jquery-3.1.1.min.js"></script>
 	<script src="../../js/main.js"></script>
   <script src="../../js/usuario.js"></script>
+
+  <style>
+    .custom-btn {
+        color: black;
+    }
+</style>
 </body>
 </html>
