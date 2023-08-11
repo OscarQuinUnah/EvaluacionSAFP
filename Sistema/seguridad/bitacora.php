@@ -64,14 +64,13 @@ $fecha_fin = isset($_POST['fecha_fin']) ? $_POST['fecha_fin'] : '';
                             <button class="btn btn-warning" id="generar-reporte" name="generar-reporte" onclick="window.open('../../fpdf/ReporteBitacora.php?campo=' + encodeURIComponent(document.getElementById('campo').value), '_blank')" >
                                 <i class="zmdi zmdi-collection-pdf"></i> Generar Reporte Bitácora
                             </button>
-                            
+                            <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Eliminacion=1 and ID_Rol=$ID_Rol and ID_Objeto=2) or ('$usuario'='ADMIN')");
+if ($datos=$sql->fetch_object()) { ?>
                             <form action="../../borrar_registros.php" method="post" onsubmit="return confirmDelete();" style="margin-left: 10px; margin-top: 0px;">
                                 <input type="submit" class="btn btn-danger custom-btn" name="borrar" value="Depurar">
                             </form>
                         </div>
-
-
-
+                        <?php } ?>
     <script>
         function confirmDelete() {
             return confirm("¿Estás seguro de que deseas borrar los 100 registros?");

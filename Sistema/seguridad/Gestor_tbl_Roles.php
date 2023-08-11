@@ -107,7 +107,7 @@ if ($datos=$sql->fetch_object()) {
 }
 $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=5) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { 
-        $output['data'] .= '<td><a class="boton-permiso" href="PermisosUl.php?ID_Rol=' . $row['ID_Rol'] . '"><i class="zmdi zmdi-key"></i></a></td>';
+    $output['data'] .= '<td><a class="boton-permiso" href="PermisosUl.php?ID_Rol=' . $row['ID_Rol'] . '" title="Permisos"><i class="zmdi zmdi-key"></i></a></td>';
 }
 
         $output['data'] .= '</tr>';
