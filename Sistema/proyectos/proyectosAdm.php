@@ -263,7 +263,8 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre del proyecto(*):</label>
                             <input type="hidden" name="Nombre_proyecto" id="Nombre_proyecto">
-                            <input type="text" class="form-control" name="Nombre_proyecto" id="Nombre_proyecto" maxlength="100" placeholder="INGRESE EL NOMBRE DEL PROYECTO"  oninput="this.value = this.value.toUpperCase();"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)" required>
+                            <input type="text" class="form-control" name="Nombre_proyecto" id="Nombre_proyecto" maxlength="100" placeholder="INGRESE EL NOMBRE DEL PROYECTO"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                           <label>Fecha de Inicio:</label>
@@ -287,7 +288,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                             </select>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <button class="btn btn-primary" type="submit" name="enviar" value="AGREGAR"><i class="zmdi zmdi-download"></i> Guardar</button>
+                          <button class="btn btn-primary" type="submit" name="enviar" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
                             <button class="btn btn-danger" onclick="cancelar()" type="button"><i class="zmdi zmdi-close-circle"></i> Cancelar</button>
                           </div>
                           </div>
@@ -332,6 +333,13 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
     fechaFinal.min = fechaInicial.value;
   });
 </script>
+
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
+
 
 
 

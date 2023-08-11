@@ -131,7 +131,8 @@
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre del proyecto(*):</label>
                             <input type="hidden" name="Nombre_proyecto" id="Nombre_proyecto">
-                            <input type="text" class="form-control" name="Nombre_proyecto" id="Nombre_proyecto" maxlength="100" placeholder="Ingrese el nombre del proyecto:" value="<?php echo $nomb_proyec; ?>"  oninput="this.value = this.value.toUpperCase();" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" required>
+                            <input type="text" class="form-control" name="Nombre_proyecto" id="Nombre_proyecto" maxlength="100" placeholder="Ingrese el nombre del proyecto:" value="<?php echo $nomb_proyec; ?>"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Fecha de Inicio:</label>
@@ -139,7 +140,7 @@
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                           <label>Fecha final:</label>
-                          <input type="date" class="form-control" name="Fechafinal" id="Fechafinal" maxlength="100" placeholder="Ingrese la Fecha final" min="<?= date('Y-m-d') ?>" value="<?php echo $Fecha_final; ?>">
+                          <input type="date" class="form-control" name="Fechafinal" id="Fechafinal" maxlength="100" placeholder="Ingrese la Fecha final" value="<?php echo $Fecha_final; ?>">
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                           <label>Fondos proyectados(*):</label>
@@ -156,7 +157,7 @@
                             </select>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <button class="btn btn-primary" type="submit" name="enviar" value="AGREGAR"><i class="zmdi zmdi-download"></i> Guardar</button>
+                          <button class="btn btn-primary" type="submit" name="enviar" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
                           <button class="btn btn-danger" onclick="cancelar()" type="button"><i class="zmdi zmdi-close-circle"></i> Cancelar</button>
                           </div>
                           </div>
@@ -176,7 +177,11 @@
     ?>
 
 
-
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 	<!--script en java para los efectos-->
   <script>
   function cancelar() {
@@ -194,17 +199,6 @@
   });
 }
 </script>
-</script>
-<script>
-  const fechaInicial = document.getElementById('Fechaini');
-  const fechaFinal = document.getElementById('Fechafinal');
-
-  fechaInicial.addEventListener('change', () => {
-    if (fechaInicial.value > fechaFinal.value) {
-      fechaFinal.value = fechaInicial.value;
-    }
-    fechaFinal.min = fechaInicial.value;
-  });
 </script>
 	<script src="../../js/jquery-3.1.1.min.js"></script>
   <script src="../../js/events.js"></script>
