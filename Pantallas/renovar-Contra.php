@@ -41,7 +41,7 @@
           
             <input class="buttons_recupera_contra" type="button" Class="btn" name="btn_enviar_C" value="Enviar contraseña por correo" onclick="window.location.href='controlador_recupera_contra_c.php'">
             <input class="buttons_recupera_contra" type="submit" Class="btn" name="btn_pregun_secret" value="Recuperar vía preguntas secretas">
-             <li><a href="../Pantallas/Login.php">volver atras</a></li>
+             <li><a href="../Pantallas/Login.php">Volver atras</a></li>
     </section>
    
     </form>
