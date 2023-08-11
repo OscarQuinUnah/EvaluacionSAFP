@@ -109,7 +109,6 @@ $resObjetosFaltantes = $stmt->get_result();
                               <th>Actualizar</th>
                               <th>Consultar</th>
                               <th>Estado</th>
-                              <th>Acciones</th>
 				                    </tr>
                             <tfoot>
 
@@ -131,11 +130,6 @@ $resObjetosFaltantes = $stmt->get_result();
                           <td><input type="checkbox" name="actu['.$mostrar['ID_permiso'].']"'.($mostrar['Permiso_Actualizacion'] == 1 ? 'checked' : '').' /></td>
                           <td><input type="checkbox" name="cons['.$mostrar['ID_permiso'].']"'.($mostrar['Permiso_consultar'] == 1 ? 'checked' : '').' /></td>
                           <td><input type="checkbox" name="est['.$mostrar['ID_permiso'].']"'.($mostrar['Estad'] == 1 ? 'checked' : '').' /></td>
-                          <td>
-                             <a href="DeletePerm.php?ID_permiso='.$mostrar['ID_permiso'].'" onclick="return confirmar()" class="boton-eliminar">
-                              <i class="zmdi zmdi-delete"></i>
-                            </a>
-                          </td>
                           </tr>';
 			                	}
 				              ?>
