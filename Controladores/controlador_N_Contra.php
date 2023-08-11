@@ -54,7 +54,6 @@ if(isset($_POST['btn_enviar_R'])){
     
       
               echo'<script>alert("Datos Guardados exitosamente ")</script>';
-              session_start();
               
               $_SESSION['user']=$User;
               $_SESSION['ID_User']=$idUser;
