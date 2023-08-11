@@ -253,7 +253,7 @@ if ($datos=$sql->fetch_object()) { ?>
 oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Descripcion(*):</label>
+                            <label>Descripción(*):</label>
                             <input type="hidden" name="descripcion" id="descripcion">
                             <input type="text" class="form-control" name="descripcion" id="descripcion" maxlength="100" placeholder="INGRESE LA DESCRIPCIÓN DEL ROL"  onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
 oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>

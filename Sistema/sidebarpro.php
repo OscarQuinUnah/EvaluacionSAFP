@@ -137,7 +137,7 @@ if ($datos=$sql->fetch_object()) { ?>
 if ($datos=$sql->fetch_object()) { ?>
 			<li>
 			<a href="../proyectos/ProyectosGest.php?ID_proyecto=<?php echo $IDProyecto; ?>">
-	            <i class="zmdi zmdi-menu"></i> Gestion proyecto
+	            <i class="zmdi zmdi-menu"></i> Gestión proyecto
             </a>
 			</li>
 			<?php } ?>
