@@ -170,7 +170,7 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                             <th class="sort asc">Monto pagado</th>
                             <th class="sort asc">Tipo pago</th>
                             <th class="sort asc">Proyecto</th>
-                            <th class="sort asc">Fecha de Transaccion</th>
+                            <th class="sort asc">Fecha de Transacción</th>
 
                             <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=10) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
@@ -329,7 +329,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                             </select>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Fecha de Transaccion:</label>
+                            <label>Fecha de Transacción:</label>
                             <input type="date" class="form-control" name="FechaTransaccion" id="FechaTransaccion" maxlength="100" placeholder="INGRESE LA FECHA DE TRANSACCIÓN" required>
                           </div>
                           
