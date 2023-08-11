@@ -78,11 +78,11 @@ $R_F_Vencida= date("Y-m-j",strtotime($R_Fecha_actual."+ ".$diasV." days")); /*le
               <div class="col-md-12">
                   <div class="box">
                     <div class="box-header with-border">
-                          <h1 class="box-title" style="text-align:center; margin-top:15px; margin-bottom:20px">Mantenimiento Areas de Trabajos</h1>
+                          <h1 class="box-title" style="text-align:center; margin-top:15px; margin-bottom:20px">Mantenimiento Áreas de Trabajos</h1>
                           <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=14) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
 
-                          <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-assignment"></i> Agregar Area de trabajo</button>
+                          <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-assignment"></i> Agregar Áreas de trabajo</button>
                           <button class="btn btn-warning" id="generar-reporte" name="generar-reporte" onclick="window.open('../../fpdf/ReporteAreasTrab.php?campo=' + encodeURIComponent(document.getElementById('campo').value), '_blank')" >
                          <i class="zmdi zmdi-collection-pdf"></i> Generar Reporte Area de Trabajo
                           </button>
@@ -150,8 +150,8 @@ if ($datos=$sql->fetch_object()) { ?>
                     <table class="table table-sm table-bordered table-striped">
                         <thead>
                             <th class="sort asc">ID</th>
-                            <th class="sort asc">Area de Trabajo</th>
-                            <th class="sort asc">Descripcion</th>
+                            <th class="sort asc">Área de Trabajo</th>
+                            <th class="sort asc">Descripción</th>
 
                             <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=14) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) {?>
@@ -270,11 +270,11 @@ if ($datos=$sql->fetch_object()) { ?>
                         <div class="container">
                           <div class="row">
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Nombre del Area de Trabajo</label>
+                            <label>Nombre del Áreas de Trabajo</label>
                             <input maxlength="49" oncopy="return false" type="text" class="form-control"  name="nombre_Area_Trabajo" id="nombre_Area_Trabajo" placeholder="INGRESE EL NOMBRE DEL ÁREA DE TRABAJO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Descripcion del Area de Trabajo</label>
+                            <label>Descripcion del Áreas de Trabajo</label>
                             <input maxlength="99" oncopy="return false" type="text" class="form-control"  name="descripcion_A_Trabajo" id="descripcion_A_Trabajo" placeholder="INGRESE LA DESCRIPCIÓN DEL ÁREA DE TRABAJO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">

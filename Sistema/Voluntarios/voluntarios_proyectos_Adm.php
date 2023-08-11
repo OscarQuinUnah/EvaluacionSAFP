@@ -80,10 +80,10 @@ $R_F_Vencida= date("Y-m-j",strtotime($R_Fecha_actual."+ ".$diasV." days")); /*le
               <div class="col-md-12">
                   <div class="box">
                     <div class="box-header with-border">
-                          <h1 style="text-align:center; margin-top:15px; margin-bottom:20px" class="box-title">Vinculacion de Voluntarios a Proyectos</h1>
+                          <h1 style="text-align:center; margin-top:15px; margin-bottom:20px" class="box-title">Vinculación de Voluntarios a Proyectos</h1>
                           <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Insercion=1 and ID_Rol=$ID_Rol and ID_Objeto=15) or ('$usuario'='ADMIN') ");
 if ($datos=$sql->fetch_object()) { ?>
-                          <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-link"></i> Agregar Vinculacion a proyecto</button>
+                          <button class="btn btn-success" id="btnagregar" name="btnAgregar" onclick="mostrarform(true)"><i class="zmdi zmdi-link"></i> Agregar Vinculación a proyecto</button>
                           <!-- PARA GENERAR LOS REPORTES ====================== -->
                           <button class="btn btn-warning" id="generar-reporte" name="generar-reporte" onclick="window.open('../../fpdf/ReporteVolProy.php?campo=' + encodeURIComponent(document.getElementById('campo').value), '_blank')" >
                          <i class="zmdi zmdi-collection-pdf"></i> Generar Reporte Voluntarios Proyectos
@@ -160,9 +160,9 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                         <thead>
                             <th class="sort asc">ID</th>
                             <th class="sort asc">Nombre del voluntario</th>
-                            <th class="sort asc">Nombre proyecto</th>
-                            <th class="sort asc">Area de trabajo</th>
-                            <th class="sort asc">Fecha de Vinculacion</th>
+                            <th class="sort asc">Nombre Proyecto</th>
+                            <th class="sort asc">Área de trabajo</th>
+                            <th class="sort asc">Fecha de Vinculación</th>
                             <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=15) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
@@ -314,7 +314,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                             </select>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <label>Area de trabajo:</label>
+                            <label>Área de trabajo:</label>
                             <?php
                            $sql2=$conexion->query("SELECT * FROM tbl_area_trabajo");
                           ?>
@@ -330,7 +330,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                             </select>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <label>Fecha de Vinculacion de Proyectos:</label>
+                            <label>Fecha de Vinculación de Proyectos:</label>
                             <input type="date" class="form-control" name="Fecha_Vinculacion_P" id="Fecha_Vinculacion_P" placeholder="Ingrese la Fecha de Vinculacion de Proyectos" required>
                           </div>
 
