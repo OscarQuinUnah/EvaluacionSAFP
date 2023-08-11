@@ -49,6 +49,40 @@ $database = 'u221487857_bd_asociacion';
 // Comprobar si se hizo clic en el botón "Crear copia de seguridad"
 if(isset($_POST['crear_copia_btn'])) {
   // Nombre del archivo de backup
+
+
+
+
+
+ // Realizar la restauración de la copia de seguridad
+    // Aquí va tu código para restaurar la copia de seguridad
+    
+    // Cerrar todas las sesiones activas excepto la del usuario ADMIN
+    require_once '../../conexion_BD.php'; // Asegúrate de incluir la conexión a la base de datos aquí
+    
+    // Obtener el ID del usuario ADMIN
+  // Consulta para cerrar las sesiones excepto la del usuario ADMIN
+$sql_admin = "SELECT Usuario FROM tbl_ms_usuario WHERE Usuario = 'ADMIN'";
+$result_admin = mysqli_query($conexion, $sql_admin);
+$row_admin = mysqli_fetch_assoc($result_admin);
+$admin_id = $row_admin['Usuario'];
+
+// Comprueba si el usuario actual es diferente al usuario ADMIN
+if ($usuario !== $admin_id) {
+    $sql = "DELETE FROM active_sessions WHERE User_ID <> '$admin_id'";
+    mysqli_query($conexion, $sql);
+    
+    // Redirige solo a los usuarios no ADMIN al inicio de sesión
+    header('Location: ../../Pantallas/Login.php');
+    exit();
+}
+
+// Cerrar la conexión a la base de datos
+mysqli_close($conexion);
+  
+    
+
+
   $conn = mysqli_connect($host, $user, $password, $database);
 $backups_folder = "/home/u221487857/domains/asociacionasfp.site/public_html/Sistema/seguridad/Backups/";
   // Nombre del archivo de backup
@@ -112,6 +146,8 @@ $resultado = mysqli_query($conn, $sql);
 }
 
 ?>
+
+
 </head>
 
 <body>
@@ -169,6 +205,8 @@ $resultado = mysqli_query($conn, $sql);
           <div class="card mb-4">
             <div class="card-header" style="background-color: #F6DDCC; font-family: Arial, sans-serif;"> Restaurar una Copia de Seguridad</div>
               <div class="card-body">
+
+
                 <form action="restore.php" method="post">
                   <div class="form-group">
                     <label>Seleccionar el archivo a restaurar</label>
@@ -190,6 +228,9 @@ $resultado = mysqli_query($conn, $sql);
                   </div>
                   <button type="submit" style="background-color: #2E86C1" class="btn btn-primary" onclick='return confirmar1()'> <i class="fa fa-upload"> </i> Restaurar Copia de Seguridad </button>
                   </form>
+
+
+
                 </div>
           </div><!-- Fin restaurar Copia de seguridad -->
           <?php } ?><!-- Fin Del permiso de actualizar -->

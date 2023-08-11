@@ -9,6 +9,34 @@ $database = 'u221487857_bd_asociacion';
 // Ruta absoluta de la carpeta de backups
 // Configuración de la base de datos
 
+
+    // Cerrar todas las sesiones activas excepto la del usuario ADMIN
+    require_once '../../conexion_BD.php'; // Asegúrate de incluir la conexión a la base de datos aquí
+    
+    // Obtener el ID del usuario ADMIN
+  // Consulta para cerrar las sesiones excepto la del usuario ADMIN
+$sql_admin = "SELECT Usuario FROM tbl_ms_usuario WHERE Usuario = 'ADMIN'";
+$result_admin = mysqli_query($conexion, $sql_admin);
+$row_admin = mysqli_fetch_assoc($result_admin);
+$admin_id = $row_admin['Usuario'];
+
+// Comprueba si el usuario actual es diferente al usuario ADMIN
+if ($usuario !== $admin_id) {
+    $sql = "DELETE FROM active_sessions WHERE User_ID <> '$admin_id'";
+    mysqli_query($conexion, $sql);
+    
+    // Redirige solo a los usuarios no ADMIN al inicio de sesión
+    header('Location: ../../Pantallas/Login.php');
+    exit();
+}
+
+// Cerrar la conexión a la base de datos
+mysqli_close($conexion);
+
+
+
+
+
 // Obtener la ruta absoluta del archivo de backup seleccionado
 $backup_file = "/home/u221487857/domains/asociacionasfp.site/public_html/Sistema/seguridad/Backups/" . $_POST['backup_file'];
 

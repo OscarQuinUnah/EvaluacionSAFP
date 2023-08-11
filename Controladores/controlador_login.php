@@ -18,6 +18,18 @@ if (!empty($_POST["btn_Login"])) {
             if (password_verify($contra, $storedHashedPassword)) {
                 // Contraseña verificada correctamente
 
+                    // Agrega el código aquí para actualizar la tabla de sesiones activas
+    // Obtener el ID del usuario de la sesión actual
+    $user_id = $_SESSION['usuario'];
+
+    // Obtener la fecha y hora actual
+    $current_time = date("Y-m-d H:i:s");
+
+    // Actualizar la tabla de sesiones activas con la última actividad del usuario
+    $sql = "REPLACE INTO active_sessions (User_ID, Last_Activity) VALUES ('$user_id', '$current_time')";
+    mysqli_query($conexion, $sql);
+    //Fin de Agrega el código aquí para actualizar la tabla de sesiones activas
+    
                 // ... Resto de tu código para verificar el estado del usuario y otras acciones ...
                             //si el usuario esta inactivo (nuevo registro)
             $sql=$conexion->query("SELECT * FROM tbl_ms_usuario where Estado_Usuario='INACTIVO' and Usuario='$usuario' ");
