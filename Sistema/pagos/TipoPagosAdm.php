@@ -276,11 +276,12 @@ if ($datos=$sql->fetch_object()) { ?>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Nombre Tipo Pago</label>
-                            <input type="text" class="form-control"  name="Nombre" id="Nombre" placeholder="INGRESE EL TIPO DE FONDO" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input type="text" class="form-control"  name="Nombre" id="Nombre" maxlength="50" placeholder="INGRESE EL TIPO DE FONDO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);"required>
                           </div>
 
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <button class="btn btn-primary" type="submit" name="enviar_F" value="AGREGAR"><i class="zmdi zmdi-download"></i> Guardar</button>
+                          <button class="btn btn-primary" type="submit" name="enviar_F" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
                             <button class="btn btn-danger" onclick="cancelar()" type="button"><i class="zmdi zmdi-close-circle"></i> Cancelar</button>
                           </div>
                           </div>
@@ -313,13 +314,6 @@ if ($datos=$sql->fetch_object()) { ?>
   });
 }
 </script>
-    <script src="../../js/jquery-3.1.1.min.js"></script>
-  <script src="../../js/events.js"></script>
-    <script src="../../js/main.js"></script>
-  <script src="../../js/usuario.js"></script>
-
-</body>
-</html>
 
 <script>
   function validarNombre(e) {
@@ -332,3 +326,18 @@ if ($datos=$sql->fetch_object()) { ?>
   }
   }
 </script>
+
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+  <script src="../../js/events.js"></script>
+    <script src="../../js/main.js"></script>
+  <script src="../../js/usuario.js"></script>
+
+</body>
+</html>
+
+
