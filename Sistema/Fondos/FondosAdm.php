@@ -171,10 +171,10 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                             <th class="sort asc">Tipo de Fondo</th>
                             <th class="sort asc">Nombre del Objeto</th>
                             <th class="sort asc">Cantidad recibida</th>
-                            <th class="sort asc">Valor_monetario</th>
+                            <th class="sort asc">Valor monetario</th>
                             <th class="sort asc">Proyecto</th>
                             <th class="sort asc">Donante</th>
-                            <th class="sort asc">Fecha de Adquisicion</th>
+                            <th class="sort asc">Fecha de Adquisición</th>
 
                             <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=7) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
@@ -352,7 +352,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                             </select>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Proyecto al que esta siendo donado:</label>
+                            <label>Proyecto al que está siendo donado:</label>
                             <input type="text" class="form-control"  name="Proyecto" id="Proyecto" placeholder="<?php echo $Nombre_del_proyecto?>" readonly>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
@@ -360,7 +360,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                             <input type="text" class="form-control"  name="Usuario" id="Usuario" maxlength="100" placeholder="<?php echo $usuario?>" style="text-transform:uppercase" readonly>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Fecha de Adquisicion:</label>
+                            <label>Fecha de Adquisición:</label>
                             <input type="date" class="form-control" name="FechaAdquisicion" id="FechaAdquisicion" maxlength="100" placeholder="INGRESE LA FECHA DE ADQUISICIÓN" required>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">

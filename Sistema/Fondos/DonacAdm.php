@@ -130,9 +130,9 @@ document.getElementById("campo").addEventListener("keyup", function(event) {
                         <thead>
                             <th class="sort asc">ID</th>
                             <th class="sort asc">Donante</th>
-                            <th class="sort asc">Telefono o Celular</th>
-                            <th class="sort asc">Direccion</th>
-                            <th class="sort asc">Correo electronico</th>
+                            <th class="sort asc">Teléfono o Celular</th>
+                            <th class="sort asc">Dirección</th>
+                            <th class="sort asc">Correo electrónico</th>
 
                             <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=8) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
@@ -256,17 +256,17 @@ if ($datos=$sql->fetch_object()) { ?>
                             <input onpaste="return false" type="text" class="form-control" name="Nombre_Donante" id="Nombre_Donante" maxlength="39" placeholder="INGRESE EL NOMBRE DEL DONANTE" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Telefono(*):</label>
+                            <label>Teléfono(*):</label>
                             <input type="hidden" name="Telef" id="Telef">
                             <input onpaste="return false" type="text" class="form-control" name="Telef" id="Telef" maxlength="19" placeholder="INGRESE EL NÚMERO DE TELÉFONO" onkeypress='return event.charCode >= 48 && event.charCode <= 57' oninput="validarTelefono(event)" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Direccion(*):</label>
+                            <label>Dirección(*):</label>
                             <input type="hidden" name="Direccion" id="Direccion">
                             <input onpaste="return false" type="text" class="form-control" name="Direccion" id="Direccion" maxlength="39" placeholder="INGRESE LA DIRECCIÓN DEL DONANTE" oninput="this.value = this.value.toUpperCase();" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Correo electronico(*):</label>
+                            <label>Correo electrónico(*):</label>
                             <input type="hidden" name="Correo_electronico" id="Correo_electronico">
                             <input onpaste="return false" type="email" class="form-control" name="Correo_electronico" id="Correo_electronico" maxlength="39" placeholder="INGRESE EL CORREO ELECTRÓNICO" oninput="validarCorreo(event)" onkeydown="return evitarEspacios(event)"  required>
                           </div>
