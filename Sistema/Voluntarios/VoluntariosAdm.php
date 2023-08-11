@@ -251,7 +251,8 @@ if ($datos=$sql->fetch_object()) { ?>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre Voluntario(*):</label>
                             <input type="hidden" name="Nombre_Voluntario" id="Nombre_Voluntario">
-                            <input onpaste="return false"  type="text" class="form-control" name="Nombre_Voluntario" id="Nombre_Voluntario" maxlength="39" placeholder="INGRESE EL NOMBRE DEL VOLUNTARIO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false"  type="text" class="form-control" name="Nombre_Voluntario" id="Nombre_Voluntario" maxlength="30" placeholder="INGRESE EL NOMBRE DEL VOLUNTARIO" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Teléfono(*):</label>
@@ -263,11 +264,11 @@ if ($datos=$sql->fetch_object()) { ?>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Dirección Voluntario(*):</label>
                             <input type="hidden" name="Direccion_Voluntario" id="Direccion_Voluntario">
-                            <textarea onpaste="return false" oninput="this.value = this.value.toUpperCase();" type="text" class="form-control" name="Direccion_Voluntario" id="Direccion_Voluntario" maxlength="100" placeholder="INGRESE LA DIRECCIÓN DEL VOLUNTARIO"  required></textarea>
+                            <textarea onpaste="return false" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" type="text" class="form-control" name="Direccion_Voluntario" id="Direccion_Voluntario" maxlength="100" placeholder="INGRESE LA DIRECCIÓN DEL VOLUNTARIO" required></textarea>
                           </div>
                         
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <button class="btn btn-primary" type="submit" name="enviar_V" value="AGREGAR"><i class="zmdi zmdi-download"></i> Guardar</button>
+                          <button class="btn btn-primary" type="submit" name="enviar_V" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
                             <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="zmdi zmdi-close-circle"></i> Cancelar</button>
                           </div>
                           </div>
@@ -317,6 +318,12 @@ if ($datos=$sql->fetch_object()) { ?>
     }
     }
   </script>
+
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 
 
 <script>

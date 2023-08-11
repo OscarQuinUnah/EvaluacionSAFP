@@ -116,20 +116,22 @@
                         <div class="container">
                           <div class="row">
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>ID Area de Trabajo(*):</label>
+                            <label>ID Área de Trabajo(*):</label>
                             <input type="hidden" name="ID_Fondo" id="ID_Fondo">
                             <input style="text" type="text" class="form-control" name="ID_Area_Trabajo" id="ID_Area_Trabajo" maxlength="10"  value="<?php echo $ID_Area_Trabajo; ?>" readonly>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Nombre del Area de Trabajo</label>
-                            <input maxlength="49"oncopy="return false" type="text" class="form-control"  name="nombre_Area_Trabajo" id="nombre_Area_Trabajo" placeholder="Ingrese el nombre del Area de Trabajo" value="<?php echo $nombre_Area_Trabajo; ?>" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();"require>
+                            <label>Nombre del Área de Trabajo</label>
+                            <input maxlength="49"oncopy="return false" type="text" class="form-control"  name="nombre_Area_Trabajo" id="nombre_Area_Trabajo" placeholder="Ingrese el nombre del Area de Trabajo" value="<?php echo $nombre_Area_Trabajo; ?>" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                            <label>Descripcion del Area de Trabajo</label>
-                            <input maxlength="99"  oncopy="return false" type="text" class="form-control"  name="descripcion_A_Trabajo" id="descripcion_A_Trabajo" placeholder="Ingrese la descripcion del Area de Trabajo" value="<?php echo $descripcion_A_Trabajo; ?>" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();"require>
+                            <label>Descripcion del Área de Trabajo</label>
+                            <input maxlength="99"  oncopy="return false" type="text" class="form-control"  name="descripcion_A_Trabajo" id="descripcion_A_Trabajo" placeholder="Ingrese la descripcion del Area de Trabajo" value="<?php echo $descripcion_A_Trabajo; ?>" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);"required>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <button class="btn btn-primary" type="submit" name="enviar_F2" value="AGREGAR"><i class="zmdi zmdi-download"></i> Guardar</button>
+                          <button class="btn btn-primary" type="submit" name="enviar_F2" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
                           <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="zmdi zmdi-close-circle"></i> Cancelar</button>
                           </div>
                           </div>
@@ -148,7 +150,11 @@
         }
     ?>
 
-
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 
 	<!--script en java para los efectos-->
   

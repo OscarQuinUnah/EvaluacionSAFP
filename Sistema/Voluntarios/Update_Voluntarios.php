@@ -143,7 +143,8 @@ if ($count === 0) {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Nombre Voluntario(*):</label>
                             <input type="hidden" name="Nombre_Voluntario" id="Nombre_Voluntario">
-                            <input onpaste="return false"  type="text" class="form-control" name="Nombre_Voluntario" id="Nombre_Voluntario" maxlength="30" placeholder="Ingrese el nombre del voluntario"  value="<?php echo $Nombre_Voluntario; ?>" onkeypress="return /[a-zA-Z\s]/i.test(event.key)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input onpaste="return false"  type="text" class="form-control" name="Nombre_Voluntario" id="Nombre_Voluntario" maxlength="30" placeholder="Ingrese el nombre del voluntario"  value="<?php echo $Nombre_Voluntario; ?>" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Telefono(*):</label>
@@ -153,10 +154,10 @@ if ($count === 0) {
                           <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
                             <label>Direccion Voluntario(*):</label>
                             <input type="hidden" name="Direccion_Voluntario" id="Direccion_Voluntario">
-                            <input onpaste="return false" oninput="this.value = this.value.toUpperCase();" type="text" class="form-control" name="Direccion_Voluntario" id="Direccion_Voluntario" maxlength="100" placeholder="Ingrese la direccion del voluntario" value="<?php echo $Direccion_Voluntario; ?>" required>
+                            <input onpaste="return false" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" type="text" class="form-control" name="Direccion_Voluntario" id="Direccion_Voluntario" maxlength="100" placeholder="Ingrese la direccion del voluntario" value="<?php echo $Direccion_Voluntario; ?>" required>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <button class="btn btn-primary" type="submit" name="Enviar_V" value="AGREGAR"><i class="zmdi zmdi-download"></i> Guardar</button>
+                          <button class="btn btn-primary" type="submit" name="Enviar_V" value="AGREGAR"><i class="zmdi zmdi-upload"></i> Guardar</button>
                           <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="zmdi zmdi-close-circle"></i> Cancelar</button>
                           </div>
                           </div>
@@ -183,6 +184,12 @@ if ($count === 0) {
 	<script src="../../js/main.js"></script>
   <script src="../../js/usuario.js"></script>
   <?php include '../sidebarpro.php'; ?>
+
+  <script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 
   <script>
     //Validar Telefono
