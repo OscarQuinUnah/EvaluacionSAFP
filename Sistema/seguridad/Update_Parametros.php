@@ -9,7 +9,7 @@ if (empty($_SESSION['user']) and empty($_SESSION['ID_User'])) {
   header('location:../../Pantallas/Login.php');
 exit();
 }
-$query = "SELECT COUNT(*) as count FROM tbl_permisos WHERE Estad=1 AND Permiso_consultar=1 AND Permiso_Actualizacion = 1 AND ID_Rol =? AND ID_Objeto = 3";
+$query = "SELECT COUNT(*) as count FROM tbl_permisos WHERE (Estad=1 AND Permiso_consultar=1 AND Permiso_Actualizacion = 1 AND ID_Rol =? AND ID_Objeto = 3) or ('$usuario'='ADMIN')";
 $stmt = $conexion->prepare($query);
 $stmt->bind_param('i', $ID_Rol);
 $stmt->execute();
