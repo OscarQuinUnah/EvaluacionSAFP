@@ -136,7 +136,7 @@ $resultado = mysqli_query($conn, $sql);
 		</nav>
 
     <div class="container" style="width:850px">
-        <h1 style="text-align:center;" class="my-4">Administracion de Base de Datos</h1><hr>
+        <h1 style="text-align:center;" class="my-4">Administración de Base de Datos</h1><hr>
 
          <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where Permiso_consultar=1 and ID_Rol=$ID_Rol and ID_Objeto=12");
           if ($datos=$sql->fetch_object()) { ?>
@@ -148,7 +148,7 @@ $resultado = mysqli_query($conn, $sql);
               <div class="card-header" style="background-color: #F6DDCC; font-family: Arial, sans-serif;">Copia de Seguridad</div>
               <div class="card-body">
                 <form method="post" enctype="multipart/form-data">
-                <label>Preciona el boton si deseas realizar una Copia de Seguridad</label>
+                <label>Presiona el boton si deseas realizar una copia de seguridad</label>
                   <div class="form-group" style="margin-top:10px">
                   <button class="btn btn-success" style="background-color: #28B463 ;" type="submit" name="crear_copia_btn">
                     <i class="	fas fa-cloud-download-alt"></i> Crear copia de seguridad
