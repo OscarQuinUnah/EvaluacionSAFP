@@ -78,7 +78,7 @@ $sql="SELECT SQL_CALC_FOUND_ROWS u.ID_Usuario, u.Usuario, u.Nombre_Usuario, r.Ro
 FROM tbl_ms_usuario u
 JOIN tbl_ms_roles r ON u.ID_Rol = r.ID_Rol
 WHERE (u.ID_Usuario LIKE '%{$campo}%' OR u.Usuario LIKE '%{$campo}%' OR u.Nombre_Usuario LIKE '%{$campo}%' OR r.Rol LIKE '%{$campo}%' OR u.Correo_electronico LIKE '%{$campo}%' OR u.Estado_Usuario LIKE '%{$campo}%')
-AND u.Fecha_Creacion BETWEEN '{$fechaInicio}' AND '{$fechaFinal}' OR u.Fecha_Vencimiento BETWEEN '{$fechaInicio}' AND '{$fechaFinal}'
+AND u.Fecha_Creacion BETWEEN '{$fechaInicio}' AND '{$fechaFinal}'
 ORDER BY {$columns[$orderCol]} {$oderType}
 LIMIT {$inicio}, {$limit}";
 $resultado = $conexion->query($sql);
