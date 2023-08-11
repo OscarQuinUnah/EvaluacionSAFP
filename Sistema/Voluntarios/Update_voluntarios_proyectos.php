@@ -2,6 +2,7 @@
     include("../../conexion_BD.php");
     session_start();
     $usuario=$_SESSION['usuario'];
+    $ID_Rol=$_SESSION['ID_Rol'];
     $IDProyecto=$_SESSION['ID_Proyect'];
     if (empty($_SESSION['user']) and empty($_SESSION['ID_User'])) {
       header('location:../../Pantallas/Login.php');
