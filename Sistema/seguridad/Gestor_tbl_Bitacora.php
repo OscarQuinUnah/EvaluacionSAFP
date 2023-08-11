@@ -65,7 +65,7 @@ $sLimit = "LIMIT $inicio , $limit";
  $sOrder = "";
  if(isset($_POST['orderCol'])){
     $orderCol = $_POST['orderCol'];
-    $oderType = isset($_POST['orderType']) ? $_POST['orderType'] : 'asc';
+    $oderType = isset($_POST['orderType']) ? $_POST['orderType'] : 'desc';
     
     $sOrder = "ORDER BY ". $columns[intval($orderCol)] . ' ' . $oderType;
  }
