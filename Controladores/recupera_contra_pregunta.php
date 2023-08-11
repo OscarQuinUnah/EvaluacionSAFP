@@ -29,22 +29,25 @@ include ("../conexion_BD.php");
                        $idUser=$row['ID_Usuario'];
           }
 
-        $sql1=$conexion->query("SELECT * FROM `tbl_ms_preguntas_x_usuario` WHERE ID_Pregunta='$pregunta' and  Respuesta='$respuesta' AND ID_Usuario='$idUser'");
-        //si trae registros de preguntas agregadas por usuario
-        if (mysqli_num_rows($sql1)>=1) {
-            session_start();
-            $_SESSION['user']=$User;
-
-            // Redirige al New_pass_preg.php y pasa el usuario SQL como parámetro
-            header("Location: ../Pantallas/New_pass_preg.php");
-            exit;
-
-        }else{
+          $sql1 = $conexion->query("SELECT * FROM `tbl_ms_preguntas_x_usuario` WHERE ID_Pregunta='$pregunta' AND ID_Usuario='$idUser'");
+          if (mysqli_num_rows($sql1) >= 1) {
+              $row = mysqli_fetch_assoc($sql1);
+              $hashedResponseFromDB = $row['Respuesta'];
+          
+              if (password_verify($respuesta, $hashedResponseFromDB)) {
+                  session_start();
+                  $_SESSION['user'] = $User;
+          
+                  // Redirige al New_pass_preg.php y pasa el usuario SQL como parámetro
+                  header("Location: ../Pantallas/New_pass_preg.php");
+                  exit;
+              } else {
             //edicion de contraseña, preguntas y primer ingreso
                 $sql2=$conexion->query("UPDATE tbl_ms_usuario SET Estado_Usuario='BLOQUEADO' WHERE ID_Usuario='$idUser'");
                  echo'<script>alert("Pregunta o respuesta Invalida. Su usuario ha sido Bloqueado. Contactese con uno de los Administradores.")</script>';
                    header( "refresh:0;url=../Pantallas/Login.php" ); 
    
+            }
         }
 
 
@@ -53,5 +56,15 @@ include ("../conexion_BD.php");
 
 
 
+        // $sql1=$conexion->query("SELECT * FROM `tbl_ms_preguntas_x_usuario` WHERE ID_Pregunta='$pregunta' and  Respuesta='$respuesta' AND ID_Usuario='$idUser'");
+        // //si trae registros de preguntas agregadas por usuario
+        // if (mysqli_num_rows($sql1)>=1) {
+        //     session_start();
+        //     $_SESSION['user']=$User;
 
+        //     // Redirige al New_pass_preg.php y pasa el usuario SQL como parámetro
+        //     header("Location: ../Pantallas/New_pass_preg.php");
+        //     exit;
+
+        // }
 ?>

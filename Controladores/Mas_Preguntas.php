@@ -20,9 +20,16 @@ $sql1=$conexion->query("SELECT Preguntas_Contestadas FROM `tbl_ms_usuario` WHERE
                 $respuesta=$_POST["respuesta"];
                 $R_Fecha_actual = date("Y-m-j");
                 
+
+            //Encriptar respuestas
+            // $respuesta=$_POST["respuesta"]; // Contraseña ingresada por el usuario en el formulario de registro
+            $hashedAnswer = password_hash($respuesta, PASSWORD_DEFAULT);
+            // Guardar $hashedAnswer en la base de datos junto con otros datos del usuario
+
+
                 //Insert de Nueva Pregunta
                 $sql=$conexion->query("INSERT INTO tbl_ms_preguntas_x_usuario(`ID_Pregunta`, `ID_Usuario`, `Respuesta`, `Creado_Por`, `Fecha_Creacion`) 
-                    VALUES ('$pregunta','$idUser','$respuesta', '$User', '$R_Fecha_actual')");
+                    VALUES ('$pregunta','$idUser','$hashedAnswer', '$User', '$R_Fecha_actual')");
                     $preguntas_C=$preguntas_C+1;
                 $sql2=$conexion->query("UPDATE tbl_ms_usuario SET Preguntas_Contestadas='$preguntas_C' WHERE Usuario='$User'");
                 
