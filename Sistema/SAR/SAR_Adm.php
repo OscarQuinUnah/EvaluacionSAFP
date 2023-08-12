@@ -175,7 +175,6 @@ if ($datos=$sql->fetch_object()) { ?>
                             <th class="sort asc">Fecha Limite de Emision</th>
                             <th class="sort asc">Numero Inicial</th>
                             <th class="sort asc">Numero Final</th>
-                            <th class="sort asc">Acciones</th>
                             <?php $sql=$conexion->query("SELECT * FROM tbl_permisos where (Permiso_Actualizacion=1 and ID_Rol=$ID_Rol and ID_Objeto=11) or ('$usuario'='ADMIN')");
 if ($datos=$sql->fetch_object()) { ?>
                             <th></th>
