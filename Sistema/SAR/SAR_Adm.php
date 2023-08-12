@@ -328,7 +328,8 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Nombre o Razon Social(*):</label>
                             <input type="hidden" name="razonSocial" id="razonSocial">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="razonSocial" id="razonSocial" maxlength="100" placeholder="INGRESE EL NOMBRE O RAZÓN SOCIAL" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="razonSocial" id="razonSocial" maxlength="100" placeholder="INGRESE EL NOMBRE O RAZÓN SOCIAL" onkeypress="return /[a-zA-Z\s]/i.test(event.key)"
+oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -372,13 +373,13 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Barrio o Colonia(*):</label>
                             <input type="hidden" name="barrioColonia" id="barrioColonia">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="barrioColonia" id="barrioColonia" maxlength="100" placeholder="INGRESE EL BARRIO O COLONIA" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="barrioColonia" id="barrioColonia" maxlength="100" placeholder="INGRESE EL BARRIO O COLONIA" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Calle o Avenida(*):</label>
                             <input type="hidden" name="calleAvenida" id="calleAvenida">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="calleAvenida" id="calleAvenida" maxlength="100" placeholder="INGRESE LA CALLE O AVENIDA" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="calleAvenida" id="calleAvenida" maxlength="100" placeholder="INGRESE LA CALLE O AVENIDA" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -408,7 +409,7 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Domicilio(*):</label>
                             <input type="hidden" name="domicilio" id="domicilio">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="domicilio" id="domicilio" maxlength="100" placeholder="INGRESE EL DOMICILIO" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="domicilio" id="domicilio" maxlength="100" placeholder="INGRESE EL DOMICILIO" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -420,13 +421,13 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>Profesion u Oficio(*):</label>
                             <input type="hidden" name="profesionOficio" id="profesionOficio">
-                            <input style="text-transform:uppercase" type="text" class="form-control" name="profesionOficio" id="profesionOficio" maxlength="100" placeholder="INGRESE LA PROFESIÓN U OFICIO" onkeypress="validarNombre(event)" oninput="this.value = this.value.toUpperCase();" required>
+                            <input style="text-transform:uppercase" type="text" class="form-control" name="profesionOficio" id="profesionOficio" maxlength="100" placeholder="INGRESE LA PROFESIÓN U OFICIO" onkeypress="validarNombre(event)"oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <label>CAI(*):</label>
                             <input type="hidden" name="cai" id="cai">
-                            <input type="text" class="form-control" name="cai" id="cai" maxlength="36" placeholder="INGRESE EL CÓDIGO CAI" required>
+                            <input type="text" class="form-control" name="cai" id="cai" maxlength="36" placeholder="INGRESE EL CÓDIGO CAI" oninput="this.value = this.value.toUpperCase(); validarEspacios(this);" required>
                           </div>
 
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -519,17 +520,23 @@ document.getElementById("fechaFinal").addEventListener("change", function() {
     }
   </script>
 
+<script>
+function validarEspacios(input) {
+  input.value = input.value.replace(/^\s+|\s{2,}/g, ' ');
+}
+</script>
 
-<!-- <script>
-  function validarInput(input) {
-  // Expresión regular que valida que solo se ingresen letras (mayúsculas o minúsculas)
-  const regex = /^[a-zA-Z]*$/;
-  if (!regex.test(input.value)) {
-    // Si no cumple con la expresión regular, se elimina el último caracter ingresado
-    input.value = input.value.substring(0, input.value.length - 1);
+<script>
+function validarCorreo(event) {
+  var correo = event.target.value;
+  var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!regex.test(correo)) {
+    event.target.setCustomValidity("Ingrese un correo electrónico válido");
+  } else {
+    event.target.setCustomValidity("");
   }
 }
-</script> -->
+</script>
 
 <script>
   function validarNombre(e) {
