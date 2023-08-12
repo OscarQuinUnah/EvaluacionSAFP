@@ -87,10 +87,10 @@ class PDF extends FPDF
       $this->SetFont('Arial', 'B', 11);
       $this->Cell(10, 10, utf8_decode('N°'), 1, 0, 'C', 1);
       $this->Cell(50, 10, utf8_decode('FECHA'), 1, 0, 'C', 1);
-      $this->Cell(40, 10, utf8_decode('USUARIO'), 1, 0, 'C', 1);
-      $this->Cell(45, 10, utf8_decode('OBJETO'), 1, 0, 'C', 1);
-      $this->Cell(52, 10, utf8_decode('ACCIÓN'), 1, 0, 'C', 1);
-      $this->Cell(85, 10, utf8_decode('DESCRIPCIÓN'), 1, 1, 'C', 1);
+      $this->Cell(50, 10, utf8_decode('USUARIO'), 1, 0, 'C', 1);
+      //$this->Cell(45, 10, utf8_decode('OBJETO'), 1, 0, 'C', 1);
+      $this->Cell(60, 10, utf8_decode('ACCIÓN'), 1, 0, 'C', 1);
+      $this->Cell(120, 10, utf8_decode('DESCRIPCIÓN'), 1, 1, 'C', 1);
     //   $this->Cell(50, 10, utf8_decode('DEPARTAMENTO'), 1, 0, 'C', 1);
     //   $this->Cell(50, 10, utf8_decode('MUNICIPIO'), 1, 1, 'C', 1);
       // $this->Cell(50, 10, utf8_decode('CAI'), 1, 0, 'C', 1);
@@ -141,14 +141,16 @@ while ($datos_reporte = $consulta_reporte_alquiler->fetch_object()) {
       /* TABLA */
       $pdf->Cell(10, 10, utf8_decode($i), 0, 0, 'C', 0);
       $pdf->Cell(50, 10, utf8_decode($datos_reporte -> Fecha), 0, 0, 'C', 0);
-      $pdf->Cell(40, 10, utf8_decode($datos_reporte -> Usuario), 0, 0, 'C', 0);
-      $pdf->Cell(45, 10, utf8_decode($datos_reporte -> Objeto), 0, 0, 'C', 0);
-      $pdf->Cell(52, 10, utf8_decode($datos_reporte -> Accion), 0, 0, 'C', 0);
-      $pdf->Cell(85, 10, utf8_decode($datos_reporte -> Descripcion), 0, 1, 'C', 0);
-    //   $pdf->Cell(50, 10, utf8_decode($datos_reporte -> departamento), 0, 0, 'C', 0);
-    //   $pdf->Cell(50, 10, utf8_decode($datos_reporte -> municipio), 0, 1, 'C', 0);
-      // $pdf->Cell(100, 10, utf8_decode($datos_reporte -> cai), 1, 0, 'C', 0);   
-      // $pdf->Cell(20, 10, utf8_decode($datos_reporte -> estado), 0, 1, 'C', 0);   
+      $pdf->Cell(50, 10, utf8_decode($datos_reporte -> Usuario), 0, 0, 'C', 0);
+      //$pdf->Cell(45, 10, utf8_decode($datos_reporte -> Objeto), 0, 0, 'C', 0);
+      $pdf->Cell(60, 10, utf8_decode($datos_reporte -> Accion), 0, 0, 'C', 0);
+       // Utilizamos MultiCell para la columna "Accion"
+       //$pdf->MultiCell(52, 10, utf8_decode($datos_reporte->Accion), 0, 'C', 0);
+
+      //$pdf->Cell(85, 10, utf8_decode($datos_reporte -> Descripcion), 0, 1, 'C', 0);
+
+         // Utilizamos MultiCell para la columna "Descripcion"
+      $pdf->MultiCell(120, 10, utf8_decode($datos_reporte->Descripcion), 0, 'C', 0);
    }
 
 $pdf->Output('ReporteDeBitacora.pdf', 'I');//nombreDescarga, Visor(I->visualizar - D->descargar)
